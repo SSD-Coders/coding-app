@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>user profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="card" style="width: 18rem;">
+    <img src="https://www.marmuq.com/assets/front/images/logo/user2.png" class="card-img-top" alt="ProfilePicture">
+    <div class="card-body">
+<!--        <h5 class="card-text" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"/>-->
+        <p class="card-text" th:text="${userProfile.email}"/>
+        <p class="card-text" th:text="${userProfile.bio}"/>
+        <p class="card-text" th:text="${userProfile.dateOfBirth}"/>
+    </div>
+</div>
+
+<br>
+<br>
+
+<form action="/addPost" method="post">
+    <fieldset>
+        <div class="mb-3">
+            <label class="form-label">Add a post</label>
+            <input type="textarea" class="form-control" name="body">
+            </br>
+            <button type="submit" class="btn btn-primary" name="password">submit</button>
+        </div>
+    </fieldset>
+</form>
+
+<br>
+<br>
+
+<legend>Posts</legend>
+
+<form th:each="post : ${userProfile.posts}">
+    <fieldset>
+        <div class="mb-3">
+            <p th:text="${post.body}"></p>
+            <p th:text="${post.createdAt}"></p>
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
