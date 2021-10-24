@@ -14,7 +14,8 @@ public class Post {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne()
+
+    @ManyToOne
     @JoinColumn(name = "application_user_id")
     private ApplicationUser applicationUser;
 
@@ -22,7 +23,7 @@ public class Post {
 
     @CreationTimestamp
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    @JsonFormat(pattern = "yyyy-MM-dd||HH:mm:ss")
+//    @JsonFormat(pattern = "yyyy-MM-dd||HH:mm:ss")
     private LocalDateTime createdAt;
 
     public Post() {
@@ -64,4 +65,5 @@ public class Post {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
 }

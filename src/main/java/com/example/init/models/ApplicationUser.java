@@ -31,7 +31,7 @@ public class ApplicationUser implements UserDetails {
     }
 
     public ApplicationUser(String email, String username, String password, String firstName, String lastName, String dateOfBirth, String bio) {
-        this.id = id;
+        this.email=email;
         this.username = username;
         this.password = password;
         this.firstName = firstName;

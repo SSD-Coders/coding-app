@@ -45,7 +45,7 @@ public class User {
 
     @PostMapping("/signup")
     public RedirectView attemptSignUp(@ModelAttribute ApplicationUser user) {
-        ApplicationUser newUser = new ApplicationUser(user.getEmail(),bCryptPasswordEncoder.encode(user.getUsername()),user.getPassword(),
+        ApplicationUser newUser = new ApplicationUser(user.getEmail(),user.getUsername(),bCryptPasswordEncoder.encode(user.getPassword()),
                 user.getFirstName(),user.getLastName(),user.getDateOfBirth(),user.getBio());
         applicationUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
