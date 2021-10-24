@@ -8,6 +8,7 @@ import com.example.init.repositories.ContentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -77,6 +78,15 @@ public class User {
         return new RedirectView("/profile");
     }
 
+    @GetMapping("/user")
+    public String profile(@RequestParam long id, Model model, Principal principal) {
+        Coders user = codersRepository.findById(id).get();
+        model.addAttribute("username", user.getUsername());
+        model.addAttribute("userProfile", user);
+        model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
+        return "user";
+    }
+
     @GetMapping("/users")
     public String getUsers(Model model, Principal principal) {
         List<Coders> users = codersRepository.findAll();
@@ -87,7 +97,7 @@ public class User {
     }
 
     @PostMapping("/follow")
-    public RedirectView followUser(Coders user, @RequestParam Long id) {
+    public RedirectView followUser(@AuthenticationPrincipal Coders user, @RequestParam Long id) {
         Coders feed = codersRepository.findByUsername(user.getUsername());
         Coders follow = codersRepository.findById(id).get();
         feed.getFollowers().add(follow);
@@ -96,7 +106,7 @@ public class User {
     }
 
     @GetMapping("/feed")
-    public String getUsersInfo(Coders user, Model model) {
+    public String getUsersInfo(@AuthenticationPrincipal Coders user, Model model) {
         Coders feed = codersRepository.findByUsername(user.getUsername());
         List<Coders> following = feed.getFollowers();
         model.addAttribute("followers", following);

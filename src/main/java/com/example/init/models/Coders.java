@@ -29,10 +29,10 @@ public class Coders implements UserDetails {
     @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
     private List<Post> posts;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
     List<Coders> followers = new ArrayList<>();
-    @ManyToMany(mappedBy = "followers")
+    @ManyToMany(mappedBy = "followers", fetch = FetchType.EAGER)
     List<Coders> following = new ArrayList<>();
 
     public Coders() {
@@ -51,22 +51,22 @@ public class Coders implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     public void setUsername(String username) {

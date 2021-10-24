@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface CodersRepository extends JpaRepository<Coders, Long> {
     public Coders findByUsername(String username);
 
-    public Coders findUserById(Long id);
+    // public Coders findUserById(Long id);
 }

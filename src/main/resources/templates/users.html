@@ -31,8 +31,15 @@
         <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
         <li th:text="${user.dateOfBirth}"></li>
         <li th:text="${user.bio}"></li>
-        <form method="post" th:action="@{'/follow?id='+${user.id}}">
-          <button class="btn btn-danger" type="submit">Follow</button>
+        <form method="POST" action="/follow">
+          <button
+            style="align-items: center"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Follow Me!
+          </button>
+          <input type="hidden" name="id" th:value="${user.id}" />
         </form>
       </ul>
     </main>
