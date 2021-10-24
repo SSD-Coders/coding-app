@@ -2,9 +2,9 @@ package com.example.init.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
@@ -18,51 +18,26 @@ public class ApplicationUser implements UserDetails {
 
     @Column(unique = true)
     private String username;
-
     private String password;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
     private String bio;
 
+    @OneToMany (mappedBy = "applicationUser", fetch = FetchType.EAGER)
+    private List<Post> posts;
+
     public ApplicationUser() {
     }
 
-    public ApplicationUser(Long id, String email, String username, String password, String firstName, String lastName, String dateOfBirth, String bio) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.bio = bio;
-    }
-
     public ApplicationUser(String email, String username, String password, String firstName, String lastName, String dateOfBirth, String bio) {
-        this.email = email;
+        this.id = id;
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.bio = bio;
-    }
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
     }
 
     @Override
@@ -85,6 +60,15 @@ public class ApplicationUser implements UserDetails {
         return false;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
     public Long getId() {
         return id;
     }
@@ -101,8 +85,14 @@ public class ApplicationUser implements UserDetails {
         this.email = email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
@@ -141,4 +131,11 @@ public class ApplicationUser implements UserDetails {
         this.bio = bio;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 }

@@ -2,7 +2,9 @@ package com.example.init.controllers;
 
 import antlr.BaseAST;
 import com.example.init.models.ApplicationUser;
+import com.example.init.models.Post;
 import com.example.init.repositories.ApplicationUserRepository;
+import com.example.init.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,10 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Controller
 public class User {
@@ -29,6 +29,9 @@ public class User {
 
     @Autowired
     ApplicationUserRepository applicationUserRepository;
+
+    @Autowired
+    PostRepository postRepository;
 
     @GetMapping("/signup")
     public String getSignUpPage() {
@@ -42,9 +45,8 @@ public class User {
 
     @PostMapping("/signup")
     public RedirectView attemptSignUp(@ModelAttribute ApplicationUser user) {
-        ApplicationUser newUser = new ApplicationUser(user.getEmail(),user.getUsername(),
-                bCryptPasswordEncoder.encode(user.getPassword()),
-                user.getFirstName(), user.getLastName(), user.getDateOfBirth(), user.getBio());
+        ApplicationUser newUser = new ApplicationUser(user.getEmail(),bCryptPasswordEncoder.encode(user.getUsername()),user.getPassword(),
+                user.getFirstName(),user.getLastName(),user.getDateOfBirth(),user.getBio());
         applicationUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -68,4 +70,11 @@ public class User {
         return "profile";
     }
 
+    @PostMapping("/addPost")
+    public RedirectView addPost(Principal principle, String body) {
+        ApplicationUser newUser = applicationUserRepository.findByUsername(principle.getName());
+        Post post = new Post(newUser, body);
+        postRepository.save(post);
+        return new RedirectView("/profile");
+    }
 }
