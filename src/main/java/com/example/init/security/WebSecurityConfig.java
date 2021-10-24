@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers( "/login", "/signup","/")
+                .antMatchers( "/login", "/signup","/","/quiz")
                 .permitAll().antMatchers("/adminpanel")
                 .hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
