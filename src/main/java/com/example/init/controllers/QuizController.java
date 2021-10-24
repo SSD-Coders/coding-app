@@ -3,6 +3,7 @@ package com.example.init.controllers;
 import com.example.init.models.Quiz;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,9 +33,16 @@ public class QuizController {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String data = bufferedReader.readLine();
         Type jsonCasting = new TypeToken<List<Quiz>>(){}.getType();
+//        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("answers" , data);
+
+
+
+
+//        List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
         List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
         model.addAttribute("quiz",jsonList);
-//        model.addAttribute("answers",jsonList);
+//        model.addAttribute("answers",jsonObject);
         bufferedReader.close();
         return "quiz";
     }

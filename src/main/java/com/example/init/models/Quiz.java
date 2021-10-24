@@ -1,6 +1,7 @@
 package com.example.init.models;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import javax.persistence.*;
@@ -8,46 +9,63 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-@Entity
 public class Quiz {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
 
+    public int id;
     public String question;
-//    public String answers;
+    public Object description;
+    public Answers answers;
+    public String multiple_correct_answers;
+    public CorrectAnswers correct_answers;
+    public String correct_answer;
+    public Object explanation;
+    public Object tip;
+    public List<Tag> tags;
+    public String category;
+    public String difficulty;
 
-    public Quiz(String question) {
+    public Quiz(int id, String question, Object description, Answers answers, String multiple_correct_answers, CorrectAnswers correct_answers, String correct_answer, Object explanation, Object tip, List<Tag> tags, String category, String difficulty) {
+        this.id = id;
         this.question = question;
-//        this.answers = answers;
+        this.description = description;
+        this.answers = answers;
+        this.multiple_correct_answers = multiple_correct_answers;
+        this.correct_answers = correct_answers;
+        this.correct_answer = correct_answer;
+        this.explanation = explanation;
+        this.tip = tip;
+        this.tags = tags;
+        this.category = category;
+        this.difficulty = difficulty;
     }
 
-    public Long getId() {
-        return id;
+    private static class Answers{
+        public String answer_a;
+        public String answer_b;
+        public String answer_c;
+        public String answer_d;
+        public Object answer_e;
+        public Object answer_f;
     }
 
-//    public String url = "https://quizapi.io/api/v1/questions?apiKey=phkL2Z69NDCrImLlfnLoElQkoF3StoJlQrAeKvkf&limit=5&css";
-
-    public Quiz() {
+    private static class CorrectAnswers{
+        public String answer_a_correct;
+        public String answer_b_correct;
+        public String answer_c_correct;
+        public String answer_d_correct;
+        public String answer_e_correct;
+        public String answer_f_correct;
     }
 
-//    public String getAnswers() {
-//        return answers;
-//    }
-
-//    public void setAnswers(String answers) {
-//        this.answers = answers;
-//    }
-
-    public String getQuestion() {
-        return question;
+    private static class Tag{
+        public String name;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+
+
+
 
 }

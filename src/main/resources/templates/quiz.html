@@ -10,21 +10,48 @@
 <!--private String course_level;-->
 <!--private String description;-->
 <!--private String image;-->
-<tr th:each="quiz: ${quiz}">
-    <td th:text="${quiz.question}"></td>
+<tr th:each="Quiz: ${quiz}">
+    <td th:text="${Quiz.id}"></td>
     <br />
-<!--    <td >-->
-<!--        <ul th:each="answers : ${[0].answers}">-->
-<!--            <li th:text=" ${answers.answer_a}"></li>-->
-<!--            <li th:text=" ${answers.answer_b}"></li>-->
-<!--            <li th:text=" ${answers.answer_c}"></li>-->
-<!--            <li th:text=" ${answers.answer_d}"></li>-->
-<!--            <li th:text=" ${answers.answer_e}"></li>-->
-<!--            <li th:text=" ${answers.answer_f}"></li>-->
+    <td th:text="${Quiz.question}"></td>
+    <br />
 
-<!--        </ul>-->
-<!--    </td>-->
-    <br />
+
+
+                    <p th:text="${Quiz.answers.answer_a}"></p>
+                    <p th:text="${Quiz.answers.answer_b}"></p>
+                    <p th:text="${Quiz.answers.answer_c}"></p>
+                    <p th:text="${Quiz.answers.answer_d}"></p>
+                    <p th:text="${Quiz.answers.answer_e}"></p>
+                    <p th:text="${Quiz.answers.answer_f}"></p>
+
+
+
+                    <p style="background-color : grey" th:text="${Quiz.correct_answers.answer_a_correct}"></p>
+                    <p th:text="${Quiz.correct_answers.answer_b_correct}"></p>
+                    <p th:text="${Quiz.correct_answers.answer_c_correct}"></p>
+                    <p th:text="${Quiz.correct_answers.answer_d_correct}"></p>
+                    <p th:text="${Quiz.correct_answers.answer_e_correct}"></p>
+                    <p th:text="${Quiz.correct_answers.answer_f_correct}"></p>
+<!--                    <p th:text="${Quiz.answers.answer_a_correct}"></p>-->
+<!--                    <p th:text="${Quiz.answers.answer_a_correct}"></p>-->
+
+
+
+<!--    <td th:text="${Quiz.answers.answer_a}"></td>-->
+<!--    <br />-->
+<!--    <td th:text="${Quiz.answers.answer_b}"></td>-->
+<!--    <br />-->
+<!--    <td th:text="${Quiz.answers.answer_c}"></td>-->
+<!--    <br />-->
+<!--    <td th:text="${Quiz.answers.answer_d}"></td>-->
+<!--    <br />-->
+<!--    <td th:text="${Quiz.answers.answer_e}"></td>-->
+<!--    <br />-->
+<!--    <td th:text="${Quiz.answers.answer_f}"></td>-->
+<!--    <br />-->
+
+
 
 
 </tr>
