@@ -10,6 +10,7 @@
     <img src="https://www.marmuq.com/assets/front/images/logo/user2.png" class="card-img-top" alt="ProfilePicture">
     <div class="card-body">
         <h5 class="card-text" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"/>
+        <p class="card-text" th:text="${userProfile.email}"/>
         <p class="card-text" th:text="${userProfile.bio}"/>
         <p class="card-text" th:text="${userProfile.dateOfBirth}"/>
     </div>
