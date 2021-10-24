@@ -1,12 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www,thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello</title>
+    <title>Init home</title>
   </head>
+  <style>
+
+  </style>
   <body>
-    <h1>Hello World</h1>
+  <header>
+    <img id="logo" src="" alt="logo"   width="10%"
+         height="10%">
+    <nav>
+      <a  th:href="@{#why}">Why init?</a>
+      <a  th:href="@{#quizes}">Quizes</a>
+      <a  th:href="@{#chat}">Chat</a>
+
+      <a class="a" th:href="@{/signup}">Sign up</a>
+      <a class="a" th:href="@{/login}">Log in</a>
+    </nav>
+  </header>
+  <main>
+
+
+    <div>
+      <h1>
+        Find your co learning <span class="codingFont">&lt;coding/&gt;</span>
+      </h1>
+      <a  href="/signup" role="button">Signup</a>
+      <a  href="/login" role="button">Log in</a>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <h1 id="why">Why Init?</h1>
+      <h3>Init will initialize you to get involved with the coding community.</h3>
+      <p>also it will provide you with everything you need to start. </p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <h3 id="chat">Chat</h3>
+     <h3>Init will help you to collaborate, share ideas, and get the help from other programmers.</h3>
+
+      <div>
+        <img  src="" alt="logo"   width="10%"
+             height="10%">
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <h3 id="quizes">Quizes</h3>
+      <h3>Your coding and thinking skills will get better everyday, as we provide quizes for you to solve it and practice.</h3>
+      <p>each quiz you solve you will git extra points, that you can use for buying courses from our website.</p>
+       <div>
+          <img id="" src="" alt="logo"   width="10%"
+             height="10%">
+       </div>
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer>
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+  </footer>
+
   </body>
 </html>
