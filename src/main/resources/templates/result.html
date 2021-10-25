@@ -16,18 +16,18 @@
 
         <div class="d-flex justify-content-center">
 
-            <p th:if="${resultsQuiz}" th:text="${resultsQuiz.username}"></p>
+            <p th:if="${quiz}" th:text="${quiz.getUsername()}"></p>
 
         </div>
 
         <div class="d-flex justify-content-center">
             <p>Total correct answer:&nbsp;&nbsp;</p>
-            <p th:if="${resultsQuiz}" th:text="${resultsQuiz.totalCorrect}"></p>
+            <p th:if="${quiz}" th:text="${quiz.totalCorrect}"></p>
         </div>
 
         <div class="d-flex justify-content-center">
             <p>Total false answer:&nbsp;&nbsp;</p>
-            <p th:if="${resultsQuiz}" th:text=" 10 - ${resultsQuiz.totalCorrect}"></p>
+            <p th:if="${quiz}" th:text=" 10 - ${quiz.totalCorrect}"></p>
         </div>
 
         <div class="d-flex justify-content-center mt-4">

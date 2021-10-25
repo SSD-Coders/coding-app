@@ -3,8 +3,9 @@ package com.example.init.controllers;
 import com.example.init.models.ApplicationUser;
 import com.example.init.models.Quiz;
 import com.example.init.models.ResultsQuiz;
+import com.example.init.repositories.ApplicationUserRepository;
 import com.example.init.repositories.ResultsRepo;
-import com.example.init.serviceQuiz.ServiceQuiz;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.dom4j.rule.Mode;
@@ -23,16 +24,18 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class QuizController {
 
-    @Autowired
-    ServiceQuiz qService;
+
     @Autowired
     ResultsRepo resultsRepo;
+    @Autowired
+    ApplicationUserRepository applicationUserRepository;
     @GetMapping("/quiz")
     public String getQuiz(Model model) throws IOException {
         Gson gson = new Gson();
@@ -58,14 +61,16 @@ public class QuizController {
 
 
     @PostMapping("/submit")
-    public String submit(@ModelAttribute Quiz quiz,Model model ){
+    public String submit( Model model , Principal principal){
         ResultsQuiz resultsQuiz = new ResultsQuiz();
-        ApplicationUser applicationUser = new ApplicationUser();
-        resultsQuiz.setTotalCorrect(qService.getAnswersTest(quiz));
-        resultsQuiz.setUsername(applicationUser.getUsername());
+//        ApplicationUser applicationUser = new ApplicationUser();
+        Quiz quiz = new Quiz();
+//        resultsQuiz.setTotalCorrect(quiz.getAnswers());
+        resultsQuiz.setUsername(applicationUserRepository.findByUsername(principal.getName()));
         resultsQuiz.setTotalCorrect(resultsQuiz.getTotalCorrect());
-            model.addAttribute("resultQuiz", resultsRepo.save(resultsQuiz));
+            model.addAttribute("quiz", resultsRepo.save(resultsQuiz));
         return "result";
+
     }
 
 

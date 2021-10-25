@@ -36,20 +36,20 @@
 
         <form action="submit" method="POST" th:object=${quiz}>
             <div class="ques-box bg-dark text-light" th:each="Quiz , i : ${quiz}">
-                <td th:text="${Quiz.question}"></td>
+                <td  th:text="${Quiz.question}"></td>
 
                 <div class="option">
-                    <input type="radio" th:name="|[${i.index}].chose|" th:value="1"/>
+                    <input  type="radio" th:name="|[${i.index}].chose|" />
                     <p th:text="${Quiz.answers.answer_a}"></p>
                 </div>
 
                 <div class="option">
-                    <input type="radio" th:name="|[${i.index}].chose|"th:value="2"/>
+                    <input type="radio" th:name="|[${i.index}].chose|"/>
                     <p th:text="${Quiz.answers.answer_b}"></p>
                 </div>
 
                 <div class="option">
-                    <input type="radio" th:name="|[${i.index}].chose|"th:value="3"/>
+                    <input type="radio" th:name="|[${i.index}].chose|"/>
                     <p th:text="${Quiz.answers.answer_c}"></p>
                 </div>
 

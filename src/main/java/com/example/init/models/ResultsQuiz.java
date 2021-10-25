@@ -10,13 +10,15 @@ public class ResultsQuiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "id", nullable = false)
     private int id;
-    private String username;
-    private int totalCorrect;
+    @ManyToOne
+    @JoinColumn(name = "username_id")
+    public ApplicationUser username;
+    public int totalCorrect;
 
     public ResultsQuiz() {
     }
 
-    public ResultsQuiz(int id ,String username, int totalCorrect) {
+    public ResultsQuiz(int id ,ApplicationUser username, int totalCorrect) {
         this.id = id;
         this.username = username;
                 this.totalCorrect = totalCorrect;
@@ -27,12 +29,11 @@ public class ResultsQuiz {
     }
 
 
-
-    public String getUsername() {
+    public ApplicationUser getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(ApplicationUser username) {
         this.username = username;
     }
 

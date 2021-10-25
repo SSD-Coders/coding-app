@@ -70,12 +70,25 @@ public class Quiz {
         public String name;
     }
 
-
-
-
-
-
-
-
-
+    public int getAnswers() {
+         int correct = 0;
+        if (answers.answer_a == (correct_answer)){
+            correct++;
 }
+        else if (correct_answer.equals(answers.answer_b) ){
+            correct++;
+        }else if (correct_answer.equals(answers.answer_c)) {
+            correct++;
+        }else if (correct_answer .equals(answers.answer_d)) {
+            correct++;
+        }else if (correct_answer.equals(answers.answer_e)) {
+            correct++;
+        }else if (correct_answer.equals(answers.answer_f)) {
+            correct++;
+        }
+        return correct;
+    }
+    }
+
+
+
