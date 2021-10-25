@@ -77,8 +77,8 @@ public class Coders implements UserDetails {
         return null;
     }
 
-    public Long getId() {
-        return id;
+    public Long getId(long id) {
+        return this.id;
     }
 
     public void setId(Long id) {
