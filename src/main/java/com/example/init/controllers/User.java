@@ -77,28 +77,6 @@ public class User {
         return new RedirectView("/profile");
     }
 
-    @Transactional
-    @GetMapping("/delete/{id}")
-    public RedirectView deleteUserPost(@PathVariable String id, HttpServletRequest request, Principal principal, Model model) {
-        String username = (String) request.getSession().getAttribute("username");
-        Coders user = codersRepository.findByUsername(principal.getName());
-        model.addAttribute("username", principal.getName());
-        model.addAttribute("userProfile", user);
-        contentRepository.deletePostByAppUser_UsernameAndId(username, Long.parseLong(id));
-        return new RedirectView("/profile");
-    }
-
-//    @GetMapping("posts/{postId}")
-//    public RedirectView deletePostByPostId(@PathVariable String postId,Principal principal, Model model) {
-//        Post post = contentRepository.findById(Long.parseLong(postId)).orElseThrow();
-//        Coders user = codersRepository.findByUsername(principal.getName());
-//        contentRepository.delete(post);
-//        model.addAttribute("username", principal.getName());
-//        model.addAttribute("userProfile", user);
-//        model.addAttribute("authorPost", post);
-//        return new RedirectView( "profile");
-//    }
-
     @GetMapping("/user")
     public String profile(@RequestParam long id, Model model, Principal principal) {
         Coders user = codersRepository.findById(id).get();
