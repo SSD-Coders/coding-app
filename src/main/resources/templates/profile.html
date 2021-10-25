@@ -39,7 +39,10 @@
     <fieldset>
         <div class="mb-3">
             <p th:text="${post.body}"></p>
-            <p th:text="${post.createdAt}"></p>
+           <p th:text="${post.createdAt}"></p>
+            <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>
+            <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
+
         </div>
     </fieldset>
 </form>
