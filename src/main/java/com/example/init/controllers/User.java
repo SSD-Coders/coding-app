@@ -6,6 +6,8 @@ import com.example.init.repositories.CodersRepository;
 import com.example.init.repositories.ContentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,15 +15,17 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @Controller
 public class User {
@@ -75,6 +79,18 @@ public class User {
         Coders newUser = codersRepository.findByUsername(principle.getName());
         Post post = new Post(newUser, body);
         contentRepository.save(post);
+        return new RedirectView("/profile");
+    }
+
+    @Transactional
+    @GetMapping("/delete/{id}")
+    public RedirectView deleteUserPost(@PathVariable String id, HttpServletRequest request, Principal principal, Model model) {
+        Post post = contentRepository.findById(Long.parseLong(id)).orElseThrow();
+        String username = (String) request.getSession().getAttribute("username");
+        Coders user = codersRepository.findByUsername(principal.getName());
+        model.addAttribute("username", principal.getName());
+        model.addAttribute("userProfile", user);
+        contentRepository.delete(post);
         return new RedirectView("/profile");
     }
 
