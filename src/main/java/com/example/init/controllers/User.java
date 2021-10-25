@@ -13,12 +13,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +76,28 @@ public class User {
         contentRepository.save(post);
         return new RedirectView("/profile");
     }
+
+    @Transactional
+    @GetMapping("/delete/{id}")
+    public RedirectView deleteUserPost(@PathVariable String id, HttpServletRequest request, Principal principal, Model model) {
+        String username = (String) request.getSession().getAttribute("username");
+        Coders user = codersRepository.findByUsername(principal.getName());
+        model.addAttribute("username", principal.getName());
+        model.addAttribute("userProfile", user);
+        contentRepository.deletePostByAppUser_UsernameAndId(username, Long.parseLong(id));
+        return new RedirectView("/profile");
+    }
+
+//    @GetMapping("posts/{postId}")
+//    public RedirectView deletePostByPostId(@PathVariable String postId,Principal principal, Model model) {
+//        Post post = contentRepository.findById(Long.parseLong(postId)).orElseThrow();
+//        Coders user = codersRepository.findByUsername(principal.getName());
+//        contentRepository.delete(post);
+//        model.addAttribute("username", principal.getName());
+//        model.addAttribute("userProfile", user);
+//        model.addAttribute("authorPost", post);
+//        return new RedirectView( "profile");
+//    }
 
     @GetMapping("/user")
     public String profile(@RequestParam long id, Model model, Principal principal) {
