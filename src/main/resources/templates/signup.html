@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:ta="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:ta="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <title>signup</title>
@@ -11,7 +11,9 @@
     />
   </head>
   <body>
-    <form ta:action="@{/signup}" method="post">
+  <div th:replace="header :: header"></div>
+
+  <form ta:action="@{/signup}" method="post">
       <legend>Sign up</legend>
       <fieldset>
         <div class="mb-3">

@@ -13,7 +13,7 @@ public class Post {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "coders_id")
+    @JoinColumn(name = "application_user_id")
     private Coders applicationUser;
 
     private String body;
