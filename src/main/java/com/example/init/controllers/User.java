@@ -112,5 +112,4 @@ public class User {
         model.addAttribute("followers", following);
         return "feed";
     }
-
 }
