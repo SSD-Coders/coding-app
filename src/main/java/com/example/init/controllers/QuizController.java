@@ -1,12 +1,20 @@
 package com.example.init.controllers;
 
+import com.example.init.models.ApplicationUser;
 import com.example.init.models.Quiz;
+import com.example.init.models.ResultsQuiz;
+import com.example.init.repositories.ResultsRepo;
+import com.example.init.serviceQuiz.ServiceQuiz;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.dom4j.rule.Mode;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,9 +29,10 @@ import java.util.List;
 @Controller
 public class QuizController {
 
-
-
-
+    @Autowired
+    ServiceQuiz qService;
+    @Autowired
+    ResultsRepo resultsRepo;
     @GetMapping("/quiz")
     public String getQuiz(Model model) throws IOException {
         Gson gson = new Gson();
@@ -33,17 +42,49 @@ public class QuizController {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String data = bufferedReader.readLine();
         Type jsonCasting = new TypeToken<List<Quiz>>(){}.getType();
-//        JSONObject jsonObject = new JSONObject();
-//        jsonObject.put("answers" , data);
-
-
-
-
-//        List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
         List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
         model.addAttribute("quiz",jsonList);
-//        model.addAttribute("answers",jsonObject);
         bufferedReader.close();
         return "quiz";
     }
+//    @PostMapping("/quiz")
+//    public String postQuiz(Model model){
+////        Quiz quiz = new Quiz();
+//        Quiz quiz = (Quiz) qService.getQustion();
+//        model.addAttribute("quiz" , quiz);
+//
+//        return "quiz";
+//    }
+
+
+    @PostMapping("/submit")
+    public String submit(@ModelAttribute Quiz quiz,Model model ){
+        ResultsQuiz resultsQuiz = new ResultsQuiz();
+        ApplicationUser applicationUser = new ApplicationUser();
+        resultsQuiz.setTotalCorrect(qService.getAnswersTest(quiz));
+        resultsQuiz.setUsername(applicationUser.getUsername());
+        resultsQuiz.setTotalCorrect(resultsQuiz.getTotalCorrect());
+            model.addAttribute("resultQuiz", resultsRepo.save(resultsQuiz));
+        return "result";
+    }
+
+
+//
+//    @GetMapping("/posts")
+//    public String getPostForUsername(Model model , Principal principal) {
+//        ApplicationUser applicationUser = repositeryData.findApplicationUserByUsername(principal.getName());
+//        model.addAttribute("username" , applicationUser);
+//        return "posts";
+//    }
+//
+//    @PostMapping("/posts")
+//    public RedirectView createPostUsername(Model model , Principal principal , String body)
+//    {
+//        ApplicationUser applicationUser = repositeryData.findApplicationUserByUsername(principal.getName());
+//        Post post = new Post(applicationUser , body);
+//        post = repositeryPost.save(post);
+//        model.addAttribute("username" , applicationUser.getWrittenPost());
+//        return  new RedirectView("/profile");
+//    }
+
 }

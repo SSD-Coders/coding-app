@@ -26,8 +26,9 @@ public class Quiz {
     public List<Tag> tags;
     public String category;
     public String difficulty;
+    public int chose = -1;
 
-    public Quiz(int id, String question, Object description, Answers answers, String multiple_correct_answers, CorrectAnswers correct_answers, String correct_answer, Object explanation, Object tip, List<Tag> tags, String category, String difficulty) {
+    public Quiz(int id, String question, Object description, Answers answers, String multiple_correct_answers, CorrectAnswers correct_answers, String correct_answer, Object explanation, Object tip, List<Tag> tags, String category, String difficulty , int chose) {
         this.id = id;
         this.question = question;
         this.description = description;
@@ -40,18 +41,23 @@ public class Quiz {
         this.tags = tags;
         this.category = category;
         this.difficulty = difficulty;
+        this.chose = chose;
     }
 
-    private static class Answers{
+    public Quiz() {
+
+    }
+
+    public static class Answers{
         public String answer_a;
         public String answer_b;
         public String answer_c;
         public String answer_d;
-        public Object answer_e;
-        public Object answer_f;
+        public String answer_e;
+        public String answer_f;
     }
 
-    private static class CorrectAnswers{
+    public static class CorrectAnswers{
         public String answer_a_correct;
         public String answer_b_correct;
         public String answer_c_correct;
@@ -63,6 +69,10 @@ public class Quiz {
     private static class Tag{
         public String name;
     }
+
+
+
+
 
 
 
