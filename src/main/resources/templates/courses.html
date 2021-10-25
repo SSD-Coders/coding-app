@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Courses Page</title>
+  </head>
+  <body>
+  <div th:replace="header :: header"></div>
+  <!--private String title;-->
+    <!--private String course_level;-->
+    <!--private String description;-->
+    <!--private String image;-->
+    <tr th:each="course: ${courses}">
+      <td th:text="${course.title}"></td>
+      <br />
+      <td th:text="${course.course_level}"></td>
+      <br />
+      <td th:text="${course.description}"></td>
+      <br />
+
+      <img width="30%" th:src="${course.image}" src="image" alt="image" />
+      <br />
+    </tr>
+  </body>
+</html>
