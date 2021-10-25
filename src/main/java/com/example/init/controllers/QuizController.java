@@ -2,20 +2,22 @@ package com.example.init.controllers;
 
 import com.example.init.models.Quiz;
 import com.google.gson.Gson;
+//import com.google.gson.reflect.TypeToken;
+
 import com.google.gson.reflect.TypeToken;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class QuizController {
@@ -34,8 +36,8 @@ public class QuizController {
         Type jsonCasting = new TypeToken<List<Quiz>>(){}.getType();
         List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
         model.addAttribute("quiz",jsonList);
-//        model.addAttribute("answers",jsonList);
         bufferedReader.close();
         return "quiz";
     }
+
 }

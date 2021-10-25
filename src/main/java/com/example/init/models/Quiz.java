@@ -1,7 +1,10 @@
 package com.example.init.models;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
+import netscape.javascript.JSObject;
 
 import javax.persistence.*;
 import java.io.*;
@@ -18,11 +21,30 @@ public class Quiz {
     private Long id;
 
     public String question;
-//    public String answers;
+    public String description;
+    public static class Answers {
 
-    public Quiz(String question) {
+        public String answer_a;
+        public String answer_b;
+        public String answer_c;
+        public String answer_d;
+        public String answer_e;
+        public String answer_f;
+    }
+    public Answers anserws;
+
+    public Answers getAnserws() {
+        return anserws;
+    }
+
+    public void setAnserws(Answers anserws) {
+        this.anserws = anserws;
+    }
+
+    public Quiz(String question , String description ) {
         this.question = question;
-//        this.answers = answers;
+        this.description = description;
+
     }
 
     public Long getId() {
