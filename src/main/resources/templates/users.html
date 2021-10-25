@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Suggest Friends</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: darkgray;
+      }
+    </style>
+    <main>
+      <h1>People You May Know</h1>
+      <br />
+      <ul th:each="user: ${allusers}">
+        <img
+          src="https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/256/profile-icon.png"
+          alt=""
+        />
+        <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
+        <li th:text="${user.dateOfBirth}"></li>
+        <li th:text="${user.bio}"></li>
+        <form method="POST" action="/follow">
+          <button
+            style="align-items: center"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Follow Me!
+          </button>
+          <input type="hidden" name="id" th:value="${user.id}" />
+        </form>
+      </ul>
+    </main>
+  </body>
+</html>

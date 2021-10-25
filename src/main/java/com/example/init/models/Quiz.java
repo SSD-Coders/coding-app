@@ -1,75 +1,43 @@
 package com.example.init.models;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
-import netscape.javascript.JSObject;
 
-import javax.persistence.*;
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 public class Quiz {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
 
+    public int id;
     public String question;
+
     public String description;
-    public static class Answers {
-
-        public String answer_a;
-        public String answer_b;
-        public String answer_c;
-        public String answer_d;
-        public String answer_e;
-        public String answer_f;
-    }
-    public Answers anserws;
-
-    public Answers getAnserws() {
-        return anserws;
-    }
-
-    public void setAnserws(Answers anserws) {
-        this.anserws = anserws;
-    }
+ 
 
     public Quiz(String question , String description ) {
         this.question = question;
         this.description = description;
 
+
     }
 
-    public Long getId() {
-        return id;
+    private static class Answers {
+        public String answer_a;
+        public String answer_b;
+        public String answer_c;
+        public String answer_d;
+        public Object answer_e;
+        public Object answer_f;
     }
 
-//    public String url = "https://quizapi.io/api/v1/questions?apiKey=phkL2Z69NDCrImLlfnLoElQkoF3StoJlQrAeKvkf&limit=5&css";
-
-    public Quiz() {
+    private static class CorrectAnswers {
+        public String answer_a_correct;
+        public String answer_b_correct;
+        public String answer_c_correct;
+        public String answer_d_correct;
+        public String answer_e_correct;
+        public String answer_f_correct;
     }
 
-//    public String getAnswers() {
-//        return answers;
-//    }
-
-//    public void setAnswers(String answers) {
-//        this.answers = answers;
-//    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
+    private static class Tag {
+        public String name;
     }
 
 }

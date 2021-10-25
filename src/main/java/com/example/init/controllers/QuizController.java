@@ -24,7 +24,6 @@ public class QuizController {
 
 
 
-
     @GetMapping("/quiz")
     public String getQuiz(Model model) throws IOException {
         Gson gson = new Gson();
@@ -41,3 +40,4 @@ public class QuizController {
     }
 
 }
+

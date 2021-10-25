@@ -2,14 +2,13 @@ package com.example.init.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class ApplicationUser implements UserDetails {
+public class Coders implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -20,20 +19,26 @@ public class ApplicationUser implements UserDetails {
 
     @Column(unique = true)
     private String username;
-
     private String password;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
     private String bio;
 
-    @OneToMany(mappedBy = "author" , fetch = FetchType.EAGER)
-    private List<Code> codes ;
-    public ApplicationUser() {
+    @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
+    private List<Post> posts;
+
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
+    List<Coders> followers = new ArrayList<>();
+    @ManyToMany(mappedBy = "followers", fetch = FetchType.EAGER)
+    List<Coders> following = new ArrayList<>();
+
+    public Coders() {
     }
 
-    public ApplicationUser(Long id, String email, String username, String password, String firstName, String lastName, String dateOfBirth, String bio) {
-        this.id = id;
+    public Coders(String email, String username, String password, String firstName, String lastName, String dateOfBirth,
+            String bio) {
         this.email = email;
         this.username = username;
         this.password = password;
@@ -41,52 +46,35 @@ public class ApplicationUser implements UserDetails {
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.bio = bio;
-    }
-
-    public ApplicationUser(String email, String username, String password, String firstName, String lastName, String dateOfBirth, String bio) {
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.bio = bio;
-    }
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 
     public Long getId() {
@@ -105,8 +93,14 @@ public class ApplicationUser implements UserDetails {
         this.email = email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
@@ -143,6 +137,30 @@ public class ApplicationUser implements UserDetails {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public List<Coders> getFollowers() {
+        return this.followers;
+    }
+
+    public void setFollowers(List<Coders> followers) {
+        this.followers = followers;
+    }
+
+    public List<Coders> getFollowing() {
+        return this.following;
+    }
+
+    public void setFollowing(List<Coders> following) {
+        this.following = following;
     }
 
 }

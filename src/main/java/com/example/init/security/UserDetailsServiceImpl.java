@@ -1,7 +1,7 @@
 package com.example.init.security;
 
-import com.example.init.models.ApplicationUser;
-import com.example.init.repositories.ApplicationUserRepository;
+import com.example.init.models.Coders;
+import com.example.init.repositories.CodersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    ApplicationUserRepository applicationUserRepository;
+    CodersRepository codersRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        ApplicationUser applicationUser = applicationUserRepository.findByUsername(username);
-        if (applicationUser == null) {
+        Coders coders = codersRepository.findByUsername(username);
+        if (coders == null) {
             throw new UsernameNotFoundException((username + " not found!"));
         }
-        return applicationUser;
+        return coders;
     }
 }

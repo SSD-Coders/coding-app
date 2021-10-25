@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Quiz Page</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!--private String title;-->
+    <!--private String course_level;-->
+    <!--private String description;-->
+    <!--private String image;-->
+    <tr th:each="Quiz: ${quiz}">
+      <td th:text="${Quiz.id}"></td>
+      <br />
+      <td th:text="${Quiz.question}"></td>
+      <br />
 
-<!--private String title;-->
-<!--private String course_level;-->
-<!--private String description;-->
-<!--private String image;-->
+
 <tr th:each="quiz: ${quiz}">
     <td th:text="${quiz.question}"></td>
     <br />
@@ -30,3 +36,4 @@
 </tr>
 </body>
 </html>
+

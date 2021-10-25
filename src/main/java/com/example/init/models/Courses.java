@@ -1,17 +1,13 @@
 package com.example.init.models;
 
+import javax.persistence.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 
-//import javax.persistence.*;
-import javax.persistence.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
+
 //
 @Entity
 public class Courses {
@@ -19,7 +15,7 @@ public class Courses {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-//    public int course_id;
+    // public int course_id;
     public String title;
     public String course_level;
     public String description;
@@ -29,7 +25,6 @@ public class Courses {
 
     }
 
-
     public Courses(String title, String course_level, String description, String image) throws Exception {
         this.title = title;
         this.course_level = course_level;
@@ -38,9 +33,7 @@ public class Courses {
 
     }
 
-
-
-    //    this is reader json file  --------------------------
+    // this is reader json file --------------------------
     public static ArrayList<Courses> readJsonFile(FileReader jsonFile) {
         // create Gson instance
         Gson gson = new Gson();
@@ -49,14 +42,14 @@ public class Courses {
         BufferedReader reader = new BufferedReader(jsonFile);
 
         // convert JSON array to list of users
-        ArrayList<Courses> courses = gson.fromJson(reader,new TypeToken<ArrayList<Courses>>() {}.getType());
-
+        ArrayList<Courses> courses = gson.fromJson(reader, new TypeToken<ArrayList<Courses>>() {
+        }.getType());
 
         System.out.println(courses);
         return courses;
     }
 
-// ------------------------------------ this is the End
+    // ------------------------------------ this is the End
 
     public Long getId() {
         return id;
@@ -94,15 +87,9 @@ public class Courses {
         this.image = image;
     }
 
-
-
-
     @Override
     public String toString() {
-        return "Courses{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                '}';
+        return "Courses{" + "title='" + title + '\'' + ", description='" + description + '\'' + ", image='" + image
+                + '\'' + '}';
     }
 }
