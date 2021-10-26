@@ -161,10 +161,12 @@ background-color: rgba(44,154,141);
 /* ////////// second div section 1 ////////////// */
 
 .second-div-s1{
-    display: inline-block;
-    float: right;
-    margin: 83px 82px 0px 0px;
 
+     display: inline-block;
+    position: absolute;
+    float: right;
+    margin: 83px 0px 0px 0px;
+    right: 2px;
 }
 #mainDesign{
 
@@ -176,17 +178,17 @@ background-color: rgba(44,154,141);
 .first-div-s2{
     background-color: #F2F2F2;
     position: relative;
-    top: 657px;
+    top: 245px;
     z-index: -1;
     height: 458px;
+    clear:both;
 
 }
 
-.first-div-s2 div{
-    position: absolute;
-    display: inline-block;
-    /* margin: 0px -3px 0px -2px; */
-    bottom: 100px;
+ .first-div-s2 div{
+    position: relative;
+    top: 70px;
+
     left: 75px;
     width: 559px;
 }
@@ -208,9 +210,115 @@ color: #253B4D;
 }
 
 /* /////////////////////////////////section3///////////////////////////// */
+.section-three{
+display:flex;
+clear:both;
+}
+
+.section-three div{
+    margin: 136px 68px 0px 75px;
+
+    clear: both;
+    color: white;
+}
 
 
+.section-three div h2{
+font-size: 30px;
+}
+
+.section-three div h3{
+font-size: 30px;
+}
+
+#div-interactive{
+
+    padding-top: 60px;
+}
+
+/* //////////////////////section 4/////////////////// */
+
+.section-four{
+display:flex;
+clear:both;
+}
+
+
+.section-four div{
+        margin: 40px 68px 110px 75px;
+    clear: both;
+    color: white;
+}
+
+
+.section-four div h3{
+font-size: 30px;
+}
+
+#div-interactive{
+
+    padding-top: 60px;
+}
+#div-quizes{
+padding-top: 111px;
+
+}
 /* /////////////////////////////////////////////footer////////////////////////////// */
+
+.footer{
+background:#F2F2F2;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
 
   </style>
   <body>
@@ -218,13 +326,13 @@ color: #253B4D;
 <!--  start of navbar-->
   <header>
 
-    <img id="logo" src="/resources/images/Init.png" alt="logo"   width="10%"
+    <img id="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Init.png" alt="logo"   width="10%"
          height="10%">
     <nav>
       <ul class="navlinks">
       <li><a  th:href="@{#why}">Why init?</a></li>
       <li><a  th:href="@{#quizes}">Quizes</a></li>
-      <li><a  th:href="@{#chat}">Chat</a></li>
+      <li><a  th:href="@{#interactive}">Interactive</a></li>
       </ul>
     </nav>
     <a class="a" th:href="@{/login}">Login</a>
@@ -253,7 +361,7 @@ color: #253B4D;
 
 <!-- second div is for the design-->
       <div class="second-div-s1">
-        <img id="mainDesign"src="/resources/images/designFirstSection.png" alt="designFirstSection" width="70%" height="10%">
+        <img id="mainDesign"src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/designFirstSection.png" alt="designFirstSection" width="70%" height="10%">
       </div>
 
     </section>
@@ -284,92 +392,62 @@ color: #253B4D;
 
 
 
-<!--<section class="section-three">-->
-<!--    <div>-->
-<!--      <h3 id="chat">Chat</h3>-->
-<!--     <h3>Init will help you to collaborate, share ideas, and get the help from other programmers.</h3>-->
-<!--    </div>-->
+<section class="section-three" id="interactive">
+    <div id="div-interactive">
+      <h2>Interactive</h2>
+     <h3>Init will help you to collaborate, share ideas, and get the help from other programmers.</h3>
+    </div>
 
-<!--      <div>-->
-<!--        <img  src="/resources/images/hands.png" alt="hands"   width="10%"-->
-<!--             height="10%">-->
-<!--      </div>-->
+      <div>
+        <img  src="/resources/images/hands.png" alt="hands"
+            >
+      </div>
 
-<!--</section>-->
+</section>
 
-    <br>
-    <br>
-    <br>
-    <br>
+<section class="section-four" id="quizes">
 
-<!--    <div>-->
-<!--      <h3 id="quizes">Quizes</h3>-->
-<!--      <h3>Your coding and thinking skills will get better everyday, as we provide quizes for you to solve it and practice.</h3>-->
-<!--      <p>each quiz you solve you will git extra points, that you can use for buying courses from our website.</p>-->
-<!--       <div>-->
-<!--          <img id="" src="" alt="logo"   width="10%"-->
-<!--             height="10%">-->
-<!--       </div>-->
-<!--    </div>-->
+    <div>
+        <img src="/resources/images/book.png" alt="logo">
+    </div>
 
+        <div id="div-quizes">
+          <h3 >Quizes</h3>
+          <h3>Your coding and thinking skills will get better everyday, as we provide quizes for you to solve it and practice.</h3>
+          <p>each quiz you solve you will git extra points, that you can use for buying courses from our website.</p>
+
+        </div>
+
+
+
+
+</section>
+
+      <footer>
+          <div class="footer">
+
+
+              <div class="row">
+                  <ul>
+                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#">Our Services</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms & Conditions</a></li>
+                      <li><a href="#">Career</a></li>
+                  </ul>
+              </div>
+
+              <div class="row">
+               Copyright © 2021 Inferno - All rights reserved
+          </div>
+      </footer>
 
 
   </main>
 
 
 
-<!--<footer class="site-footer">-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-sm-12 col-md-6">-->
-<!--        <h6>About</h6>-->
-<!--        <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>-->
-<!--      </div>-->
 
-<!--      <div class="col-xs-6 col-md-3">-->
-<!--        <h6>Categories</h6>-->
-<!--        <ul class="footer-links">-->
-<!--          <li><a href="http://scanfcode.com/category/c-language/">C</a></li>-->
-<!--          <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>-->
-<!--          <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>-->
-<!--          <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>-->
-<!--          <li><a href="http://scanfcode.com/category/android/">Android</a></li>-->
-<!--          <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-
-<!--      <div class="col-xs-6 col-md-3">-->
-<!--        <h6>Quick Links</h6>-->
-<!--        <ul class="footer-links">-->
-<!--          <li><a href="http://scanfcode.com/about/">About Us</a></li>-->
-<!--          <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>-->
-<!--          <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>-->
-<!--          <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>-->
-<!--          <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <hr>-->
-<!--  </div>-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-8 col-sm-6 col-xs-12">-->
-<!--        <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by-->
-<!--          <a href="#">Scanfcode</a>.-->
-<!--        </p>-->
-<!--      </div>-->
-
-<!--      <div class="col-md-4 col-sm-6 col-xs-12">-->
-<!--        <ul class="social-icons">-->
-<!--          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>-->
-<!--          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>-->
-<!--          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>-->
-<!--          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</footer>-->
 
   </body>
 </html>
