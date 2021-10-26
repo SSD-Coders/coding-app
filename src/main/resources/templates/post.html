@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<nav th:fragment="post" xmlns:th="http://www.w3.org/1999/xhtml">
 <form action="/addComment" method="post" th:each="post : ${posts}">
                <fieldset>
                    <input type="hidden" name="id" th:value="${post.id}" />
@@ -20,21 +20,22 @@
                             </br>
                         </div>
                         </fieldset> <br>
+                        <form th:each="comment : ${post.comments}">
+                            <fieldset>
+                                <div class="mb-3">
+                                    <p th:text="${comment.body}"></p>
+                                    <p th:text="${comment.createdAt}"></p>
+                                </div>
+                            </fieldset>
+                        </form>
                         <button type="submit" class="btn btn-primary" name="addComment">Comment</button>
 
                     </form>
 
-                            <form th:each="comment : ${post.comments}">
-                                <fieldset>
-                                    <div class="mb-3">
-                                        <p th:text="${comment.body}"></p>
-                                        <p th:text="${comment.createdAt}"></p>
-                                    </div>
-                                </fieldset>
-                            </form>
+
 
                 </fieldset>
 
 </form>
-</body>
-</html>
+</nav>
+<!--</html>-->

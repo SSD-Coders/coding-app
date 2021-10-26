@@ -39,16 +39,44 @@
 
 <legend>Posts</legend>
 
-<form th:each="post : ${userProfile.posts}">
+<form action="/addComment" method="post" th:each="post : ${userProfile.posts}">
     <fieldset>
-        <div class="mb-3">
-            <p th:text="${post.body}"></p>
-            <p th:text="${post.createdAt}"></p>
-            <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>
-            <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
-        </div>
+        <input type="hidden" name="id" th:value="${post.id}" />
+<!--        <div class="mb-3">-->
+<!--            </div>-->
+<!--            <p th:text="${post.body}"></p>-->
+<!--            <p th:text="${post.createdAt}"></p>-->
+<!--            <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>-->
+<!--            <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>-->
+<!--        </div>-->
+        <form >
+            <fieldset>
+                <div class="mb-3">
+                    <p th:text="${post.body}"></p>
+                    <p th:text="${post.createdAt}"></p>
+                    <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>
+                    <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Add a Comment</label>
+                    <input type="textarea" class="form-control" name="body">
+                    </br>
+                </div>
+            </fieldset> <br>
+            <button type="submit" class="btn btn-primary" name="addComment">Comment</button>
+
+        </form>
+
     </fieldset>
-    <button type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">Comment</button>
+    <form  th:each="comment : ${post.comments}">
+        <fieldset>
+            <div class="mb-3">
+                <p th:text="${comment.body}"></p>
+                <p th:text="${comment.createdAt}"></p>
+            </div>
+        </fieldset>
+    </form>
+<!--    <button type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">Comment</button>-->
 </form>
 
 </body>
