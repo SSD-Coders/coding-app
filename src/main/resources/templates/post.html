@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/addComment" method="post" th:each="post : ${posts}">
+               <fieldset>
+                   <input type="hidden" name="id" th:value="${post.id}" />
+                   <button type="submit" class="btn btn-primary" name="addComment">submit</button>
+                    <form >
+                        <fieldset>
+                        <div class="mb-3">
+                            <p th:text="${post.body}"></p>
+                            <p th:text="${post.createdAt}"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Add a Comment</label>
+                            <input type="textarea" class="form-control" name="body">
+                            </br>
+                        </div>
+                        </fieldset>
+                    </form>
+
+                            <form th:each="comment : ${post.comments}">
+                                <fieldset>
+                                    <div class="mb-3">
+                                        <p th:text="${comment.body}"></p>
+                                        <p th:text="${comment.createdAt}"></p>
+                                    </div>
+                                </fieldset>
+                            </form>
+                </fieldset>
+
+</form>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.example.init;
 
+import com.example.init.models.Comment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,7 +9,6 @@ public class InitApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InitApplication.class, args);
-
 	}
 
 }

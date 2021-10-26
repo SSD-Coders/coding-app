@@ -9,7 +9,7 @@ public class Quiz {
     public String question;
 
     public String description;
- 
+
 
     public Quiz(String question , String description ) {
         this.question = question;
