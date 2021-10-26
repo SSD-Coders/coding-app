@@ -41,7 +41,7 @@ public class QuizCont {
         Type jsonCasting = new TypeToken<List<QuizDto>>() {
         }.getType();
         List<QuizDto> jsonList = gson.fromJson(data, jsonCasting);
-        model.addAttribute("quiz", jsonList);
+        model.addAttribute("qForm", jsonList);
         System.out.println(jsonList);
         System.out.println("----------------------");
         String numbersJson = gson.toJson(jsonList);
@@ -49,15 +49,15 @@ public class QuizCont {
         return "quiz2";
     }
 
-    @PostMapping("/quiz")
-    public String quiz(@RequestParam String username, Model m, RedirectAttributes ra) {
-        if(username.equals("")) {
-            ra.addFlashAttribute("warning", "You must enter your name");
-            return "redirect:/";
-        }
-
-        submitted = false;
-        result.setUsername(username);
+    @PostMapping("/quiz/v2")
+    public String quiz( Model m, RedirectAttributes ra) {
+//        if(username.equals("")) {
+//            ra.addFlashAttribute("warning", "You must enter your name");
+//            return "redirect:/";
+//        }
+//
+//        submitted = false;
+//        result.setUsername(username);
 
         QuestionForm qForm = qService.getQuestions();
         m.addAttribute("qForm", qForm);
