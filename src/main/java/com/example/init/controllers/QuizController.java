@@ -1,32 +1,25 @@
 package com.example.init.controllers;
 
-import com.example.init.models.ApplicationUser;
 import com.example.init.models.Quiz;
 import com.example.init.models.ResultsQuiz;
-import com.example.init.repositories.ApplicationUserRepository;
 import com.example.init.repositories.CodersRepository;
 import com.example.init.repositories.ResultsRepo;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.dom4j.rule.Mode;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller

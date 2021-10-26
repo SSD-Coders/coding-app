@@ -25,6 +25,8 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
 import javax.transaction.Transactional;
 
 @Controller
@@ -115,7 +117,7 @@ public class User {
     @GetMapping("/feed")
     public String getUsersInfo(@AuthenticationPrincipal Coders user, Model model) {
         Coders feed = codersRepository.findByUsername(user.getUsername());
-        List<Coders> following = feed.getFollowers();
+        Set<Coders> following = feed.getFollowers();
         model.addAttribute("followers", following);
         return "feed";
     }
