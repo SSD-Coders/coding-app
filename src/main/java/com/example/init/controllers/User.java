@@ -1,8 +1,10 @@
 package com.example.init.controllers;
 
 import com.example.init.models.Coders;
+import com.example.init.models.Comment;
 import com.example.init.models.Post;
 import com.example.init.repositories.CodersRepository;
+import com.example.init.repositories.CommentRepository;
 import com.example.init.repositories.ContentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +25,6 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
 @Controller
@@ -38,6 +38,9 @@ public class User {
 
     @Autowired
     ContentRepository contentRepository;
+
+    @Autowired
+    CommentRepository commentRepository;
 
     @GetMapping("/signup")
     public String getSignUpPage() {
@@ -119,8 +122,7 @@ public class User {
 
     @Transactional
     @GetMapping("/delete/{id}")
-    public RedirectView deleteUserPost(@PathVariable String id, Principal principal,
-            Model model) {
+    public RedirectView deleteUserPost(@PathVariable String id, Principal principal, Model model) {
         Post post = contentRepository.findById(Long.parseLong(id)).orElseThrow();
         Coders user = codersRepository.findByUsername(principal.getName());
         model.addAttribute("username", principal.getName());
@@ -144,4 +146,22 @@ public class User {
         contentRepository.save(updatedPost);
         return new RedirectView("/profile");
     }
+
+    @PostMapping("/addComment")
+    public RedirectView addComment(Long id, String body) {
+        Post post = contentRepository.findById(id).get();
+        System.out.println(post.getBody());
+        Comment comment = new Comment(post, body);
+        commentRepository.save(comment);
+        System.out.println(comment.getBody());
+        return new RedirectView("/post");
+    }
+
+    @GetMapping("/post")
+    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
+        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
+        model.addAttribute("posts", posts);
+        return "post";
+    }
+
 }

@@ -6,257 +6,448 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Init home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    body {
-      background: linear-gradient(
-        115.17deg,
-        #212634 9.22%,
-        #142833 50.16%,
-        rgba(13, 48, 46, 0.94) 92.84%
-      );
-      font-family: 'Raleway', sans-serif;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 
-    /* ////////////////////////////// Start of nav bar //////////////////////////////////////// */
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 30px 5%;
-    }
+body {
+background: linear-gradient(115.17deg, #212634 9.22%, #142833 50.16%, rgba(13, 48, 46, 0.94) 92.84%);
+font-family: 'Raleway', sans-serif;
+}
 
-    .navlinks li {
-      display: inline-block;
-      padding: 0px 25px;
-      position: relative;
-      left: 208px;
-    }
 
-    .navlinks li a {
-      transition: all 0.3s ease 0s;
-      padding-bottom: 15px;
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
 
-    .navlinks li a:hover {
-      color: #2c9a8d;
-      border-bottom: solid #2c9a8d 3.5px;
-    }
+/* ////////////////////////////// Start of nav bar //////////////////////////////////////// */
 
-    .nav-button {
-      padding: 7px 25px;
-      background-color: rgba(44, 154, 141, 1);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      font-family: 'Raleway', sans-serif;
-      font-weight: bold;
-      font-size: 15px;
-    }
 
-    .nav-button:hover {
-      background-color: rgba(44, 154, 141, 0.8);
-    }
-    .a {
-      position: relative;
-      left: 3;
-      color: white;
-      font-style: normal;
-      left: 120px;
-      font-size: 15px;
-    }
 
-    /* ////////////////////////// start of main //////////////////////////////////// */
 
-    /* ///////////////////// first div section 1//////////////////////// */
+header{
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding: 30px 5%;
 
-    .first-div-s1 {
-      display: inline-block;
-      float: left;
-      width: 609px;
-      margin: 200px 0px 0px 70px;
-    }
+}
 
-    .first-div-s1 h1 {
-      color: #fff9b6;
-      font-weight: 50;
-      font-size: 40px;
-    }
 
-    .first-div-buttons-s1 {
-      margin-top: 30px;
-    }
 
-    .first-div-buttons-s1 a {
-      margin-right: 15px;
-    }
+.navlinks li{
+    display: inline-block;
+    padding: 0px 25px;
+    position: relative;
+    left:  208px;
+}
 
-    .signup-button {
-      padding: 11px 48px;
-      background-color: rgba(44, 154, 141, 1);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      font-family: 'Raleway', sans-serif;
-      font-weight: bold;
-      font-size: 15px;
-    }
+.navlinks li a{
+transition: all 0.3s ease 0s;
+    padding-bottom: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
 
-    .signup-button:hover {
-      background-color: rgba(44, 154, 141, 0.8);
-    }
+.navlinks li a:hover{
+color:#2C9A8D;
+border-bottom:solid #2C9A8D 3.5px;
+}
 
-    .login-button {
-      padding: 9px 25px;
-      background-color: transparent;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      font-family: 'Raleway', sans-serif;
-      font-weight: bold;
-      font-size: 15px;
-      border: 2.8px solid #2c9a8d;
-    }
-    .login-button:hover {
-      background-color: rgba(44, 154, 141);
-    }
+.nav-button{
+padding:7px 25px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+font-family: 'Raleway', sans-serif;
+font-weight: bold;
+font-size: 15px;
+}
 
-    /* ////////// second div section 1 ////////////// */
+.nav-button:hover{
+background-color: rgba(44,154,141,0.8);
+}
+.a{
+    position: relative;
+    left: 3;
+    color: white;
+    font-style: normal;
+    left: 120px;
+    font-size: 15px;
+}
 
-    .second-div-s1 {
-      display: inline-block;
-      float: right;
-      margin: 83px 82px 0px 0px;
-    }
-    #mainDesign {
-    }
+/* ////////////////////////// start of main //////////////////////////////////// */
 
-    /* ////////////////////////// start of second section /////////////////////////////////////// */
 
-    .first-div-s2 {
-      background-color: #f2f2f2;
-      position: relative;
-      top: 657px;
-      z-index: -1;
-      height: 458px;
-    }
+/* ///////////////////// first div section 1//////////////////////// */
 
-    .first-div-s2 div {
-      position: absolute;
-      display: inline-block;
-      /* margin: 0px -3px 0px -2px; */
-      bottom: 100px;
-      left: 75px;
-      width: 559px;
-    }
 
-    .first-div-s2 div h1 {
-      font-weight: bold;
-      font-size: 80px;
-      color: #253b4d;
-    }
 
-    .first-div-s2 div h3 {
-      font-size: 35px;
-      color: #253b4d;
-    }
+.first-div-s1{
+    display: inline-block;
+    float: left;
+    width: 609px;
+    margin: 200px 0px 0px 70px;
 
-    .first-div-s2 div {
-      font-size: 25px;
-      color: #253b4d;
-    }
+}
 
-    /* /////////////////////////////////section3///////////////////////////// */
 
-    /* /////////////////////////////////////////////footer////////////////////////////// */
+
+.first-div-s1 h1{
+color:#FFF9B6;
+font-weight: 50;
+font-size: 40px;
+}
+
+.first-div-buttons-s1{
+    margin-top: 30px;
+}
+
+.first-div-buttons-s1 a{
+margin-right: 15px;
+}
+
+
+
+
+.signup-button{
+padding:11px 48px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+font-family: 'Raleway', sans-serif;
+font-weight: bold;
+font-size: 15px;
+
+}
+
+.signup-button:hover{
+background-color: rgba(44,154,141,0.8);
+}
+
+.login-button{
+padding:9px 25px;
+background-color: transparent;
+color:white;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+font-family: 'Raleway', sans-serif;
+font-weight: bold;
+font-size: 15px;
+border: 2.8px solid #2C9A8D;
+}
+.login-button:hover{
+background-color: rgba(44,154,141);
+
+}
+
+/* ////////// second div section 1 ////////////// */
+
+.second-div-s1{
+
+     display: inline-block;
+    position: absolute;
+    float: right;
+    margin: 83px 0px 0px 0px;
+    right: 2px;
+}
+#mainDesign{
+
+
+}
+
+/* ////////////////////////// start of second section /////////////////////////////////////// */
+
+.first-div-s2{
+    background-color: #F2F2F2;
+    position: relative;
+    top: 245px;
+    z-index: -1;
+    height: 458px;
+    clear:both;
+
+}
+
+ .first-div-s2 div{
+    position: relative;
+    top: 70px;
+
+    left: 75px;
+    width: 559px;
+}
+
+.first-div-s2 div h1{
+font-weight: bold;
+font-size: 80px;
+color: #253B4D;
+}
+
+.first-div-s2 div h3{
+font-size: 35px;
+color: #253B4D;
+}
+
+.first-div-s2 div {
+font-size: 25px;
+color: #253B4D;
+}
+
+/* /////////////////////////////////section3///////////////////////////// */
+.section-three{
+display:flex;
+clear:both;
+}
+
+.section-three div{
+    margin: 136px 68px 0px 75px;
+
+    clear: both;
+    color: white;
+}
+
+
+.section-three div h2{
+font-size: 30px;
+}
+
+.section-three div h3{
+font-size: 30px;
+}
+
+#div-interactive{
+
+    padding-top: 60px;
+}
+
+/* //////////////////////section 4/////////////////// */
+
+.section-four{
+display:flex;
+clear:both;
+}
+
+
+.section-four div{
+        margin: 40px 68px 110px 75px;
+    clear: both;
+    color: white;
+}
+
+
+.section-four div h3{
+font-size: 30px;
+}
+
+#div-interactive{
+
+    padding-top: 60px;
+}
+#div-quizes{
+padding-top: 111px;
+
+}
+/* /////////////////////////////////////////////footer////////////////////////////// */
+
+.footer{
+background:#F2F2F2;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+
   </style>
   <body>
-    <!--  start of navbar-->
-    <header>
-      <img
-        id="logo"
-        src="https://i.postimg.cc/ZnGLS4wb/Init.png"
-        alt="logo"
-        width="10%"
-        height="10%"
-      />
-      <nav>
-        <ul class="navlinks">
-          <li><a th:href="@{#why}">Why init?</a></li>
-          <li><a th:href="@{#quizes}">Quizes</a></li>
-          <li><a th:href="@{profile}">Profile</a></li>
-        </ul>
-      </nav>
-      <a class="a" th:href="@{/login}">Login</a>
-      <a th:href="@{/signup}"><button class="nav-button">Sign up</button></a>
-    </header>
 
-    <main>
-      <!--first section of the page-->
+<!--  start of navbar-->
+  <header>
 
-      <section>
-        <!--      section is dived into two first div is text-->
-        <div class="first-div-s1">
-          <h1>
-            Find your community and enjoy the process of learning
-            &lt;coding/&gt;
-          </h1>
-          <div class="first-div-buttons-s1">
-            <a th:href="@{/signup}" role="button"
-              ><button class="signup-button">Sign up</button></a
+    <img id="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Init.png" alt="logo"   width="10%"
+         height="10%">
+    <nav>
+      <ul class="navlinks">
+      <li><a  th:href="@{#why}">Why init?</a></li>
+      <li><a  th:href="@{#quizes}">Quizes</a></li>
+      <li><a  th:href="@{#interactive}">Interactive</a></li>
+      </ul>
+    </nav>
+    <a class="a" th:href="@{/login}">Login</a>
+    <a th:href="@{/signup}"><button class="nav-button">Sign up</button></a>
+
+  </header>
+
+
+
+  <main>
+
+<!--first section of the page-->
+
+    <section>
+
+<!--      section is dived into two first div is text-->
+    <div class="first-div-s1">
+      <h1>
+        Find your community and enjoy the process of learning &lt;coding/&gt;
+      </h1>
+      <div class="first-div-buttons-s1">
+      <a  th:href="@{/signup}" role="button" ><button class="signup-button">Sign up</button></a>
+      <a  href="/login" role="button" ><button class="login-button">Log in</button></a>
+      </div>
+    </div>
+
+<!-- second div is for the design-->
+      <div class="second-div-s1">
+        <img id="mainDesign"src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/designFirstSection.png" alt="designFirstSection" width="70%" height="10%">
+      </div>
+
+    </section>
+  <section class="first-div-s2" id="why">
+    <div class="div-s2">
+      <h1 >Why Init?</h1>
+      <h3>Init will initialize you to get involved with the coding community.</h3>
+      <p>also it will provide you with everything you need to start. </p>
+    </div>
+  </section>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+<section class="section-three" id="interactive">
+    <div id="div-interactive">
+      <h2>Interactive</h2>
+     <h3>Init will help you to collaborate, share ideas, and get the help from other programmers.</h3>
+    </div>
+
+      <div>
+        <img  src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/hands.png" alt="hands"
             >
-            <a href="/login" role="button"
-              ><button class="login-button">Log in</button></a
-            >
+      </div>
+
+</section>
+
+<section class="section-four" id="quizes">
+
+    <div>
+        <img src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/book.png" alt="logo">
+    </div>
+
+        <div id="div-quizes">
+          <h3 >Quizes</h3>
+          <h3>Your coding and thinking skills will get better everyday, as we provide quizes for you to solve it and practice.</h3>
+          <p>each quiz you solve you will git extra points, that you can use for buying courses from our website.</p>
+
+        </div>
+
+
+
+
+</section>
+
+      <footer>
+          <div class="footer">
+
+
+              <div class="row">
+                  <ul>
+                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#">Our Services</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms & Conditions</a></li>
+                      <li><a href="#">Career</a></li>
+                  </ul>
+              </div>
+
+              <div class="row">
+               Copyright © 2021 Inferno - All rights reserved
           </div>
-        </div>
+      </footer>
 
-        <!-- second div is for the design-->
-        <div class="second-div-s1">
-          <img
-            id="mainDesign"
-            src="https://i.postimg.cc/rmzbyyNx/design-First-Section.png"
-            alt="designFirstSection"
-            width="70%"
-            height="10%"
-          />
-        </div>
-      </section>
-      <section class="first-div-s2" id="why">
-        <div class="div-s2">
-          <h1>Why Init?</h1>
-          <h3>
-            Init will initialize you to get involved with the coding community.
-          </h3>
-          <p>also it will provide you with everything you need to start.</p>
-        </div>
-      </section>
+
+  </main>
+
+
+
+
+
   </body>
 </html>
