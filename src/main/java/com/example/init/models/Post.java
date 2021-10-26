@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -19,6 +20,9 @@ public class Post {
     private String body;
 
     private String createdAt;
+
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
+    private List<Comment> comments;
 
     public Post() {
     }
@@ -62,6 +66,14 @@ public class Post {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
 }

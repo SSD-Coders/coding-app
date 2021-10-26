@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Coders implements UserDetails {
@@ -28,11 +29,11 @@ public class Coders implements UserDetails {
     @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
     private List<Post> posts;
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
-    List<Coders> followers = new ArrayList<>();
-    @ManyToMany(mappedBy = "followers", fetch = FetchType.EAGER)
-    List<Coders> following = new ArrayList<>();
+    Set<Coders> followers;
+    @ManyToMany(mappedBy = "followers")
+    Set<Coders> following;
 
     public Coders() {
     }
@@ -147,19 +148,19 @@ public class Coders implements UserDetails {
         this.posts = posts;
     }
 
-    public List<Coders> getFollowers() {
+    public Set<Coders> getFollowers() {
         return this.followers;
     }
 
-    public void setFollowers(List<Coders> followers) {
+    public void setFollowers(Set<Coders> followers) {
         this.followers = followers;
     }
 
-    public List<Coders> getFollowing() {
+    public Set<Coders> getFollowing() {
         return this.following;
     }
 
-    public void setFollowing(List<Coders> following) {
+    public void setFollowing(Set<Coders> following) {
         this.following = following;
     }
 
