@@ -157,7 +157,7 @@ public class User {
         Comment comment = new Comment(post, body);
         commentRepository.save(comment);
         System.out.println(comment.getBody());
-        return new RedirectView("/profile");
+        return new RedirectView("profile");
     }
 
     @GetMapping("/post")
