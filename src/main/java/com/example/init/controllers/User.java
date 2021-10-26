@@ -156,14 +156,14 @@ public class User {
         Comment comment = new Comment(post, body);
         commentRepository.save(comment);
         System.out.println(comment.getBody());
-        return new RedirectView("/post");
+        return new RedirectView("/profile");
     }
 
-    @GetMapping("/post")
-    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
-        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
-        model.addAttribute("posts", posts);
-        return "post";
-    }
+//    @GetMapping("/post")
+//    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
+//        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
+//        model.addAttribute("posts", posts);
+//        return "post";
+//    }
 
 }
