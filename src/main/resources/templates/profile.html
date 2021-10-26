@@ -4,12 +4,53 @@
     <meta charset="UTF-8">
     <title>user profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="profile.css" rel="stylesheet" />
 </head>
 <body>
 
-<header th:replace="nav::nav">
+<header>
 
-</header>
+        <div class="navBar">
+            <nav id="navIcons">
+                <a href="@{/}" id="logoNav">
+                    <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+                         width="50%" height="50%">
+                </a>
+
+
+                <a href="@{/feed}">
+                    <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+                          width="50%" height="50%">
+                </a>
+
+
+                <a href="@{/messages}" class="navIcon">
+                    <img class="navIcon" alt="messages" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
+                         width="50%" height="50%">
+                </a>
+
+
+                <a href="@{/quizes}" class="navIcon">
+                    <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+                         width="50%" height="50%">
+                </a>
+
+                <a href="@{/courses}" class="navIcon">
+                    <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+                         width="50%" height="50%">
+                </a>
+
+
+                <a href="@{/profile}" class="navIcon" >
+                    <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+                         width="120%" height="120%">
+                </a>
+            </nav>
+        </div>
+
+    </header>
+
+
 <div class="card" style="width: 12rem;">
     <img src="https://freesvg.org/img/publicdomainq-0006224bvmrqd.png" class="card-img-top" alt="ProfilePicture">
     <div class="card-body">
@@ -17,6 +58,7 @@
         <p class="card-text" th:text="${userProfile.email}"/>
         <p class="card-text" th:text="${userProfile.bio}"/>
         <p class="card-text" th:text="${userProfile.dateOfBirth}"/>
+
     </div>
 </div>
 
@@ -50,6 +92,26 @@
     </fieldset>
     <button type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">Comment</button>
 </form>
+
+
+<footer>
+    <div class="footer">
+
+
+        <div class="row">
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            Copyright © 2021 Inferno - All rights reserved
+        </div>
+</footer>
 
 </body>
 </html>
