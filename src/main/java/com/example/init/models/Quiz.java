@@ -1,37 +1,21 @@
 package com.example.init.models;
 
+
 import java.util.List;
 
 public class Quiz {
 
     public int id;
     public String question;
-    public Object description;
-    public Answers answers;
-    public String multiple_correct_answers;
-    public CorrectAnswers correct_answers;
-    public String correct_answer;
-    public Object explanation;
-    public Object tip;
-    public List<Tag> tags;
-    public String category;
-    public String difficulty;
 
-    public Quiz(int id, String question, Object description, Answers answers, String multiple_correct_answers,
-            CorrectAnswers correct_answers, String correct_answer, Object explanation, Object tip, List<Tag> tags,
-            String category, String difficulty) {
-        this.id = id;
+    public String description;
+
+
+    public Quiz(String question , String description ) {
         this.question = question;
         this.description = description;
-        this.answers = answers;
-        this.multiple_correct_answers = multiple_correct_answers;
-        this.correct_answers = correct_answers;
-        this.correct_answer = correct_answer;
-        this.explanation = explanation;
-        this.tip = tip;
-        this.tags = tags;
-        this.category = category;
-        this.difficulty = difficulty;
+
+
     }
 
     private static class Answers {

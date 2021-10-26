@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Post {
@@ -13,12 +15,26 @@ public class Post {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "application_user_id")
+    @JoinColumn(name = "coder_id")
     private Coders applicationUser;
 
     private String body;
 
     private String createdAt;
+//    @ManyToOne
+//    @JoinTable(name = "Comment", joinColumns = @JoinColumn(name = "post_id"), inverseJoinColumns = @JoinColumn(name = "comment_id"))
+//    Post post;
+    @OneToMany(mappedBy = "post" , fetch = FetchType.EAGER)
+    private List<Comment> comments;
+
+//    public Post(Post post, String body) {
+//        this.post = post;
+//        this.body = body;
+//    }
+
+//    public Post getPost() {
+//        return post;
+//    }
 
     public Post() {
     }
@@ -64,4 +80,15 @@ public class Post {
         this.createdAt = createdAt;
     }
 
+//    public void setPost(Post post) {
+//        this.post = post;
+//    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 }

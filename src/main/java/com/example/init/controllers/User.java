@@ -1,8 +1,10 @@
 package com.example.init.controllers;
 
 import com.example.init.models.Coders;
+import com.example.init.models.Comment;
 import com.example.init.models.Post;
 import com.example.init.repositories.CodersRepository;
+import com.example.init.repositories.CommentRepository;
 import com.example.init.repositories.ContentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +15,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class User {
@@ -34,6 +34,8 @@ public class User {
 
     @Autowired
     ContentRepository contentRepository;
+    @Autowired
+    CommentRepository commentRepository;
 
     @GetMapping("/signup")
     public String getSignUpPage() {
@@ -108,8 +110,25 @@ public class User {
     @GetMapping("/feed")
     public String getUsersInfo(@AuthenticationPrincipal Coders user, Model model) {
         Coders feed = codersRepository.findByUsername(user.getUsername());
-        List<Coders> following = feed.getFollowers();
+        Set<Coders> following = feed.getFollowers();
         model.addAttribute("followers", following);
         return "feed";
+    }
+
+    @PostMapping("/addComment")
+    public RedirectView addComment( Long id , String body) {
+        Post post = contentRepository.findById(id).get();
+        System.out.println(post.getBody());
+        Comment comment = new Comment(post , body);
+        commentRepository.save(comment);
+        System.out.println(comment.getBody());
+        return new RedirectView("/post");
+    }
+    @GetMapping("/post")
+    public String getUserProfile( Model model,@AuthenticationPrincipal Coders user) {
+        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
+        model.addAttribute("posts", posts);
+//        model.addAttribute("userProfile", user);
+        return "post";
     }
 }

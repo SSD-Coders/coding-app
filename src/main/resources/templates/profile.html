@@ -25,9 +25,11 @@
             <label class="form-label">Add a post</label>
             <input type="textarea" class="form-control" name="body">
             </br>
-            <button type="submit" class="btn btn-primary" name="password">submit</button>
+            <button type="submit" class="btn btn-primary" name="addPost">submit</button>
         </div>
+
     </fieldset>
+
 </form>
 
 <br>
@@ -41,7 +43,10 @@
             <p th:text="${post.body}"></p>
             <p th:text="${post.createdAt}"></p>
         </div>
+            </fieldset>
+        </form>
     </fieldset>
+<button type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">submit</button>
 </form>
 
 </body>

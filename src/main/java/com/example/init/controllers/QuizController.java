@@ -2,7 +2,10 @@ package com.example.init.controllers;
 
 import com.example.init.models.Quiz;
 import com.google.gson.Gson;
+//import com.google.gson.reflect.TypeToken;
+
 import com.google.gson.reflect.TypeToken;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,23 +17,27 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class QuizController {
 
-        @GetMapping("/quiz")
-        public String getQuiz(Model model) throws IOException {
-                Gson gson = new Gson();
-                String urlApi = "https://quizapi.io/api/v1/questions?apiKey=phkL2Z69NDCrImLlfnLoElQkoF3StoJlQrAeKvkf&limit=10&css";
-                HttpURLConnection connection = (HttpURLConnection) new URL(urlApi).openConnection();
-                InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String data = bufferedReader.readLine();
-                Type jsonCasting = new TypeToken<List<Quiz>>() {
-                }.getType();
-                List<Quiz> jsonList = gson.fromJson(data, jsonCasting);
-                model.addAttribute("quiz", jsonList);
-                bufferedReader.close();
-                return "quiz";
-        }
+
+
+    @GetMapping("/quiz")
+    public String getQuiz(Model model) throws IOException {
+        Gson gson = new Gson();
+        String urlApi = "https://quizapi.io/api/v1/questions?apiKey=phkL2Z69NDCrImLlfnLoElQkoF3StoJlQrAeKvkf&limit=10&css";
+        HttpURLConnection connection = (HttpURLConnection) new URL(urlApi).openConnection();
+        InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        String data = bufferedReader.readLine();
+        Type jsonCasting = new TypeToken<List<Quiz>>(){}.getType();
+        List<Quiz> jsonList  = gson.fromJson(data,jsonCasting);
+        model.addAttribute("quiz",jsonList);
+        bufferedReader.close();
+        return "quiz";
+    }
+
 }
+
