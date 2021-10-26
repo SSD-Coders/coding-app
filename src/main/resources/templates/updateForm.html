@@ -5,6 +5,8 @@
     <title>Update Form</title>
   </head>
   <body>
+    <header th:replace="nav::nav"></header>
+
     <form
       action="#"
       th:action="@{/update/{id}(id=${post.id})}"
