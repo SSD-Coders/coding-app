@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContentRepository extends JpaRepository<Post, Long> {
     public Post findPostById(Long id);
+
+    // void deletePostByAppUser_UsernameAndId(String username, Long id);
+
 }
