@@ -11,78 +11,132 @@
   <header th:replace="nav::nav">
 
   </header>
-  
-<!--private String title;-->
-<!--private String course_level;-->
-<!--private String description;-->
-<!--private String image;-->
-<!--<tr th:each="Quiz: ${quiz}">-->
-<!--    <td th:text="${Quiz.id}"></td>-->
-<!--    <br />-->
-<!--    <td th:text="${Quiz.question}"></td>-->
-<!--    <br />-->
+
+<!--    <div class="container py-5 px-4">-->
+<!--        <h1 class="bg-danger text-light">Only Select The Correct Answers</h1>-->
+
+<!--        <form action="submit" method="post" th:object=${quiz}>-->
+<!--            <div class="ques-box bg-secondary text-light" th:each="Quiz , i : ${quiz}">-->
+<!--                <td  th:text="${Quiz.question}"></td>-->
+
+<!--                <div class="option">-->
+<!--                    <input  type="radio" th:name="|[${i.index}].chose|" id="answer_a" value="1" />-->
 <!--                    <p th:text="${Quiz.answers.answer_a}"></p>-->
+<!--                </div>-->
+
+<!--                <div class="option">-->
+<!--                    <input type="radio" th:name="|[${i.index}].chose|" id="answer_b" value="2"/>-->
 <!--                    <p th:text="${Quiz.answers.answer_b}"></p>-->
+<!--                </div>-->
+
+<!--                <div class="option">-->
+<!--                    <input type="radio" th:name="|[${i.index}].chose|" id="answer_c" value="3"/>-->
 <!--                    <p th:text="${Quiz.answers.answer_c}"></p>-->
-<!--                    <p th:text="${Quiz.answers.answer_d}"></p>-->
-<!--                    <p th:text="${Quiz.answers.answer_e}"></p>-->
-<!--                    <p th:text="${Quiz.answers.answer_f}"></p>-->
-
-<!--                    <p style="background-color : grey" th:text="${Quiz.correct_answers.answer_a_correct}"></p>-->
-<!--                    <p th:text="${Quiz.correct_answers.answer_b_correct}"></p>-->
-<!--                    <p th:text="${Quiz.correct_answers.answer_c_correct}"></p>-->
-<!--                    <p th:text="${Quiz.correct_answers.answer_d_correct}"></p>-->
-<!--                    <p th:text="${Quiz.correct_answers.answer_e_correct}"></p>-->
-<!--                    <p th:text="${Quiz.correct_answers.answer_f_correct}"></p>-->
-    <div class="container py-5 px-4">
-        <h1 class="bg-danger text-light">Only Select The Correct Answers</h1>
-
-        <form action="submit" method="POST" th:object=${quiz}>
-            <div class="ques-box bg-secondary text-light" th:each="Quiz , i : ${quiz}">
-                <td  th:text="${Quiz.question}"></td>
-
-                <div class="option">
-                    <input  type="radio" th:name="|[${i.index}].chose|" />
-                    <p th:text="${Quiz.answers.answer_a}"></p>
-                </div>
-
-                <div class="option">
-                    <input type="radio" th:name="|[${i.index}].chose|"/>
-                    <p th:text="${Quiz.answers.answer_b}"></p>
-                </div>
-
-                <div class="option">
-                    <input type="radio" th:name="|[${i.index}].chose|"/>
-                    <p th:text="${Quiz.answers.answer_c}"></p>
-                </div>
-
-<!--                <div class="option">-->
-<!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_d_correct}"th:value="4"/>-->
-<!--                    <p th:text="${Quiz.answers.answer_d}"></p>-->
 <!--                </div>-->
 
-<!--                <div class="option">-->
-<!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_e_correct}"th:value="5"/>-->
-<!--                    <p th:text="${Quiz.answers.answer_e}"></p>-->
+<!--&lt;!&ndash;                <div class="option">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="radio" th:name="${Quiz.correct_answers.answer_d_correct}"th:value="4"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p th:text="${Quiz.answers.answer_d}"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="option">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="radio" th:name="${Quiz.correct_answers.answer_e_correct}"th:value="5"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p th:text="${Quiz.answers.answer_e}"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="option">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="radio" th:name="${Quiz.correct_answers.answer_f_correct}"th:value="6"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p th:text="${Quiz.answers.answer_f}">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    </p>&ndash;&gt;-->
 <!--                </div>-->
 
-<!--                <div class="option">-->
-<!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_f_correct}"th:value="6"/>-->
-<!--                    <p th:text="${Quiz.answers.answer_f}">-->
+<!--  <div class="container py-5 px-4">-->
+<!--      <h1 class="bg-danger text-light">Only Select The Correct Answers</h1>-->
 
-<!--                    </p>-->
-                </div>
+<!--      <form action="submit" method="post" th:object=${quiz}>-->
+<!--          <div class="ques-box bg-secondary text-light" th:each="Quiz , i : ${quiz}">-->
+<!--              <td  th:text="${Quiz.question}"></td>-->
+
+<!--              <div class="option">-->
+<!--                  <input  type="radio" th:name="|[${i.index}].chose|" id="answer_a" th:value="${Quiz.answers.answer_a}" />-->
+<!--                  <p th:text="${Quiz.answers.answer_a}"></p>-->
+<!--              </div>-->
+
+<!--              <div class="option">-->
+<!--                  <input type="checkbox" th:name="|[${i.index}].chose|" id="answer_b" value="2"/>-->
+<!--                  <p th:text="${Quiz.answers.answer_b}"></p>-->
+<!--              </div>-->
+
+<!--              <div class="option">-->
+<!--                  <input type="checkbox" th:name="|[${i.index}].chose|" id="answer_c" value="3"/>-->
+<!--                  <p th:text="${Quiz.answers.answer_c}"></p>-->
+<!--              </div>-->
+
+              <!--                <div class="option">-->
+              <!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_d_correct}"th:value="4"/>-->
+              <!--                    <p th:text="${Quiz.answers.answer_d}"></p>-->
+              <!--                </div>-->
+
+              <!--                <div class="option">-->
+              <!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_e_correct}"th:value="5"/>-->
+              <!--                    <p th:text="${Quiz.answers.answer_e}"></p>-->
+              <!--                </div>-->
+
+              <!--                <div class="option">-->
+              <!--                    <input type="radio" th:name="${Quiz.correct_answers.answer_f_correct}"th:value="6"/>-->
+              <!--                    <p th:text="${Quiz.answers.answer_f}">-->
+
+              <!--                    </p>-->
+<!--          </div>-->
 
 
-<!--                <input type="hidden" th:name="|questions[${i.index}].quesId|" th:value="${ques.quesId}" />-->
+
+
+          <!--                <input type="hidden" th:name="|questions[${i.index}].quesId|" th:value="${ques.quesId}" />-->
 <!--                <input type="hidden" th:name="|questions[${i.index}].title|" th:value="${ques.title}" />-->
 <!--                <input type="hidden" th:name="|questions[${i.index}].ans|" th:value="${ques.ans}" />-->
-            </div>
 
-            <button type="submit" class="btn btn-danger d-block mx-auto mt-4">Submit Answer</button>
-        </form>
-    </div>
 
-</tr>
+<!--          <input type="submit" class="btn btn-danger d-block mx-auto mt-4"/>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--</tr>-->
+  <form action="/quiz" method="post" th:object="${quiz}">
+      <div th:each=ques,i:"${quiz.questions}">
+          <p th:text = "${ques.question}"></p>
+
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_a}"></p>
+          </div>
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_b}"></p>
+          </div>
+
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_c}"></p>
+          </div>
+
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_d}"></p>
+          </div>
+
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_e}"></p>
+          </div>
+
+          <div>
+              <input type="radio" th:name="|questions[${i.index}].chose|" >
+              <p th:text="${ques.answer_f}"></p>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-danger d-block mx-auto mt-4">Submit Answer</button>
+  </form>
 </body>
 </html>

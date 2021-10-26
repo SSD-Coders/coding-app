@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam</title>
+</head>
+<body>
+
+<form action="/exam" method="post" th:object="${quiz}">
+    <div th:each=ques,i:"${quiz.questions}">
+        <p th:text = "${ques.question}"></p>
+
+    <div>
+        <input type="radio" th:name="|questions[${i.index}].chose|" >
+        <p th:text="${ques.answer_a}"></p>
+    </div>
+        <div>
+            <input type="radio" th:name="|questions[${i.index}].chose|" >
+            <p th:text="${ques.answer_b}"></p>
+        </div>
+
+        <div>
+            <input type="radio" th:name="|questions[${i.index}].chose|" >
+            <p th:text="${ques.answer_c}"></p>
+        </div>
+
+        <div>
+            <input type="radio" th:name="|questions[${i.index}].chose|" >
+            <p th:text="${ques.answer_d}"></p>
+        </div>
+
+        <div>
+            <input type="radio" th:name="|questions[${i.index}].chose|" >
+            <p th:text="${ques.answer_e}"></p>
+        </div>
+
+        <div>
+            <input type="radio" th:name="|questions[${i.index}].chose|" >
+            <p th:text="${ques.answer_f}"></p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger d-block mx-auto mt-4">Submit Answer</button>
+</form>
+</body>
+</html>

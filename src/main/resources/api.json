@@ -1,0 +1,10 @@
+{
+  "id": 951,
+  "question": "Which statement is true for Replica set?",
+
+    "answer_a": "Replica set is considered as a substitute to the replication controller. The prime function of replica set is to assure the number of pod replicas running.",
+    "answer_b": "Replica set is considered as the legacy replication controller. The prime function of replica set is to remove the number of pod replicas running.",
+
+  "correct_answer": "Replica set is considered as a substitute to the replication controller. The prime function of replica set is to assure the number of pod replicas running."
+
+}
