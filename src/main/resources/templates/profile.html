@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-<!--    <link th:href="@{src/main/resources/static/main.css" rel="stylesheet" />-->
+<!--    <link href="main.css" rel="stylesheet" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -128,6 +128,26 @@ font-size: 16px;
     font-size: 16px;
 }
 
+.email{
+    color: white;
+    margin: 91px 38px 0px;
+    font-size: 16px;
+}
+
+
+#userInfo p{
+
+     color: white;
+    margin: 8px 38px 0px;
+    font-size: 16px;
+}
+
+.contact{
+    color: white;
+    margin: 37px 38px 0px;
+    font-size: 16px;
+}
+
 
 .button {
   background-color: #2C9A8D; /* Green */
@@ -176,7 +196,21 @@ height: 47px;
     margin: 30px 464px 0px;
 }
 
+.submit{
+padding:7px 25px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
 
+font-size: 15px;
+}
+
+.submit:hover{
+background-color: rgba(44,154,141,0.8);
+}
 
 </style>
 <body>
@@ -185,36 +219,36 @@ height: 47px;
     <div class="navBar">
         <nav id="navIcons">
             <a href="@{/}" id="logoNav">
-                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/I.png"
+                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="@{/feed}">
-                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/homeIcon.png"
+                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
                       width="50%" height="50%">
             </a>
 
 
             <a href="@{/messages}" class="navIcon">
-                <img class="navIcon" alt="messages" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/messagesIcon.png"
+                <img class="navIcon" alt="messages" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="@{/quizes}" class="navIcon">
-                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/quizezIcon.png"
+                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
                      width="50%" height="50%">
             </a>
 
             <a href="@{/courses}" class="navIcon">
-                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/coursesIcon.png"
+                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="@{/profile}" class="navIcon" >
-                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/profileIcon.png"
+                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
                      width="120%" height="120%">
             </a>
         </nav>
@@ -225,7 +259,7 @@ height: 47px;
 <main>
 
     <div >
-        <img id="hero" alt="hero" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/giphy.gif"
+        <img id="hero" alt="hero" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/giphy.gif"
 
              width="100%"
              height="290px">
@@ -233,7 +267,7 @@ height: 47px;
 
 
     <div id="userInfo">
-        <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/Profilepic.png" width="50%" >
+        <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
 
         <h2 class="fullName">Full Name</h2>
         <h3 class="userName">userName</h3>
@@ -241,6 +275,14 @@ height: 47px;
 
         <h3 class="bio">Bio</h3>
 <div id="bioTextHolder"></div>
+
+        <h3 class="email">Email</h3>
+        <p>
+            hello.world@gmail.com
+        </p>
+
+        <h3 class="contact">Contact</h3>
+
 
     </div>
 
@@ -255,22 +297,13 @@ height: 47px;
             <p>
                 <textarea name="body" id="body" placeholder="write a post"></textarea></p>
 
-            <input type="submit" />
+            <input type="submit" class="submit"/>
         </form>
 
 
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <br> <br>
     <br>
     <br>
@@ -336,7 +369,24 @@ height: 47px;
     <br>
 
 </main>
-<footer></footer>
+<footer>
+    <div class="footer">
+
+
+        <div class="row">
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            Copyright © 2021 Inferno - All rights reserved
+        </div>
+</footer>
 
 </body>
 </html>

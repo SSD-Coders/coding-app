@@ -10,4 +10,10 @@ public class Profile {
     public String profile() {
         return "profile";
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+
 }
