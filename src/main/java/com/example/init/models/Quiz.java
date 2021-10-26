@@ -17,6 +17,9 @@ public class Quiz {
     public String category;
     public String difficulty;
 
+    public Quiz() {
+    }
+
     public Quiz(int id, String question, Object description, Answers answers, String multiple_correct_answers,
             CorrectAnswers correct_answers, String correct_answer, Object explanation, Object tip, List<Tag> tags,
             String category, String difficulty) {
