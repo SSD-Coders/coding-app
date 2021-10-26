@@ -17,6 +17,8 @@
         <p class="card-text" th:text="${userProfile.email}"/>
         <p class="card-text" th:text="${userProfile.bio}"/>
         <p class="card-text" th:text="${userProfile.dateOfBirth}"/>
+        <a th:href="@{/UserForm/{id}(id=${userProfile.id})}"
+        > <button>Update profile</button> </a>
     </div>
 </div>
 
@@ -48,8 +50,28 @@
             <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
         </div>
     </fieldset>
-    <button type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">Comment</button>
+    
+    
+    <form th:each="comment : ${post.comments}">
+        <fieldset>
+            <div class="mb-3">
+                <p th:text="${comment.body}"></p>
+                <p th:text="${comment.createdAt}"></p>
+            </div>
+        </fieldset>
+    </form>
+    
+    
+    <!-- <form action="/addComment" method="post">
+        <input type="hidden" name="id" th:value="${post.id}" />
+    <label class="form-label">Add a Comment</label>
+    <input type="textarea" class="form-control" name="body">
+    <button type="submit" class="btn btn-primary" name="addComment">submit</button>
+</form> -->
+<button style type="button" class="btn btn-primary" name="post" onclick="window.location.href='post'">Comment</button>
+
 </form>
+
 
 </body>
 </html>

@@ -151,12 +151,13 @@ public class User {
 
     @PostMapping("/addComment")
     public RedirectView addComment(Long id, String body) {
+
         Post post = contentRepository.findById(id).get();
         System.out.println(post.getBody());
         Comment comment = new Comment(post, body);
         commentRepository.save(comment);
         System.out.println(comment.getBody());
-        return new RedirectView("/post");
+        return new RedirectView("/profile");
     }
 
     @GetMapping("/post")
@@ -166,4 +167,26 @@ public class User {
         return "post";
     }
 
+    @GetMapping("/UserForm/{id}")
+    public String updateInfo(@PathVariable("id") long id, Model model) {
+        Coders coder = codersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("coder", coder);
+        return "userInfoForm";
+    }
+
+    @Transactional
+    @PostMapping("/updateInfo/{id}")
+    public RedirectView updateInfo(@PathVariable("id") long id, Coders coder) {
+        Coders updatedCoder = codersRepository.findById(id).orElseThrow();
+        updatedCoder.setEmail(coder.getEmail());
+        updatedCoder.setUsername(coder.getUsername());
+        updatedCoder.setPassword(coder.getPassword());
+        updatedCoder.setFirstName(coder.getFirstName());
+        updatedCoder.setLastName(coder.getLastName());
+        updatedCoder.setDateOfBirth(coder.getDateOfBirth());
+        updatedCoder.setBio(coder.getBio());
+        codersRepository.save(updatedCoder);
+        return new RedirectView("/profile");
+    }
 }

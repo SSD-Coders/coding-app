@@ -24,15 +24,6 @@
 
                     </form>
 
-                            <form th:each="comment : ${post.comments}">
-                                <fieldset>
-                                    <div class="mb-3">
-                                        <p th:text="${comment.body}"></p>
-                                        <p th:text="${comment.createdAt}"></p>
-                                    </div>
-                                </fieldset>
-                            </form>
-
                 </fieldset>
 
 </form>
