@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www,thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link th:href="@{src/main/resources/static/main.css" rel="stylesheet" />
+    <title>Profile</title>
+<!--    <link th:href="@{src/main/resources/static/main.css" rel="stylesheet" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
 
 * {
     box-sizing: border-box;
+      margin: 0;
+    padding: 0;
 }
     .hello {
 color: red;
@@ -25,32 +27,47 @@ font-family: 'Raleway', sans-serif;
 
 .navBar {
 position: fixed;
-width: 100px;
+    width: 83px;
+
 height: 1061px;
 
 background: radial-gradient(100% 100% at 0% 0%, #4F5F67 0%, rgba(68, 105, 125, 0.27) 100%);
 backdrop-filter: blur(15px);
-    margin: -22px -9px;
+    margin: -22px 0px;
         z-index: 1;
 }
 
 #logoNav{
-position: absolute;
-width: 36px;
-height: 36px;
-left: 47px;
-top: 26px;
+        position: absolute;
+    width: 34px;
+    height: 43px;
+    left: 6px;
+    top: -160px;
+
 
 }
 
 #navIcons{
 
-    margin: 15.2vw 2vw;
+      position: absolute;
+
+    left: 35%;
+    width: 50px;
+    top: 199px;
 
 }
 
 .navIcon{
     padding-bottom: 90%;
+
+}
+
+#navPic{
+
+    margin: 30;
+
+    position: relative;
+    left: -17px;
 
 }
 #hero{
@@ -59,36 +76,57 @@ top: 26px;
   overflow: hidden;
 }
 
+#bioTextHolder{
+    margin: 6px 29px 0px;
+    position: absolute;
+    width: 240px;
+    height: 41px;
+    background: radial-gradient(100% 100% at 0% 0%, #374045 0%, rgba(68, 105, 125, 0.27) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    margin: 6px 29px 0px;
+
+}
 
 #userInfo{
 position: absolute;
-width: 335px;
-height: 650px;
+    width: 300px;
 
+ height: 550px;
 background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
 backdrop-filter: blur(15px);
 border: 1px solid #C5C5C5;
 
 border-radius: 10px;
-margin-left: 160px;
+    margin-left: 126px;
     position: absolute;
     top: 180px;
 }
 
 #profilePic{
-    margin: 35px 66.5px 0px;
+            margin: 36px 75px 0px;
+
 }
 
 .fullName{
 color: white;
-    margin: 17px 107px 0px;
+        margin: 17px 109px 0px;
+
+    font-style: Bold;
+font-size: 16px;
 }
 
 .userName{
-color: white;
- margin: 17px 118px 0px;
+    color: rgba(255, 255, 255, 0.53);
+    margin: 6px 113px 0px;
+    font-size: 14px;
 }
 
+.bio{
+    color: white;
+    margin: 14px 38px 0px;
+    font-size: 16px;
+}
 
 
 .button {
@@ -103,65 +141,82 @@ color: white;
 
 
     position: relative;
-    left: 1150px;
+      left: 1160px;
+
     top: 10px;
     border-radius: 40px;
+
+
+
+    width: 140px;
+height: 47px;
+
+
+
+}
+
+.posts{
+     display: inline-block;
+    color: white;
+    position: relative;
+    left: 356px;
+    top: 15px;
+    font-size: 18px;
+
 }
 
 
 .profile-content{
-
-position: absolute;
-width: 750px;
-height: 575px;
-
-background: radial-gradient(100% 100% at 0% 0%, #354249 0%, rgba(68, 105, 125, 0.27) 100%);
-backdrop-filter: blur(15px);
-
-
-border-radius: 10px;
-    margin: 40px 548px 0px;
-
+    position: absolute;
+    width: 833px;
+    height: 575px;
+    background: radial-gradient(100% 100% at 0% 0%, #354249 0%, rgba(68, 105, 125, 0.27) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    margin: 30px 464px 0px;
 }
+
+
+
 </style>
 <body>
 
 <header>
     <div class="navBar">
         <nav id="navIcons">
-        <a href="@{/}" id="logoNav">
-            <img alt="logo" src="/resources/photos/I.png"
-            width="50%" height="50%">
-        </a>
+            <a href="@{/}" id="logoNav">
+                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/I.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="@{/feed}">
-            <img  class="navIcon" alt="homeIcon" src="/resources/photos/homeIcon.png"
-                  width="50%" height="50%">
-        </a>
+            <a href="@{/feed}">
+                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/homeIcon.png"
+                      width="50%" height="50%">
+            </a>
 
 
-        <a href="@{/messages}" class="navIcon">
-            <img class="navIcon" alt="messages" src="/resources/photos/messagesIcon.png"
-                 width="50%" height="50%">
-        </a>
+            <a href="@{/messages}" class="navIcon">
+                <img class="navIcon" alt="messages" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/messagesIcon.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="@{/quizes}" class="navIcon">
-            <img class="navIcon" alt="quizes" src="/resources/photos/quizezIcon.png"
-                 width="50%" height="50%">
-        </a>
+            <a href="@{/quizes}" class="navIcon">
+                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/quizezIcon.png"
+                     width="50%" height="50%">
+            </a>
 
-        <a href="@{/courses}" class="navIcon">
-            <img class="navIcon" alt="courses" src="/resources/photos/coursesIcon.png"
-                 width="50%" height="50%">
-        </a>
+            <a href="@{/courses}" class="navIcon">
+                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/coursesIcon.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="@{/profile}" class="navIcon">
-            <img class="navIcon" alt="profile" src="/resources/photos/profileIcon.png"
-                 width="120%" height="120%">
-        </a>
+            <a href="@{/profile}" class="navIcon" >
+                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/profileIcon.png"
+                     width="120%" height="120%">
+            </a>
         </nav>
     </div>
 
@@ -169,27 +224,40 @@ border-radius: 10px;
 
 <main>
 
-<div >
-    <img id="hero" alt="hero" src="/resources/photos/giphy.gif"
+    <div >
+        <img id="hero" alt="hero" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/giphy.gif"
 
-    width="100%"
-    height="290px">
-</div>
-
-
-
-   <div id="userInfo">
-       <img id="profilePic" alt="hero" src="/resources/photos/Profilepic.png">
-
-       <h2 class="fullName">Full Name</h2>
-       <h3 class="userName">userName</h3>
+             width="100%"
+             height="290px">
+    </div>
 
 
-   </div>
+    <div id="userInfo">
+        <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/photos/Profilepic.png" width="50%" >
 
+        <h2 class="fullName">Full Name</h2>
+        <h3 class="userName">userName</h3>
+
+
+        <h3 class="bio">Bio</h3>
+<div id="bioTextHolder"></div>
+
+    </div>
 
     <button type="button" class="button">Follow</button>
+
+
+  <p class="posts">Posts</p>
     <div class="profile-content">
+
+        <form method="POST" action="/posts" >
+
+            <p>
+                <textarea name="body" id="body" placeholder="write a post"></textarea></p>
+
+            <input type="submit" />
+        </form>
+
 
     </div>
 
