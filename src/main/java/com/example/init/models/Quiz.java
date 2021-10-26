@@ -55,7 +55,9 @@ public class Quiz {
         public String answer_d;
         public String answer_e;
         public String answer_f;
+
     }
+
 
     public static class CorrectAnswers{
         public String answer_a_correct;
@@ -66,29 +68,36 @@ public class Quiz {
         public String answer_f_correct;
     }
 
+
     private static class Tag{
         public String name;
     }
+    }
 
-    public int getAnswers() {
-         int correct = 0;
-        if (answers.answer_a == (correct_answer)){
-            correct++;
-}
-        else if (correct_answer.equals(answers.answer_b) ){
-            correct++;
-        }else if (correct_answer.equals(answers.answer_c)) {
-            correct++;
-        }else if (correct_answer .equals(answers.answer_d)) {
-            correct++;
-        }else if (correct_answer.equals(answers.answer_e)) {
-            correct++;
-        }else if (correct_answer.equals(answers.answer_f)) {
-            correct++;
-        }
-        return correct;
-    }
-    }
+
+
+
+
+//        String convertedToString = String.valueOf(answers.answer_a);
+////        if (convertedToString.equals(correct_answer))
+//        {
+////            correct++;
+//        }else if (correct_answer.equals(answers.answer_b) ){
+//            correct++;
+//        }else if (correct_answer.equals(answers.answer_c)) {
+//            correct++;
+//        }else if (correct_answer .equals(answers.answer_d)) {
+//            correct++;
+//        }else if (correct_answer.equals(answers.answer_e)) {
+//            correct++;
+//        }else if (correct_answer.equals(answers.answer_f)) {
+//            correct++;
+//        }
+//        return correct;
+//    }
+
+
+
 
 
 

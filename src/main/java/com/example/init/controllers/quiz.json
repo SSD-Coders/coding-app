@@ -1,0 +1,50 @@
+[
+  {
+  "quesId": 1,
+  "question": "Which are the three looping constructs provided by shell",
+  "answer_a": "while",
+  "answer_b": "for",
+  "answer_c": "until",
+  "answer_d": "foreach",
+  "answer_e": "done",
+  "answer_f": "each",
+  "correct_answer":"while"
+},
+  {
+    "quesId": 2,
+    "question": "What are the functions of Replication controller?",
+    "answer_a": "It is responsible to control and administer the lifecycle of the pod.",
+    "answer_b": "It helps the user to check the running status of the pod",
+    "answer_c": "It is responsible to monitor and verify whether the allowed number of pod replicas were running",
+    "answer_d": "It is responsible for routing the ingress traffic",
+    "correct_answer": "It is responsible to control and administer the lifecycle of the pod."
+  },
+  {
+    "quesId": 3,
+    "question": "Which command can be used by the administrator to bring the system into single user mode?",
+    "answer_a": "init s",
+    "answer_b": "single",
+    "answer_c": "init",
+    "answer_d": "single s",
+    "correct_answer": "init s"
+
+  },
+  {
+    "quesId": 4,
+    "question": "What is the Container Runtime?",
+    "answer_a": "Software that is responsible for running containers",
+    "answer_b": "An API object that manages a replicated application",
+    "answer_c": "Stored instance of a Container that holds a set of software needed to run an application",
+    "answer_d": "A command line tool for communicating with a Kubernetes API server",
+    "correct_answer": "Software that is responsible for running containers"
+
+  },
+  {
+    "quesId": 5,
+    "question": "Is the NULL value treated as 0?",
+    "answer_a": "True",
+    "answer_b": "False",
+    "correct_answer": "False"
+  }
+
+]

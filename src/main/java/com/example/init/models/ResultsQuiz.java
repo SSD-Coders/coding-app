@@ -1,39 +1,44 @@
 package com.example.init.models;
 
 
-import javax.persistence.*;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+@Component
 @Entity
 @Table(name = "results")
 public class ResultsQuiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id", nullable = false)
     private int id;
-    @ManyToOne
-    @JoinColumn(name = "username_id")
-    public ApplicationUser username;
-    public int totalCorrect;
+
+    public String username;
+    public int totalCorrect = 0;
 
     public ResultsQuiz() {
+        super();
     }
 
-    public ResultsQuiz(int id ,ApplicationUser username, int totalCorrect) {
+    public ResultsQuiz(int id, String username, int totalCorrect) {
+        super();
         this.id = id;
         this.username = username;
-                this.totalCorrect = totalCorrect;
+        this.totalCorrect = totalCorrect;
     }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public ApplicationUser getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(ApplicationUser username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -44,11 +49,4 @@ public class ResultsQuiz {
     public void setTotalCorrect(int totalCorrect) {
         this.totalCorrect = totalCorrect;
     }
-    //    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 }
