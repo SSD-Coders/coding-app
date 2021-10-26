@@ -27,8 +27,12 @@
           th:each="follower:${followers}"
         >
           <div class="card-body">
-            <h5 class="btn btn-outline-danger">Username:</h5>
             <h2 class="card-title" th:text=" ${follower.firstName}"></h2>
+            <form method="post" action="/unfollow">
+              <button type="submit">Unfollow</button>
+              <input type="hidden" name="id" th:value="${follower.id}" />
+            </form>
+
             <br /><br />
           </div>
           <h5>Posts:</h5>
