@@ -9,11 +9,239 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
+  <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+background: linear-gradient(115.17deg, #212634 9.22%, #142833 50.16%, rgba(13, 48, 46, 0.94) 92.84%);
+font-family: 'Raleway', sans-serif;
+color: white;
+
+}
+
+
+
+/* ////////////////////////////// Start of nav bar //////////////////////////////////////// */
+
+
+
+
+header{
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding: 30px 5%;
+
+}
+
+
+
+.navlinks li{
+    display: inline-block;
+    padding: 0px 25px;
+    position: relative;
+    left:  208px;
+}
+
+.navlinks li a{
+transition: all 0.3s ease 0s;
+    padding-bottom: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navlinks li a:hover{
+color:#2C9A8D;
+border-bottom:solid #2C9A8D 3.5px;
+}
+
+.nav-button{
+padding:7px 25px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+font-family: 'Raleway', sans-serif;
+font-weight: bold;
+font-size: 15px;
+}
+
+.nav-button:hover{
+background-color: rgba(44,154,141,0.8);
+}
+.a{
+    position: relative;
+    left: 3;
+    color: white;
+    font-style: normal;
+    left: 120px;
+    font-size: 15px;
+}
+
+/* ////////////////////////// start of main //////////////////////////////////// */
+
+section{
+    margin: 46px;
+
+}
+
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 365px;
+    height: auto;
+    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid #C5C5C5;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 33px 32px;
+}
+
+
+.form-control{
+     margin-bottom: 30px;
+
+
+
+}
+
+.legend{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+
+}
+
+
+
+.submit{
+margin-top:30px;
+ display: block;
+margin-left: auto;
+margin-right: auto;
+padding:7px 25px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+font-size: 15px;
+
+
+}
+
+.submit:hover{
+background-color: rgba(44,154,141,0.8);
+}
+
+.blue-circle{
+       position: absolute;
+    left: 427px;
+    top: 273px;
+}
+.yellow-circle{
+
+    position: relative;
+    bottom: 303px;
+    left: 816px;
+    z-index: -1;
+}
+/* /////////////////////////////////////////////footer////////////////////////////// */
+.footer{
+    background: #F2F2F2;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+  </style>
+
+
   <body>
+
+  <header>
+
+    <img id="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Init.png" alt="logo"   width="10%"
+         height="10%">
+
+    <a th:href="@{/signup}"><button class="nav-button">Sign up</button></a>
+
+  </header>
+
+
+  <main>
+    <img class="blue-circle" src="/resources/images/blueCircle.png">
+
+    <section >
     <form ta:action="@{/signup}" method="post">
-      <legend>Sign up</legend>
-      <fieldset>
+      <legend class="legend">Sign up</legend>
+      <fieldset class="container">
         <div class="mb-3">
           <label class="form-label">User Name</label>
           <input type="text" class="form-control" name="username" />
@@ -43,10 +271,50 @@
           <label class="form-label">Bio</label>
           <input type="text" class="form-control" name="bio" />
         </div>
-        <button type="submit" class="btn btn-primary" name="password">
-          Sign up
-        </button>
+
       </fieldset>
+      <button type="submit" class="submit" name="password">
+        Sign up
+      </button>
     </form>
+    </section>
+
+
+  <img class="yellow-circle" src="/resources/images/yellowCircle.png">
+
+
+
+  </main>
+
+
+
+
+
+
+
+
+    <footer>
+      <div class="footer">
+
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+
+        </div>
+        <div>
+    </footer>
+
+
+
+
   </body>
 </html>

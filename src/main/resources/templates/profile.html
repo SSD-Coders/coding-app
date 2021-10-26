@@ -14,21 +14,30 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
+
+
 body {
 background: linear-gradient(115.17deg, #212634 9.22%, #142833 50.16%, rgba(13, 48, 46, 0.94) 92.84%);
 font-family: 'Raleway', sans-serif;
 }
+
+
+
 /* ////////////////////////////////navbar//////////////////////////// */
 .navBar {
 position: fixed;
     width: 83px;
+
 height: 1061px;
+
 background: radial-gradient(100% 100% at 0% 0%, #4F5F67 0%, rgba(68, 105, 125, 0.27) 100%);
 backdrop-filter: blur(15px);
     margin: -22px 0px;
         z-index: 1;
 }
+
 #logoNav{
         position: absolute;
     width: 34px;
@@ -36,89 +45,132 @@ backdrop-filter: blur(15px);
     left: 6px;
     top: -160px;
 }
+
 #navIcons{
+
       position: absolute;
+
     left: 35%;
     width: 50px;
     top: 199px;
+
 }
+
 .navIcon{
     padding-bottom: 90%;
+
 }
+
 #navPic{
+
     margin: 30;
+
     position: relative;
     left: -17px;
+
 }
+
 /* ////////////////////////////////////////main////////////////////////////////// */
+
 #hero{
+
   object-fit: cover;
   overflow: hidden;
 }
+
+
 /* /////////////user info card /////// */
+
 #userInfo{
 position: absolute;
     width: 300px;
+
  height: 550px;
 background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
 backdrop-filter: blur(15px);
 border: 1px solid #C5C5C5;
+
 border-radius: 10px;
     margin-left: 126px;
     position: absolute;
     top: 180px;
 }
+
 #profilePic{
             margin: 36px 75px 0px;
+
 }
+
 .fullName{
-color: white;
-        margin: 17px 109px 0px;
+    color: white;
+    margin: 17px 0px 0px 88px;
     font-style: Bold;
-font-size: 16px;
+    font-size: 16px;
 }
+
+
+
+
+
 #bioTextHolder{
     margin: 6px 29px 0px;
     position: absolute;
     width: 240px;
-    height: 41px;
+    height: auto;
     background: radial-gradient(100% 100% at 0% 0%, #374045 0%, rgba(68, 105, 125, 0.27) 100%);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     margin: 6px 29px 0px;
+
+
 }
-.fullName{
-color: white;
-        margin: 17px 109px 0px;
-    font-style: Bold;
-font-size: 16px;
-}
+
+
+
 .userName{
     color: rgba(255, 255, 255, 0.53);
     margin: 6px 113px 0px;
     font-size: 14px;
 }
+
 .bio{
-    color: white;
-    margin: 14px 38px 0px;
+        color: white;
+    margin: 37px 38px 0px;
     font-size: 16px;
 }
+
 .bioStyling{
   color:white;
     font-size: 14px;
         margin: 12px;
+
 }
 .email{
+      color: white;
+    margin: 30px 38px 0px;
+    font-size: 16px;
+
+}
+.dateOfBirth{
+       margin: 91px 39px 0px;
     color: white;
-    margin: 91px 38px 0px;
     font-size: 16px;
 }
+
+.birth{
+    margin: 116px 0px 0px 37px;
+}
+
+
 #userInfo p{
+
     color: white;
     margin: 8px 38px 0px;
     font-size: 16px;
 }
+
 /* //////////////////posts field/////////////////// */
+
 .posts{
         display: inline-block;
     color: white;
@@ -126,7 +178,9 @@ font-size: 16px;
     left: 495px;
     top: 24px;
     font-size: 18px;
+
 }
+
 .profile-content{
     position: absolute;
     width: 833px;
@@ -136,12 +190,15 @@ font-size: 16px;
     border-radius: 10px;
     margin: 30px 464px 0px;
 }
+
 .form-control{
     border-radius: 10px;
     width: 772px;
     margin: 5px 29px;
 height: 81px;
+
 }
+
 .submit{
 padding:7px 25px;
 background-color: rgba(44,154,141,1);
@@ -150,31 +207,114 @@ border: none;
 border-radius: 10px;
 cursor: pointer;
 transition: all 0.3s ease 0s;
+
 font-size: 15px;
+
     margin-left: 704px;
+
+
 }
+
 .submit:hover{
 background-color: rgba(44,154,141,0.8);
 }
+
 .post-form{
 background-color: transparent;
  width: 772px;
  margin-left: 29px;
  color: white;
+ height:auto;
  border-bottom:solid white 0.5px;
  border-top:solid white 0.5px;
+
 }
+
 .form-space{
 padding-top: 20px;
 padding-bottom: 20px;
 }
+
+.delete-post{
+     position: relative;
+    left: 699px;
+    bottom: 99px;
+}
+
+.edit-post{
+        position: relative;
+    left: 635px;
+    top: -99px;
+}
+.mySubmittedPost{
+    position: relative;
+    left: 22px;
+
+}
+.comment-post{
+
+    position: relative;
+    left: -42px;
+        top: 18px;
+}
+.time-post{
+    font-size: 14px;
+
+    margin: -17px 0px 16px 0px;
+}
+.user-post{
+font-weight: bold;
+
+}
+
+.form-label{
+    position: relative;
+    left: 23px;
+
+}
+
+.comment-control{
+      border-radius: 10px;
+    width: 720px;
+    margin: 5px 21px;
+    height: 41px;
+}
+
+
+.comment-button{
+    padding: 7px 25px;
+    background-color: rgba(44,154,141,1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+    margin-left: 622px;
+    position: relative;
+    bottom: 30px;
+}
+
+.comment-button:hover{
+background-color: rgba(44,154,141,0.8);
+}
+
+.people-comment{
+
+    margin: -14px 0px 0px 14px;
+
+}
+
 /* /////////////////////////////////////////////footer////////////////////////////// */
 .footer{
 background:#F2F2F2;
 padding:30px 0px;
 font-family: 'Play', sans-serif;
 text-align:center;
+
+    margin: 603px 0px 0px 0px;
 }
+
 .footer .row{
 width:100%;
 margin:1% 0%;
@@ -182,81 +322,140 @@ padding:0.6% 0%;
 color:gray;
 font-size:0.8em;
 }
+
 .footer .row a{
 text-decoration:none;
 color:gray;
 transition:0.5s;
 }
+
 .footer .row a:hover{
 color:#253B4D;
 }
+
 .footer .row ul{
 width:100%;
 }
+
 .footer .row ul li{
 display:inline-block;
 margin:0px 30px;
 }
+
 .footer .row a i{
 font-size:2em;
 margin:0% 1%;
 }
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+
 </style>
 <body>
+
 <header>
+
     <div class="navBar">
         <nav id="navIcons">
             <a href="@{/}" id="logoNav">
                 <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
                      width="50%" height="50%">
             </a>
+
+
             <a href="feed">
                 <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
                       width="50%" height="50%">
             </a>
+
+
             <a href="users" class="navIcon">
-                <img class="navIcon" alt="messages" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
+                <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
                      width="50%" height="50%">
             </a>
+
+
             <a href="quiz" class="navIcon">
                 <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
                      width="50%" height="50%">
             </a>
+
             <a href="courses" class="navIcon">
                 <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
                      width="50%" height="50%">
             </a>
+
+
+
+
             <a href="profile" class="navIcon" >
                 <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
                      width="120%" height="120%">
             </a>
+
+
+            <a href="logout" class="navIcon">
+                <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+                     width="40%" height="40%">
+            </a>
         </nav>
     </div>
+
 </header>
+
 <main>
     <section>
         <div >
             <img id="hero" alt="hero" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/giphy.gif"
+
                  width="100%"
                  height="290px">
         </div>
     </section>
+
+
+
     <section>
         <div id="userInfo">
             <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
+
             <h2 class="fullName" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"></h2>
             <!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->
+
+
             <h3 class="email">Email</h3>
             <p th:text="${userProfile.email}"></p>
-            <h3 class="bio">Date of Birth</h3>
-            <p class="card-text" th:text="${userProfile.dateOfBirth}"></p>
+
+
+
+
             <h3 class="bio">Bio</h3>
             <div id="bioTextHolder" >
                 <h3 class="bioStyling" th:text="${userProfile.bio}"></h3>
             </div>
+            <h3 class="dateOfBirth">Data of birth</h3>
+            <p class="birth" th:text="${userProfile.dateOfBirth}"></p>
+
         </div>
     </section>
+
+
     <p class="posts">Posts</p>
+
+
     <section>
         <div class="profile-content">
             <form action="/addPost" method="post">
@@ -265,46 +464,108 @@ margin:0% 1%;
                         <label class="form-label"></label>
                         <input type="textarea" placeholder="write a post" class="form-control" name="body">
                         </br>
-                        <button type="submit" class="submit" name="password">submit</button>
+                        <button type="submit" class="submit" name="password">Submit</button>
                     </div>
                 </fieldset>
             </form>
+
             <br>
             <br>
+
+
             <!--    <legend>Posts</legend>-->
 
-    <form class="post-form" action="/addComment" method="post" th:each="post : ${userProfile.posts}">
-        <fieldset  class="form-space">
-            <input type="hidden" name="id" th:value="${post.id}" />
-            <form >
-                <fieldset> <br>
-                    <div class="mb-3">
-                        <p th:text="${post.body}"></p>
-                        <p th:text="${post.createdAt}"></p>
-                        <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>
-                        <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
-                    </div>
-                    <form  th:each="comment : ${post.comments}">
+            <form  class="post-form" action="/addComment" method="post" th:each="post : ${userProfile.posts}">
+                <fieldset class="form-space">
+                    <input type="hidden" name="id" th:value="${post.id}" />
+                    <form >
+                        <!--                        this is the post-->
                         <fieldset>
-                            <div class="mb-3">
-                                <p th:text="${comment.body}"></p>
-                                <p th:text="${comment.createdAt}"></p>
+                            <div class="mySubmittedPost">
+
+                                <p class="user-post" th:text="${post.applicationUser.username}"></p>
+                                <p class="time-post" th:text="${post.createdAt}"></p>
+                                <p th:text="${post.body}"></p>
+
+
+                                <td> <a class="delete-post" th:href="@{/delete/{id}(id=${post.id})}">
+                                    <img  class="test" alt="delete" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/delete.png"
+                                    >
+                                </a></td>
+
+
+                                <td> <a  class="edit-post" th:href="@{/edit/{id}(id=${post.id})}">
+                                    <img  alt="edit" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/edit.png"
+                                    >
+                                </a></td>
+
                             </div>
+
+
+                            <div id="comment-div" class="mb-3">
+                                <label class="form-label">Add a Comment</label>
+                                <input type="textarea"  class="comment-control" name="body">
+                                </br>
+                            </div>
+
                         </fieldset>
+
+
+
+
+                        <br>
+                        <button type="submit" class="comment-button" name="addComment">Comment</button>
+
+
+                        <form  th:each="comment : ${post.comments}">
+                            <fieldset class="people-comment">
+                                <div  class="people-comment" class="mb-3">
+                                    <p th:text="${comment.createdAt}"></p>
+                                    <p th:text="${comment.body}"></p>
+
+                                </div>
+                            </fieldset>
+
+
+
+
+                        </form>
                     </form>
-            
-                    <div class="mb-3">
-                        <label class="form-label">Add a Comment</label>
-                        <input type="textarea" class="form-control" name="body">
-                    </div>
                 </fieldset>
-                <button type="submit" class="btn btn-primary" name="addComment">Comment</button>
-    
+
+
+
             </form>
-    
-        </fieldset>
-    </form>
+
+
+        </div>
+
+
+    </section>
 
 </main>
+
+
+   <footer>
+    <div class="footer">
+
+
+        <div class="row">
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+
+        </div>
+        <div>
+   </footer>
+
+
 </body>
 </html>
