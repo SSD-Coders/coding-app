@@ -29,10 +29,10 @@ public class Coders implements UserDetails {
     @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
     private List<Post> posts;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
     Set<Coders> followers;
-    @ManyToMany(mappedBy = "followers")
+    @ManyToMany(mappedBy = "followers", fetch = FetchType.EAGER)
     Set<Coders> following;
 
     public Coders() {

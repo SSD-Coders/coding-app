@@ -95,6 +95,12 @@ public class User {
         model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
         return "user";
     }
+//    @GetMapping("users/{id}")
+//    public String getUserById(@PathVariable Long id, Model model) {
+//        model.addAttribute("username", codersRepository.findUserById(id));
+//        return ("profile");
+//    }
+
 
     @GetMapping("/users")
     public String getUsers(Model model, Principal principal) {
@@ -102,6 +108,7 @@ public class User {
         model.addAttribute("allusers", users);
         Coders user = codersRepository.findByUsername(principal.getName());
         model.addAttribute("username", user.getUsername());
+        model.addAttribute("userProfile", user);
         return "users";
     }
 
@@ -119,6 +126,7 @@ public class User {
         Coders feed = codersRepository.findByUsername(user.getUsername());
         Set<Coders> following = feed.getFollowers();
         model.addAttribute("followers", following);
+        model.addAttribute("userProfile", feed);
         return "feed";
     }
 
@@ -164,6 +172,31 @@ public class User {
         List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
         model.addAttribute("posts", posts);
         return "post";
+    }
+
+
+
+    @GetMapping("/UserForm/{id}")
+    public String updateInfo(@PathVariable("id") long id, Model model) {
+        Coders coder = codersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("coder", coder);
+        return "UserInfoForm";
+    }
+
+    @Transactional
+    @PostMapping("/updateInfo/{id}")
+    public RedirectView updateInfo(@PathVariable("id") long id, Coders coder) {
+        Coders updatedCoder = codersRepository.findById(id).orElseThrow();
+        updatedCoder.setEmail(coder.getEmail());
+        updatedCoder.setUsername(coder.getUsername());
+        updatedCoder.setPassword(coder.getPassword());
+        updatedCoder.setFirstName(coder.getFirstName());
+        updatedCoder.setLastName(coder.getLastName());
+        updatedCoder.setDateOfBirth(coder.getDateOfBirth());
+        updatedCoder.setBio(coder.getBio());
+        codersRepository.save(updatedCoder);
+        return new RedirectView("/profile");
     }
 
 }

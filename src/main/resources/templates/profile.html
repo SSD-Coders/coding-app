@@ -8,8 +8,10 @@
 <body>
 
 <header th:replace="nav::nav">
-
 </header>
+<!--<li th:if="${user.email == 'heba@gmail.com'}"  class="nav-item">-->
+<!--    <a class="nav-link" href="admin">Admin</a>-->
+<!--</li>-->
 <div class="card" style="width: 12rem;">
     <img src="https://freesvg.org/img/publicdomainq-0006224bvmrqd.png" class="card-img-top" alt="ProfilePicture">
     <div class="card-body">
@@ -17,6 +19,8 @@
         <p class="card-text" th:text="${userProfile.email}"/>
         <p class="card-text" th:text="${userProfile.bio}"/>
         <p class="card-text" th:text="${userProfile.dateOfBirth}"/>
+        <a th:href="@{/UserForm/{id}(id=${userProfile.id})}"
+        >Update profile</a>
     </div>
 </div>
 
