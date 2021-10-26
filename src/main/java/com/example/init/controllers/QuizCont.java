@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.security.Principal;
@@ -32,25 +33,25 @@ public class QuizCont {
 
     Boolean submitted = false;
 
-    @GetMapping("/quiz/v2")
-    public String getQuiz(Model model) throws Exception {
-
-        Gson gson = new Gson();
-
-        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
-        Type jsonCasting = new TypeToken<List<QuizDto>>() {
-        }.getType();
-        List<QuizDto> jsonList = gson.fromJson(data, jsonCasting);
-        model.addAttribute("qForm", jsonList);
-        System.out.println(jsonList);
-        System.out.println("----------------------");
-        String numbersJson = gson.toJson(jsonList);
-        System.out.println(numbersJson);
-        return "quiz2";
-    }
+//    @GetMapping("/quiz/v2")
+//    public String getQuiz(Model model) throws Exception {
+//
+////        Gson gson = new Gson();
+////
+////        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
+////        Type jsonCasting = new TypeToken<List<QuizDto>>() {
+////        }.getType();
+////        List<QuizDto> jsonList = gson.fromJson(data, jsonCasting);
+////        model.addAttribute("qForm", jsonList);
+////        System.out.println(jsonList);
+////        System.out.println("----------------------");
+////        String numbersJson = gson.toJson(jsonList);
+////        System.out.println(numbersJson);
+////        return "quiz2";
+//    }
 
     @PostMapping("/quiz/v2")
-    public String quiz( Model m, RedirectAttributes ra) {
+    public String quiz( Model m, RedirectAttributes ra) throws FileNotFoundException {
 //        if(username.equals("")) {
 //            ra.addFlashAttribute("warning", "You must enter your name");
 //            return "redirect:/";
@@ -61,7 +62,7 @@ public class QuizCont {
 
         QuestionForm qForm = qService.getQuestions();
         m.addAttribute("qForm", qForm);
-
+        System.out.println(qForm);
         return "quiz2.html";
     }
     @PostMapping("/submit")

@@ -6,10 +6,15 @@ import com.example.init.models.QuizDto;
 import com.example.init.models.ResultsQuiz;
 import com.example.init.repositories.QuestionRepo;
 import com.example.init.repositories.ResultsRepo;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -30,8 +35,18 @@ public class ServiceQuiz {
     ResultsRepo rRepo;
 
 
-    public QuestionForm getQuestions() {
-        List<QuizDto> allQues = qRepo.findAll();
+    public QuestionForm getQuestions() throws FileNotFoundException {
+//        List<QuizDto> allQues = qRepo.findAll();
+        Gson gson = new Gson();
+
+        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
+        Type jsonCasting = new TypeToken<List<QuizDto>>() {
+        }.getType();
+        List<QuizDto> allQues = gson.fromJson(data, jsonCasting);
+        System.out.println(allQues);
+        System.out.println("----------------------");
+        String numbersJson = gson.toJson(allQues);
+        System.out.println(numbersJson);
         List<QuizDto> qList = new ArrayList<QuizDto>();
 
         Random random = new Random();
