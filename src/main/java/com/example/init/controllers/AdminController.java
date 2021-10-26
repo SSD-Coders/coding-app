@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-public class adminController {
+public class AdminController {
     @Autowired
     CodersRepository codersRepository;
 
