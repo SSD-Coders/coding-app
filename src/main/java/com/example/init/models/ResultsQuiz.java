@@ -21,7 +21,7 @@ public class ResultsQuiz {
         super();
     }
 
-    public ResultsQuiz(int id, ApplicationUser username, int totalCorrect) {
+    public ResultsQuiz(int id, ApplicationUser user, int totalCorrect) {
         super();
         this.id = id;
         this.user = user;

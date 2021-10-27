@@ -80,13 +80,8 @@ public ResultsQuiz getResult() {
     }
     @PostMapping("/submit")
     public String submit(@ModelAttribute QuestionForm qForm, Model m) {
-        if(!submitted) {
             result.setTotalCorrect(qService.getResult(qForm));
             qService.saveScore(result);
-            submitted = true;
-        }
-
-
 
         return "resultsv2.html";
     }

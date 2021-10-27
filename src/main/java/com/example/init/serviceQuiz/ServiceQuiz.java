@@ -39,17 +39,19 @@ public class ServiceQuiz {
 //        List<QuizDto> allQues = qRepo.findAll();
         Gson gson = new Gson();
 
-        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
+        FileReader data = new FileReader("/home/asac/401/init/src/main/java/com/example/init/controllers/quiz.json");
         Type jsonCasting = new TypeToken<List<QuizDto>>() {
         }.getType();
         List<QuizDto> allQues = gson.fromJson(data, jsonCasting);
         System.out.println(allQues);
-        System.out.println("----------------------");
-        String numbersJson = gson.toJson(allQues);
-        System.out.println(numbersJson);
+//        System.out.println("----------------------");
+//        String numbersJson = gson.toJson(allQues);
+//        System.out.println(numbersJson);
         List<QuizDto> qList = new ArrayList<QuizDto>();
-
-
+        String numbersJson = gson.toJson(qList);
+        System.out.println("==============================================================================================");
+        System.out.println("Hello From Khair" +numbersJson);
+        System.out.println("==============================================================================================");
         Random random = new Random();
 
         for (int i = 0; i < 5; i++) {
@@ -57,21 +59,26 @@ public class ServiceQuiz {
             qList.add(allQues.get(rand));
             allQues.remove(rand);
         }
-
         qForm.setQuestions(qList);
+        String numbersJson1 = gson.toJson(qList);
+        System.out.println("==============================================================================================");
+        System.out.println("Hello From heba" +numbersJson1);
+        System.out.println("==============================================================================================");
         return qForm;
     }
         public int getResult(QuestionForm qForm) {
         int correct = 0 ;
         for (QuizDto q: qForm.getQuestions())
-                if (q.getQuesId() == q.getChose())
-                correct++;
-
+                if (q.getQuesId() == q.getChose()) {
+                    System.out.println(q.getQuesId());
+                    System.out.println(q.getChose());
+                    correct++;
+                }
             return correct;
         }
     public void saveScore(ResultsQuiz result) {
         ResultsQuiz saveResult = new ResultsQuiz();
-        saveResult.setUser(result.getUser());
+//        saveResult.setUser(result.getUser());
         saveResult.setTotalCorrect(result.getTotalCorrect());
         rRepo.save(saveResult);
     }
