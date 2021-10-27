@@ -432,6 +432,12 @@ margin:0% 3%;
         <div id="userInfo">
             <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
 
+            <a th:href="@{/UserForm/{id}(id=${userProfile.id})}"
+            >Update profile</a>
+
+
+
+
             <h2 class="fullName" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"></h2>
             <!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->
 
@@ -519,7 +525,7 @@ margin:0% 3%;
 
                         <form  th:each="comment : ${post.comments}">
                             <fieldset class="people-comment">
-                                <div  class="people-comment" class="mb-3">
+                                <div  class="mb-3">
                                     <p th:text="${comment.createdAt}"></p>
                                     <p th:text="${comment.body}"></p>
 
@@ -546,25 +552,25 @@ margin:0% 3%;
 </main>
 
 
-   <footer>
-    <div class="footer">
+<!--   <footer>-->
+<!--    <div class="footer">-->
 
 
-        <div class="row">
-            <ul>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Career</a></li>
-            </ul>
-        </div>
+<!--        <div class="row">-->
+<!--            <ul>-->
+<!--                <li><a href="#">Contact us</a></li>-->
+<!--                <li><a href="#">Our Services</a></li>-->
+<!--                <li><a href="#">Privacy Policy</a></li>-->
+<!--                <li><a href="#">Terms & Conditions</a></li>-->
+<!--                <li><a href="#">Career</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
 
-        <div class="row">
+<!--        <div class="row">-->
 
-        </div>
-        <div>
-   </footer>
+<!--        </div>-->
+<!--        <div>-->
+<!--   </footer>-->
 
 
 </body>
