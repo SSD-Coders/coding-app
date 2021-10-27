@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Interactive Technology Studio",
+    "course_level": "Graduate/Professional Only (200+)",
+    "description": "Technologies, languages, and skills required for creating prototypes to communicate interactive technology concepts. Topics include HTTP, CSS, CSS scripting, AJAX, Design Patterns, Javascript, Javascript libraries such as jQuery, SQL, MVC, and cloud architectures.",
+    "image":"https://united-pop.com/website/var/tmp/image-thumbnails/0/3214/thumb__diplomaCourseDetail/interactive_audio_designer~-~480w.jpeg"},
+  {
+    "id": 2,
+  
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Programming in Java as a Second Language",
+    "course_level": "Lower Division (1-99)",
+   
+    "description": "An introduction to the lexical, syntactic, semantic, and pragmatic characteristics of the Java language for experienced programmers. Emphasis on object-oriented programming, using standard libraries, and programming with automatic garbage collection.",
+ "image":"https://miro.medium.com/max/750/1*HuoU7i1AIvkUSApmIx8XQw.png"},
+  {
+    "id": 3,
+    
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Computer Game Development",
+    "course_level": "Graduate/Professional Only (200+)",
+    
+    "description": "Introduction to the principles of interactive 2D and 3D computer game development. Concepts in computer graphics, algorithms, software engineering, art and graphics, music and sound, story analysis, and artificial intelligence are presented and are the basis for student work.",
+"image":"https://images.ctfassets.net/3s5io6mnxfqz/32WnMVURX2H9rRiNA1qbsg/a93ccb573ad78895d20bccbfdeece606/AdobeStock_345938875.jpeg?fm=jpg&w=900&fl=progressive"},
+  {
+    "id": 4,
+
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Artificial Intelligence in Biology and Medicine",
+    "course_level": "Upper Division (100-199)",
+   
+    "description": "Introduction to computational methods in molecular biology, aimed at those interested in learning about this interdisciplinary area. Covers computational approaches to understanding and predicting the structure, function, interactions, and evolution of DNA, RNA, proteins, and related molecules and processes.",
+    "image" : "https://th.bing.com/th/id/OIP.5snHE-VIA-roO_oqBZDjswHaE8?pid=ImgDet&rs=1"
+  },
+  {
+    "id": 5,
+   
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Digital Image Processing",
+    "course_level": "Upper Division (100-199)",
+    
+    "description": "Introduction to the fundamental concepts of digital signal and image processing as applicable in areas such as multimedia, graphics, AI, data mining, databases, vision, or video games. Topics include image representation, space- and frequency-domain transformations, filters, segmentation, and compression.",
+    "image" : "https://online.stanford.edu/sites/default/files/styles/figure_default/public/2018-03/ee_digitalimageprocessing_ee368.jpg?itok=S2vGmtU4"
+  },
+  {
+    "id": 6,
+    
+    "school": "School of Physical Sciences",
+    "title": "Advanced Data Acquisition and Analysis",
+    "course_level": "Graduate/Professional Only (200+)",
+    
+    "description": "Introduces students to a variety of practical laboratory techniques, including lock-in, boxcar, coincidence counting, noise filtering, PID control, properties of common transducers, computer interfacing to instruments, vacuum technology, laboratory safety, basic mechanical design, and shop skills. Materials fee.",
+    "image" : "https://learn.g2.com/hubfs/what-is-advanced-analytics.jpg"
+  },
+  {
+    "id": 7,
+    
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Artificial Intelligence Frontiers: Technical, Ethical, and Societal",
+    "course_level": "Upper Division (100-199)",
+   
+    "description": "Explores the frontiers of artificial intelligence and related technologies with a focus on the underlying ethical, legal, and societal challenges and opportunities they create. Encourages critical thinking about these issues.",
+    "image" : "https://www.insurancejournal.com/app/uploads/2016/01/ethics-580x580.jpg"
+  },
+  {
+    "id": 8,
+    
+    "school": "The Henry Samueli School of Engineering",
+    "title": "Biomedical Big Data",
+    "course_level": "Graduate/Professional Only (200+)",
+    
+    "description": "Analysis and visualization of large biomedical datasets. Topics covered include cloud computing, learning Structured Query Language (SQL), database normalization and joins, using Google’s BigQuery, using the statistical analysis package R, machine learning algorithms, application of machine learning for classification problems.",
+    "image" : "https://prod-discovery.edx-cdn.org/media/course/image/63f8ec13-8c6b-4c70-b380-3f95e56a21f6-d8de3c31749c.small.jpg"
+  },
+  {
+    "id": 9,
+    
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Network Security",
+    "course_level": "Graduate/Professional Only (200+)",
+    
+    "description": "Introduction to network security, including network threats and attacks, as well as defenses against such attacks. Topics include network infrastructure security, mobile and Wi-Fi security, spam, phishing, firewalls, anonymity, secure email, secure and private cloud computing, and web security.",
+    "image" : "https://images.anytask.com/resources/user/07b908f2cd365eec/task/1604585232973_secure.png"},
+  {
+    "id":10 ,
+    
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Realistic Image Synthesis",
+    "course_level": "Graduate/Professional Only (200+)",
+   
+    "description": "Provides an in-depth overview on a core sub-field of computer graphics. Graduate  students who take this course are better prepared for conducting research on the related topics in computer graphics, vision, and scientific computing.",
+    "image" : "https://pbs.twimg.com/media/DVZtj_GUQAAv6mp.jpg"
+  },
+  {
+    "id": 11,
+    
+    "school": "The Henry Samueli School of Engineering",
+    "title": "Introduction to Programming",
+    "course_level": "Lower Division (1-99)",
+    "description": "An introduction to computers and programming. Python programming syntax/style, types. Numbers and sequences. Control flow. I/O and errors/exceptions. Function calling, parameter passing, formal arguments, return values. Variable scoping. Programming laboratory.",
+    "image" : "https://www.tuni.fi/sites/default/files/styles/base_landscape_lg/public/media/image/jop_pow_koodaus.png?itok=MbIrLPrF"
+  },
+  {
+    "id": 12,
+    "school": "Donald Bren School of Information and Computer Sciences",
+    "title": "Project in Databases and Web Applications",
+    "course_level": "Upper Division (100-199)",
+   
+    "description": "Introduces students to advanced database technologies and Web applications. Topics include database connectivity (ODBC/JDBC), extending databases using stored procedures, database administration, Web servers, Web programming languages (Java servlets, XML, Ajax, and mobile platforms).",
+    "image" : "https://www.midaswebtech.com/wp-content/themes/midas_it/images/web-development.gif"
+  }
+
+]
