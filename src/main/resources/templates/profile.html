@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>user profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="profile.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="profile.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -80,6 +81,19 @@ backdrop-filter: blur(15px);
 
 
 /* /////////////user info card /////// */
+.update-info{
+    position: relative;
+    left: 263px;
+    top: 12px;
+
+}
+
+
+.text-area{
+    position: relative;
+    top: -9px;
+
+}
 
 #userInfo{
 position: absolute;
@@ -92,8 +106,9 @@ border: 1px solid #C5C5C5;
 
 border-radius: 10px;
     margin-left: 126px;
-    position: absolute;
+
     top: 180px;
+    align-item: center;
 }
 
 #profilePic{
@@ -102,10 +117,12 @@ border-radius: 10px;
 }
 
 .fullName{
-    color: white;
-    margin: 17px 0px 0px 88px;
-    font-style: Bold;
-    font-size: 16px;
+color:white;
+    display: block;
+    position: relative;
+    left: 91px;
+    top: 15px;
+    width: auto;
 }
 
 
@@ -134,8 +151,8 @@ border-radius: 10px;
 }
 
 .bio{
-        color: white;
-    margin: 37px 38px 0px;
+            color: white;
+    margin: 20px 38px 0px;
     font-size: 16px;
 }
 
@@ -152,7 +169,7 @@ border-radius: 10px;
 
 }
 .dateOfBirth{
-       margin: 91px 39px 0px;
+        margin: 84px 39px 0px;
     color: white;
     font-size: 16px;
 }
@@ -363,6 +380,7 @@ margin:0% 3%;
 }
 
 
+
 </style>
 <body>
 
@@ -371,44 +389,49 @@ margin:0% 3%;
     <div class="navBar">
         <nav id="navIcons">
             <a href="@{/}" id="logoNav">
-                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+                <img alt="logo"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="feed">
-                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
-                      width="50%" height="50%">
+                <img class="navIcon" alt="homeIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+                     width="50%" height="50%">
             </a>
 
 
             <a href="users" class="navIcon">
-                <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+                <img class="navIcon" alt="users"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="quiz" class="navIcon">
-                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+                <img class="navIcon" alt="quizes"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
                      width="50%" height="50%">
             </a>
 
             <a href="courses" class="navIcon">
-                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+                <img class="navIcon" alt="courses"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
                      width="50%" height="50%">
             </a>
 
 
-
-
-            <a href="profile" class="navIcon" >
-                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+            <a href="profile" class="navIcon">
+                <img class="navIcon" id="navPic" alt="profileIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
                      width="120%" height="120%">
             </a>
 
 
             <a href="logout" class="navIcon">
-                <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+                <img class="navIcon" alt="logout"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
                      width="40%" height="40%">
             </a>
         </nav>
@@ -418,8 +441,9 @@ margin:0% 3%;
 
 <main>
     <section>
-        <div >
-            <img id="hero" alt="hero" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/giphy.gif"
+        <div>
+            <img id="hero" alt="hero"
+                 src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/giphy.gif"
 
                  width="100%"
                  height="290px">
@@ -427,34 +451,37 @@ margin:0% 3%;
     </section>
 
 
-
     <section>
         <div id="userInfo">
-            <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
-
-            <a th:href="@{/UserForm/{id}(id=${userProfile.id})}"
-            >Update profile</a>
-
-
-
-
-            <h2 class="fullName" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"></h2>
-            <!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->
-
-
-            <h3 class="email">Email</h3>
-            <p th:text="${userProfile.email}"></p>
+            <img id="profilePic" alt="profile-pic"
+                 src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png"
+                 width="50%">
 
 
 
 
-            <h3 class="bio">Bio</h3>
-            <div id="bioTextHolder" >
-                <h3 class="bioStyling" th:text="${userProfile.bio}"></h3>
+            <div class="fullName">
+
+                <h5 th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}">Sara alshater</h5>
             </div>
-            <h3 class="dateOfBirth">Data of birth</h3>
-            <p class="birth" th:text="${userProfile.dateOfBirth}"></p>
+            <a class="update-info" th:href="@{/UserForm/{id}(id=${userProfile.id})}">
+                <img alt="update-info"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/edit.png"
+                >
+            </a><!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->
 
+            <div class="text-area">
+                <h3 class="email">Email</h3>
+                <p th:text="${userProfile.email}">gleave.alshater@hotmail.com</p>
+
+
+                <h3 class="bio">Bio</h3>
+                <div id="bioTextHolder">
+                    <h3 class="bioStyling" th:text="${userProfile.bio}">hi my name is sara and i like coding</h3>
+                </div>
+                <h3 class="dateOfBirth">Data of birth</h3>
+                <p class="birth" th:text="${userProfile.dateOfBirth}">1996/9/8</p>
+            </div>
         </div>
     </section>
 
@@ -481,10 +508,10 @@ margin:0% 3%;
 
             <!--    <legend>Posts</legend>-->
 
-            <form  class="post-form" action="/addComment" method="post" th:each="post : ${userProfile.posts}">
+            <form class="post-form" action="/addComment" method="post" th:each="post : ${userProfile.posts}">
                 <fieldset class="form-space">
-                    <input type="hidden" name="id" th:value="${post.id}" />
-                    <form >
+                    <input type="hidden" name="id" th:value="${post.id}"/>
+                    <form>
                         <!--                        this is the post-->
                         <fieldset>
                             <div class="mySubmittedPost">
@@ -494,14 +521,16 @@ margin:0% 3%;
                                 <p th:text="${post.body}"></p>
 
 
-                                <td> <a class="delete-post" th:href="@{/delete/{id}(id=${post.id})}">
-                                    <img  class="test" alt="delete" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/delete.png"
+                                <td><a class="delete-post" th:href="@{/delete/{id}(id=${post.id})}">
+                                    <img class="test" alt="delete"
+                                         src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/delete.png"
                                     >
                                 </a></td>
 
 
-                                <td> <a  class="edit-post" th:href="@{/edit/{id}(id=${post.id})}">
-                                    <img  alt="edit" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/edit.png"
+                                <td><a class="edit-post" th:href="@{/edit/{id}(id=${post.id})}">
+                                    <img alt="edit"
+                                         src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/edit.png"
                                     >
                                 </a></td>
 
@@ -510,22 +539,20 @@ margin:0% 3%;
 
                             <div id="comment-div" class="mb-3">
                                 <label class="form-label">Add a Comment</label>
-                                <input type="textarea"  class="comment-control" name="body">
+                                <input type="textarea" class="comment-control" name="body">
                                 </br>
                             </div>
 
                         </fieldset>
 
 
-
-
                         <br>
                         <button type="submit" class="comment-button" name="addComment">Comment</button>
 
 
-                        <form  th:each="comment : ${post.comments}">
+                        <form th:each="comment : ${post.comments}">
                             <fieldset class="people-comment">
-                                <div  class="mb-3">
+                                <div class="mb-3">
                                     <p th:text="${comment.createdAt}"></p>
                                     <p th:text="${comment.body}"></p>
 
@@ -533,12 +560,9 @@ margin:0% 3%;
                             </fieldset>
 
 
-
-
                         </form>
                     </form>
                 </fieldset>
-
 
 
             </form>
