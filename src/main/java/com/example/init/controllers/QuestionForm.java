@@ -9,7 +9,7 @@ public class QuestionForm {
 
 
 
-        private List<Question> questions;
+        public List<Question> questions;
 
         public List<Question> getQuestions() {
             return questions;

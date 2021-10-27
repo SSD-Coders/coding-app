@@ -21,24 +21,13 @@ import java.util.Random;
 @Controller
 public class QuizController {
     int counter = 0;
-
+    int mark = 0;
 
 
     @Autowired
     QuestionForm qForm;
 
-public int getMark() {
-    Question question = new Question();
-    int mark = 0;
 
-    for (Question question1: qForm.getQuestions()) {
-        if (question.answer.equals(question1.correct_answer)){
-            mark++;
-        }
-
-    }
-    return mark;
-}
 
 @GetMapping("/quiz")
     String getQuizPage(Model model) throws FileNotFoundException {
@@ -48,17 +37,22 @@ public int getMark() {
         Type jsonCasting = new TypeToken<List<Question>>() {
         }.getType();
         List<Question> jsonList = gson.fromJson(data, jsonCasting);
+    qForm.setQuestions(jsonList);
+    String numbersJson = gson.toJson(qForm);
 
-        if (counter >= jsonList.size()) {
-            model.addAttribute("marks" , getMark());
+    System.out.println("hello from mohammad " + numbersJson);
+//        if (counter >= jsonList.size()) {
+//            model.addAttribute("marks" , mark);
+//
+//            return "marks";
+//
+//        }
+//    counter++;
+    model.addAttribute("question" , qForm);
+return "quiz";
 
-            return "marks";
-        }
-        model.addAttribute("question" , jsonList.get(counter));
 
 
-        counter++;
-        return "quiz";
 }
 
         @PostMapping("/quiz")
@@ -70,6 +64,12 @@ public int getMark() {
             }.getType();
             List<Question> jsonList = gson.fromJson(data, jsonCasting);
             qForm.setQuestions(jsonList);
+
+            for (int i = 0; i <qForm.getQuestions().size() ; i++) {
+                if (question.answer.equals(qForm.getQuestions().get(i).correct_answer)) {
+                    mark++;
+                }
+            }
 
             System.out.println(question);
 
