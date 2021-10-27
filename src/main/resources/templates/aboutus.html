@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.flaticon.com/premium-icon/icons/svg/2702/2702154.svg"
+          type="image/x-icon">
+    <link rel="stylesheet"  href="/home/asac/401/init/src/main/resources/static/aboutus.css">
+    <title>About US</title>
+</head>
+
+<body>
+    <style>
+body{
+    background-color: whitesmoke;
+}
+.teamMember {
+    width:250px;
+    font-size:16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+
+    display: inline-block;
+}
+.aboutTeamMember {
+    border-top:1px solid black;
+    padding-top: 15px;
+}
+
+.teamMember h2 ,.teamMember h3 {
+    line-height: 25px;
+}
+.teamMember h3 {
+    font-weight: normal;
+    font-size: 1.0em;
+    margin-bottom: 11px;
+}
+
+.teamMember h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.teamMember span {
+    font-weight: bold;
+}
+
+.teamMember {
+    height: 331px;
+    position: relative;
+    overflow: hidden;
+    /* transition: opacity 1s; */
+
+    margin:40px 30px;
+
+
+}
+
+/**************************/
+.teamMember .card {
+    /* overflow: visible;
+    opacity:0.1; */
+    position: absolute;
+    top:initial;
+    /* background-color: whitesmoke; */
+    height: 478px;
+    opacity:0.9;
+    /* border:1px solid black; */
+
+    transition :transform 0.5s,background-color 0.2s;
+    transition-timing-function: linear;
+}
+
+.teamMember:hover .card{
+    transform :translateY(-270px);
+    background-color: whitesmoke;
+}
+/**************************/
+
+.teamMember img {
+    width:250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+main #wrapper {
+    /* width:90%; */
+    text-align: center;
+    margin: 30px auto 0 auto;
+    background-image: repeating-linear-gradient(135deg,#f5f0ce,white 50%);
+    background-image: repeating-linear-gradient(135deg ,#eee,white 50%);
+    box-shadow:1px 1px 5px 1px lightgray;
+    width: 87%;
+    border-radius: 30px;
+    padding-top: 30px;
+}
+
+.teamMember p {
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.memberIcons {
+    border-top: 1px solid gray;
+    padding-top: 15px;
+}
+.memberIcons a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-color: #565e62;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+main h2 {
+
+}
+
+main section {
+    background-color: initial;
+    text-decoration: initial;
+    font-family: Arial;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: initial;
+
+}
+
+footer {
+    margin-top:50px;
+}
+
+main section:nth-child(1) {
+    line-height: 30px;
+    padding: 95px 20px 70px 20px;
+    display: inline-block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+    height: 700px;
+}
+
+main {
+    text-align: center;
+}
+
+main section:nth-child(1) p {
+    display: inline-block;
+    float: left;
+    width: 82%;
+    padding:0 20px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
+    padding: 2.3%;
+    background-image: repeating-linear-gradient(135deg  ,#eee,white 100%);
+    border-radius: 0 30px 30px 0;
+
+}
+main section:nth-child(1) p span.i{
+    font-style: italic;
+}
+#aboutUsHeading {
+    display: inline-block;
+    float: left;
+    font-size: 100px;
+    color: lightseagreen;
+    line-height: 100px;
+    background-color: #e7e7e7;
+    height: 100%;
+    padding: 20px;
+    border-radius: 30px 0 0 30px;
+}
+
+#meetOurTeamHeading {
+    color: lightseagreen;
+    font-size: 40px;
+    font-weight: bold;
+    padding:0 20px;
+}
+
+main section div hr {
+    border-top: 1px solid lightseagreen;
+    position: relative;
+    top: 30px;
+    z-index:-1;
+}
+main section span.title {
+    color:lightseagreen;
+    font-weight: 700;
+}
+
+main section span.b {
+    font-weight: 700;
+}
+
+.background-3 {
+    border-radius: 0 30px 30px 0;
+    background-image: linear-gradient(#8b9da9, #fff6e4);
+    background: linear-gradient(-45deg, #E1B4ED, #FFD8C0, #B2ECDF, #F8FEBF);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+
+
+#aboutus{
+     box-shadow:1px 1px 5px 1px lightgray;
+     height: 100%;
+     border-radius: 30px;
+}
+
+    </style>
+
+<main>
+    <section>
+        <div id="aboutus">
+            <h2 id="aboutUsHeading">Who <br> Are <br> We</h2>
+            <p>A group of seven people, passionate about challenges, decided to surpass their limits and go
+                beyond norms. Coming from different backgrounds and cultures enrolled themselves into a new mission.
+                <br><br>
+                Having started to research, study, and analyze latest trends about information technology and
+                software development, and partnering with ASAC department from LTUC who offer special training
+                programs, the team, was on a surprising appointment with success, they founded their first startup
+                and lunched their first product.
+                <br><br>
+                <span class="b">Init</span> is a platform that aims to gather programmers from all countries of the world and at all levels and works to facilitate communication among them to exchange experiences
+                <br><br>
+                Meet our team's members
+            </p>
+            <div>
+    </section>
+
+    <section>
+
+
+        <div id="wrapper">
+
+            <!-- <hr> -->
+            <h2 id="meetOurTeamHeading">Meet Our Team</h2>
+
+
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Abdelqader Al-Omari</h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span> kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Heba Almomani</h2>
+                    <h3>Software Develeoper</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me: </span> lllllllllllllllllllllllllllllllllllllllllllllllllllll</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Jamal Eldeen Wari</h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span> jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Khair Shkokany
+                    </h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Mohammad Alkhateeb</h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span> MMMMMMMMMMMMMMMMMMMMMMMMMM</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="teamMember">
+                <img src="../img/shukri.jpg" alt="" srcset="">
+                <div class="card">
+                    <h2>Nawal Ahmad</h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span> Graduated from Jordan University of Sience and Technology
+                            with a Bachelor's Degree in Biomedical Engineering. Optimist, like staying indoors,
+                            people who work
+                            hard inspire me.</p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="teamMember">
+                <img src="" alt="" srcset="">
+                <div class="card">
+                    <h2>Sara alshater</h2>
+                    <h3>Software Developer</h3>
+                    <div class="aboutTeamMember">
+                        <p><span>About Me:</span> </p>
+
+                    </div>
+                    <div class="memberIcons">
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+</body>
+</html>
