@@ -15,6 +15,8 @@
     <title>Suggest Friends</title>
   </head>
   <body>
+    <header th:replace="nav::nav"></header>
+
     <style>
       body {
         background-color: darkgray;
@@ -23,15 +25,19 @@
     <main>
       <h1>People You May Know</h1>
       <br />
-      <ul th:each="user: ${allusers}">
-        <img
-          src="https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/256/profile-icon.png"
+      <ul th:each="user: ${allusers}" th:if="${user.email!= logged.email}">
+        <a th:href="@{user/(id=${user.id})}">        <img style="width:150px"
+          src="https://th.bing.com/th/id/R.f29406735baf0861647a78ae9c4bf5af?rik=GKTBhov2iZge9Q&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_206976.png&ehk=gCH45Zmryw3yqyqG%2fhd8WDQ53zwYfmC8K9OIkNHP%2fNU%3d&risl=&pid=ImgRaw&r=0"
           alt=""
         />
-        <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
+</button></a>
+<!--          th:if="${user.getFollowing() != user.id}"-->
+<!--          <button class="btn btn-primary" th:if="${logged.getFollowers.contains(user) != true}" type="submit">Follow</button>-->
+
+          <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
         <li th:text="${user.dateOfBirth}"></li>
         <li th:text="${user.bio}"></li>
-        <form method="POST" action="/follow">
+        <form method="POST" action="/follow" th:if="${whoIFollow.contains(user) != true and userInfo != user.username}" >
           <button
             style="align-items: center"
             type="submit"
@@ -41,6 +47,10 @@
           </button>
           <input type="hidden" name="id" th:value="${user.id}" />
         </form>
+      </form>
+      <a th:href="@{user/(id=${user.id})}"> <button type="submit">Visit Profile</button></a> 
+     </form>
+
       </ul>
     </main>
   </body>

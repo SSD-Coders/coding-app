@@ -3,9 +3,7 @@ package com.example.init.models;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Coders implements UserDetails {
@@ -26,13 +24,13 @@ public class Coders implements UserDetails {
     private String bio;
 
     @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
-    private List<Post> posts;
+    private Set<Post> posts;
 
-    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
-    List<Coders> followers = new ArrayList<>();
-    @ManyToMany(mappedBy = "followers", fetch = FetchType.EAGER)
-    List<Coders> following = new ArrayList<>();
+    Set<Coders> followers;
+    @ManyToMany(mappedBy = "followers")
+    Set<Coders> following;
 
     public Coders() {
     }
@@ -139,27 +137,27 @@ public class Coders implements UserDetails {
         this.bio = bio;
     }
 
-    public List<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
 
-    public List<Coders> getFollowers() {
+    public Set<Coders> getFollowers() {
         return this.followers;
     }
 
-    public void setFollowers(List<Coders> followers) {
+    public void setFollowers(Set<Coders> followers) {
         this.followers = followers;
     }
 
-    public List<Coders> getFollowing() {
+    public Set<Coders> getFollowing() {
         return this.following;
     }
 
-    public void setFollowing(List<Coders> following) {
+    public void setFollowing(Set<Coders> following) {
         this.following = following;
     }
 

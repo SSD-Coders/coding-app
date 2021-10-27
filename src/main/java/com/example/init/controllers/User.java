@@ -1,8 +1,10 @@
 package com.example.init.controllers;
 
 import com.example.init.models.Coders;
+import com.example.init.models.Comment;
 import com.example.init.models.Post;
 import com.example.init.repositories.CodersRepository;
+import com.example.init.repositories.CommentRepository;
 import com.example.init.repositories.ContentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
@@ -22,6 +25,9 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
+import javax.transaction.Transactional;
 
 @Controller
 public class User {
@@ -34,6 +40,9 @@ public class User {
 
     @Autowired
     ContentRepository contentRepository;
+
+    @Autowired
+    CommentRepository commentRepository;
 
     @GetMapping("/signup")
     public String getSignUpPage() {
@@ -93,6 +102,8 @@ public class User {
         model.addAttribute("allusers", users);
         Coders user = codersRepository.findByUsername(principal.getName());
         model.addAttribute("username", user.getUsername());
+        model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
+model.addAttribute("whoIFollow", user.getFollowers());
         return "users";
     }
 
@@ -102,14 +113,94 @@ public class User {
         Coders follow = codersRepository.findById(id).get();
         feed.getFollowers().add(follow);
         codersRepository.save(feed);
-        return new RedirectView("/feed");
+        return new RedirectView("/users");
     }
 
     @GetMapping("/feed")
     public String getUsersInfo(@AuthenticationPrincipal Coders user, Model model) {
         Coders feed = codersRepository.findByUsername(user.getUsername());
-        List<Coders> following = feed.getFollowers();
+        Set<Coders> following = feed.getFollowers();
         model.addAttribute("followers", following);
         return "feed";
     }
+
+    @Transactional
+    @GetMapping("/delete/{id}")
+    public RedirectView deleteUserPost(@PathVariable String id, Principal principal, Model model) {
+        Post post = contentRepository.findById(Long.parseLong(id)).orElseThrow();
+        Coders user = codersRepository.findByUsername(principal.getName());
+        model.addAttribute("username", principal.getName());
+        model.addAttribute("userProfile", user);
+        contentRepository.delete(post);
+        return new RedirectView("/profile");
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        Post post = contentRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("post", post);
+        return "updateForm";
+    }
+
+    @PostMapping("/update/{id}")
+    public RedirectView updateUser(@PathVariable("id") long id, Post post) {
+        Post updatedPost = contentRepository.findById(id).orElseThrow();
+        updatedPost.setBody(post.getBody());
+        contentRepository.save(updatedPost);
+        return new RedirectView("/profile");
+    }
+
+    @PostMapping("/addComment")
+    public RedirectView addComment(Long id, String body, Coders coders) {
+        Post post = contentRepository.findById(id).get();
+        Long userId = post.getApplicationUser().getId();
+        System.out.println(userId);
+        Comment comment = new Comment(post, body);
+        commentRepository.save(comment);
+
+        System.out.println(comment.getBody());
+        return new RedirectView("user/?id="+userId);
+    }
+
+//    @GetMapping("/post")
+//    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
+//        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
+//        model.addAttribute("posts", posts);
+//        return "post";
+//    }
+
+    @GetMapping("/UserForm/{id}")
+    public String updateInfo(@PathVariable("id") long id, Model model) {
+        Coders coder = codersRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("coder", coder);
+        return "userInfoForm";
+    }
+
+    @Transactional
+    @PostMapping("/updateInfo/{id}")
+    public RedirectView updateInfo(@PathVariable("id") long id, Coders coder) {
+        Coders updatedCoder = codersRepository.findById(id).orElseThrow();
+        updatedCoder.setEmail(coder.getEmail());
+        updatedCoder.setUsername(coder.getUsername());
+        updatedCoder.setPassword(coder.getPassword());
+        updatedCoder.setFirstName(coder.getFirstName());
+        updatedCoder.setLastName(coder.getLastName());
+        updatedCoder.setDateOfBirth(coder.getDateOfBirth());
+        updatedCoder.setBio(coder.getBio());
+        codersRepository.save(updatedCoder);
+        return new RedirectView("/profile");
+    }
+
+//    @PostMapping("/addCommentToOther")
+//    public RedirectView addCommentToOther(Long id, String body,Principal principal) {
+//        Post post = contentRepository.findById(id).get();
+//        Coders coder1 = codersRepository.findById(id).get();
+//        System.out.println(post.getBody());
+//        Comment comment = new Comment(post, body);
+//        commentRepository.save(comment);
+//        System.out.println(comment.getBody());
+//        return new RedirectView("/user/?id=8");
+//    }
 }
