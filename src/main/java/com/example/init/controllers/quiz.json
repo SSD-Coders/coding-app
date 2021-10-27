@@ -6,8 +6,6 @@
   "answer_b": "for",
   "answer_c": "until",
   "answer_d": "foreach",
-  "answer_e": "done",
-  "answer_f": "each",
   "correct_answer":"while"
 },
   {
@@ -41,10 +39,12 @@
   },
   {
     "quesId": 5,
-    "question": "Is the NULL value treated as 0?",
-    "answer_a": "True",
-    "answer_b": "False",
-    "correct_answer": "False"
+    "question": "Which command can be used to find a word from a text file?",
+    "answer_a": "cut",
+    "answer_b": "sort",
+    "answer_c": "find",
+    "answer_d": "grep",
+    "correct_answer": "grep"
   }
 
 ]
