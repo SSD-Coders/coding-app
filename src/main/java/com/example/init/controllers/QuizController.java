@@ -21,9 +21,6 @@ import java.util.Random;
 @Controller
 public class QuizController {
     int counter = 0;
-
-
-
     @Autowired
     QuestionForm qForm;
 
@@ -44,18 +41,21 @@ public int getMark() {
     String getQuizPage(Model model) throws FileNotFoundException {
             Gson gson = new Gson();
 
-        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\resources\\quiz.json");
+        FileReader data = new FileReader("src/main/resources/quiz.json");
         Type jsonCasting = new TypeToken<List<Question>>() {
         }.getType();
         List<Question> jsonList = gson.fromJson(data, jsonCasting);
 
-        if (counter >= jsonList.size()) {
-            model.addAttribute("marks" , getMark());
 
-            return "marks";
-        }
-        model.addAttribute("question" , jsonList.get(counter));
+            if (counter >= jsonList.size()-25) {
 
+                int random_int = (int)Math.floor(Math.random()*(5-0+1)+0);
+                model.addAttribute("marks" , random_int);
+
+                return "marks";
+            }
+            int randomJson = (int) Math.floor(Math.random()*(jsonList.size()-1)+1);
+                model.addAttribute("question" , jsonList.get(randomJson));
 
         counter++;
         return "quiz";
@@ -65,7 +65,7 @@ public int getMark() {
     RedirectView submitQuiz(@ModelAttribute("quiz") Question question) throws FileNotFoundException {
             Gson gson = new Gson();
 
-            FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\resources\\quiz.json");
+            FileReader data = new FileReader("src/main/resources/quiz.json");
             Type jsonCasting = new TypeToken<List<Question>>() {
             }.getType();
             List<Question> jsonList = gson.fromJson(data, jsonCasting);
@@ -75,4 +75,9 @@ public int getMark() {
 
             return new RedirectView("/quiz");
         }
+        @GetMapping("/quizmenu")
+    public String getMenu(){
+    return "quizmenu";
+        }
+
 }
