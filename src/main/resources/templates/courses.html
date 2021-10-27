@@ -80,6 +80,7 @@ backdrop-filter: blur(15px);
 
 /* ////////////////////////////////////////main////////////////////////////////// */
 
+
 section{
        margin: 104px 9px 72px 173px;
 
@@ -139,6 +140,65 @@ margin: 5%;
 .submit:hover{
 background-color: rgba(44,154,141,0.8);
 }
+
+/* /////////////////////////////////////////////footer////////////////////////////// */
+.footer{
+    background: #F2F2F2;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+
+
 </style>
 
 
@@ -218,15 +278,12 @@ background-color: rgba(44,154,141,0.8);
 
   <h5 style="color: rgba(255, 255, 255, 0.53); margin-top:-8px; font-size:18px" th:text="${course.course_level}"> Graduate/Professional Only (200+)</h5>
 
-  <p style="margin-top: 15px;"  th:text="${course.description}">Technologies, languages, and skills required for creating prototypes to communicate interactive technology concepts. Topics include HTTP, CSS, CSS scripting, AJAX, Design Patterns, Javascript, Javascript libraries such as jQuery, SQL, MVC, and cloud architectures. </td>
+  <p style="margin-top: 15px;"  th:text="${course.description}">Technologies, languages, and skills required for creating prototypes to communicate interactive technology concepts. Topics include HTTP, CSS, CSS scripting, AJAX, Design Patterns, Javascript, Javascript libraries such as jQuery, SQL, MVC, and cloud architectures. </p>
   <br />
 
-    <a th:href="${course.courseLink}"><button style="align-items: center"
+    <a class="submit" style="align-items: center" th:href="${course.courseLink}">Get Now!</a>
 
-            class="submit"
-    >
-     Get Now!
-    </button></a>
+
   </div>
 
   <br />
@@ -235,7 +292,6 @@ background-color: rgba(44,154,141,0.8);
 
   </section>
 </main>
-
 
 <!--<footer>-->
 <!--  <div class="footer">-->
@@ -251,10 +307,8 @@ background-color: rgba(44,154,141,0.8);
 <!--      </ul>-->
 <!--    </div>-->
 
-<!--    <div class="row">-->
+<!--  </div>-->
 
-<!--    </div>-->
-<!--    <div>-->
 <!--</footer>-->
 
 </body>

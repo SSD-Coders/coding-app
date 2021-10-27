@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  xmlns:ta="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.w3.org/1999/xhtml"
+        lang="en"
+        xmlns:ta="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.w3.org/1999/xhtml"
 >
-  <head>
-    <meta charset="UTF-8" />
-    <title>login</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  </head>
-  <style>
+<head>
+  <meta charset="UTF-8" />
+  <title>login</title>
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<style>
   * {
     box-sizing: border-box;
     margin: 0;
@@ -163,7 +163,7 @@ background-color: rgba(44,154,141,0.8);
 }
 .yellow-circle{
     position: relative;
-    bottom: 166px;
+    bottom: 225px;
     left: 815px;
     z-index: -1;
 }
@@ -228,77 +228,76 @@ margin:0% 3%;
 
 
   </style>
-  <body>
+<body>
 
-  <header>
+<header>
 
-    <img id="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Init.png" alt="logo"   width="10%"
-         height="10%">
+  <img id="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Init.png" alt="logo"   width="10%"
+       height="10%">
 
-    <a th:href="@{/signup}"><button class="nav-button">Sign up</button></a>
+  <a th:href="@{/signup}"><button class="nav-button">Sign up</button></a>
 
-  </header>
-
-
-  <main>
-    <img class="blue-circle" src="/resources/images/blueCircle.png">
+</header>
 
 
-    <section>
+<main>
+  <img class="blue-circle" src="https://raw.githubusercontent.com/SSD-Coders/init/sara3/src/main/resources/images/blueCircle.png">
+
+
+  <section>
     <form ta:action="@{/login}" method="post">
-      <legend class="legend">Login</legend>
+      <legend class="legend">Sign in</legend>
 
       <fieldset class="container">
 
 
 
-      <div class="mb-3">
-        <label class="form-label">User Name </label>
-        <input type="text" class="form-control" name="username" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" />
-      </div>
+        <div class="mb-3">
+          <label class="form-label">User Name </label>
+          <input type="text" class="form-control" name="username" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" />
+        </div>
 
         <div th:if="${param.error}">Invalid username and password.</div>
         <div th:if="${param.logout}">You have been logged out.</div>
-        </fieldset>
+      </fieldset>
 
 
       <button type="submit" class="submit" name="password">
         Log in
-      </button>
+      </button><br>
+      <p style="text-align:center;">If you are not registered <a th:href="@{/signup}">Sign up</a></p>
     </form>
 
-    </section>
+  </section>
 
 
-    <img class="yellow-circle" src="/resources/images/yellowCircle.png">
-  </main>
+  <img class="yellow-circle" src="https://raw.githubusercontent.com/SSD-Coders/init/feed/src/main/resources/images/yellowCircle.png
+    ">
+</main>
 
-  <footer>
-    <div class="footer">
+<footer>
+  <div class="footer">
 
 
-      <div class="row">
-        <ul>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">Our Services</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Career</a></li>
-        </ul>
-      </div>
+    <div class="row">
+      <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Career</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
+  </div>
 
-      </div>
-      <div>
-  </footer>
-
+</footer>
 
 
 
-  </body>
+</body>
 </html>
