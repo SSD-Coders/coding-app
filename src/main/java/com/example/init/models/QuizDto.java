@@ -22,6 +22,7 @@ public class QuizDto {
     public String answer_f;
     public String correct_answer;
     public int chose = -1;
+    public String answer;
 
     @OneToOne(orphanRemoval = true)
     @JoinColumn
@@ -52,6 +53,14 @@ public class QuizDto {
 
     public QuizDto() {
         super();
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     public Long getQuesId() {

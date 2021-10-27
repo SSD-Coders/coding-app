@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -62,8 +63,12 @@ public class ServiceQuiz {
         return qForm;
     }
 
-        public int getResult() {
+        public int getResult(QuestionForm qForm) {
         int correct = 0 ;
+            Gson gson = new Gson();
+            String numbersJson = gson.toJson(qForm);
+            System.out.println("====================================================");
+            System.out.println("This is Mohammad "+numbersJson);
         for (QuizDto q: qForm.getQuestions()){
             if (q.getAnswer_a().equals(q.getCorrect_answer()))
         {
@@ -71,13 +76,13 @@ public class ServiceQuiz {
         }else if (q.getAnswer_b().equals(q.getCorrect_answer())){
             correct++;
         }else if (q.getAnswer_c().equals(q.getCorrect_answer())) {
-            correct++;
+            correct--;
         }else if (q.getAnswer_d().equals(q.getCorrect_answer())) {
             correct++;
         }else if (q.getAnswer_e().equals(q.getCorrect_answer())) {
             correct++;
         }else if (q.getAnswer_f().equals(q.getCorrect_answer())) {
-            correct++;
+            correct--;
         }
     }
             return correct;

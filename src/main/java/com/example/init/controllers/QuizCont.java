@@ -1,9 +1,6 @@
 package com.example.init.controllers;
 
-import com.example.init.models.ApplicationUser;
-import com.example.init.models.QuestionForm;
-import com.example.init.models.QuizDto;
-import com.example.init.models.ResultsQuiz;
+import com.example.init.models.*;
 import com.example.init.repositories.QuestionRepo;
 import com.example.init.serviceQuiz.ServiceQuiz;
 import com.google.gson.Gson;
@@ -23,6 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -79,15 +77,9 @@ public ResultsQuiz getResult() {
         return "quiz2.html";
     }
     @PostMapping("/submit")
-    public String submit(@ModelAttribute QuestionForm qForm, Model m) {
-        if(!submitted) {
-            result.setTotalCorrect(qService.getResult());
+    public String submit(@ModelAttribute ArrayList<QuizDto> qForm, Model m) {
+//            result.setTotalCorrect(qService.getResult(qForm));
             qService.saveScore(result);
-            submitted = true;
-        }
-
-
-
         return "resultsv2.html";
     }
 

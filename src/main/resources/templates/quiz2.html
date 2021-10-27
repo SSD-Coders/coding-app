@@ -12,27 +12,27 @@
     <div th:each="ques,i:${qForm.questions}">
         <p th:text = "${ques.question}" ></p>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|"  >
+            <input type="radio"  th:name="answer"  th:value="${ques.answer_a}" >
             <p th:text="${ques.answer_a}"></p>
         </div>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|" th:id="${ques.answer_b}">
+            <input type="radio" th:name="answer" th:value="${ques.answer_b}">
             <p th:text="${ques.answer_b}"></p>
         </div>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|" th:id="${ques.answer_c}">
+            <input type="radio" th:name="answer" th:value="${ques.answer_c}">
             <p th:text="${ques.answer_c}"></p>
         </div>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|" th:id="${ques.answer_d}">
+            <input type="radio" th:name="answer" th:value="${ques.answer_d}">
             <p th:text="${ques.answer_d}"></p>
         </div>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|" th:id="${ques.answer_e}">
+            <input type="radio" th:name="answer" th:value="${ques.answer_e}">
             <p th:text="${ques.answer_e}"></p>
         </div>
         <div>
-            <input type="radio" th:name="|[${i.index}].chose|" th:id="${ques.answer_f}">
+            <input type="radio" th:name="answer" th:value="${ques.answer_f}">
             <p th:text="${ques.answer_f}"></p>
         </div>
     </div>
