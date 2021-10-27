@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Suggest Friends</title>
+  </head>
+  <body>
+    <header th:replace="nav::nav"></header>
+
+    <style>
+      body {
+        background-color: darkgray;
+      }
+    </style>
+    <main>
+      <h1>People You May Know</h1>
+      <br />
+      <ul th:each="user: ${allusers}" th:if="${user.email!= logged.email}">
+        <a th:href="@{user/(id=${user.id})}">        <img style="width:150px"
+          src="https://th.bing.com/th/id/R.f29406735baf0861647a78ae9c4bf5af?rik=GKTBhov2iZge9Q&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_206976.png&ehk=gCH45Zmryw3yqyqG%2fhd8WDQ53zwYfmC8K9OIkNHP%2fNU%3d&risl=&pid=ImgRaw&r=0"
+          alt=""
+        />
+</button></a>
+<!--          th:if="${user.getFollowing() != user.id}"-->
+<!--          <button class="btn btn-primary" th:if="${logged.getFollowers.contains(user) != true}" type="submit">Follow</button>-->
+
+          <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
+        <li th:text="${user.dateOfBirth}"></li>
+        <li th:text="${user.bio}"></li>
+        <form method="POST" action="/follow" th:if="${whoIFollow.contains(user) != true and userInfo != user.username}" >
+          <button
+            style="align-items: center"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Follow Me!
+          </button>
+          <input type="hidden" name="id" th:value="${user.id}" />
+        </form>
+      </form>
+      <a th:href="@{user/(id=${user.id})}"> <button type="submit">Visit Profile</button></a> 
+     </form>
+
+      </ul>
+    </main>
+  </body>
+</html>
