@@ -12,44 +12,322 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+
+      <link href="profile.css" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Suggest Friends</title>
   </head>
-  <body>
-    <header th:replace="nav::nav"></header>
 
-    <style>
-      body {
-        background-color: darkgray;
-      }
+
+  <style>
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+background: linear-gradient(115.17deg, #212634 9.22%, #142833 50.16%, rgba(13, 48, 46, 0.94) 92.84%);
+font-family: 'Raleway', sans-serif;
+color: white;
+
+}
+
+
+
+/* ////////////////////////////////navbar//////////////////////////// */
+.navBar {
+position: fixed;
+    width: 83px;
+
+height: 1061px;
+
+background: radial-gradient(100% 100% at 0% 0%, #4F5F67 0%, rgba(68, 105, 125, 0.27) 100%);
+backdrop-filter: blur(15px);
+    margin: -22px 0px;
+        z-index: 1;
+}
+
+#logoNav{
+        position: absolute;
+    width: 34px;
+    height: 43px;
+    left: 6px;
+    top: -160px;
+}
+
+#navIcons{
+
+      position: absolute;
+
+    left: 35%;
+    width: 50px;
+    top: 199px;
+
+}
+
+.navIcon{
+    padding-bottom: 90%;
+
+}
+
+#navPic{
+
+    margin: 30;
+
+    position: relative;
+    left: -17px;
+
+}
+
+
+
+/* ///////////////////////////////////////////main////////////////////////////////// */
+section{
+    margin: 102px 0px 34px 165px;
+    display: flex;
+    position: absolute;
+    width: 1099px;
+    height: Auto;
+    background: radial-gradient(100% 100% at 0% 0%, #354249 0%, rgba(68, 105, 125, 0.27) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+     align-items: stretch;
+
+}
+
+
+main h2{
+     position: relative;
+    top: 48px;
+    margin-left: 169px;
+    font-size: 29px;
+}
+
+
+section div{
+        margin: 23px 2px 14px 20px;
+
+}
+
+.submit{
+
+    display: block;
+    padding: 6px 33px;
+    background-color: rgba(44,154,141,1);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+    font-size: 16px;
+
+
+
+}
+
+.submit:hover{
+background-color: rgba(44,154,141,0.8);
+}
+
+.visit-button{
+    display: block;
+    padding: 6px 40px;
+    background-color: #F2F2F2;
+    color: #212634;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+    font-size: 16px;
+    margin-top: 14px;
+}
+.visit-button:hover{
+background-color: rgba(242,242,242,0.8);
+}
+
+/* /////////////////////////////////////////////footer////////////////////////////// */
+.footer{
+    background: #F2F2F2;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+  position:absolute;
+bottom:0;
+width:100%;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+
     </style>
-    <main>
-      <h1>People You May Know</h1>
-      <br />
-      <ul th:each="user: ${allusers}">
-        <a th:href="@{user/(id=${user.id})}">        <img style="width:150px"
-          src="https://th.bing.com/th/id/R.f29406735baf0861647a78ae9c4bf5af?rik=GKTBhov2iZge9Q&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_206976.png&ehk=gCH45Zmryw3yqyqG%2fhd8WDQ53zwYfmC8K9OIkNHP%2fNU%3d&risl=&pid=ImgRaw&r=0"
-          alt=""
-        />
-</button></a> 
 
-        <li th:text="${user.firstName+ ' ' + user.lastName}"></li>
-        <li th:text="${user.dateOfBirth}"></li>
-        <li th:text="${user.bio}"></li>
+
+
+  <body>
+<!--    <header th:replace="nav::nav"></header>-->
+<header>
+
+    <div class="navBar">
+        <nav id="navIcons">
+            <a href="@{/}" id="logoNav">
+                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+                     width="50%" height="50%">
+            </a>
+
+
+            <a href="feed">
+                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+                      width="50%" height="50%">
+            </a>
+
+
+            <a href="users" class="navIcon">
+                <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+                     width="50%" height="50%">
+            </a>
+
+
+            <a href="quiz" class="navIcon">
+                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+                     width="50%" height="50%">
+            </a>
+
+            <a href="courses" class="navIcon">
+                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+                     width="50%" height="50%">
+            </a>
+
+
+
+
+            <a href="profile" class="navIcon" >
+                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+                     width="120%" height="120%">
+            </a>
+
+
+            <a href="logout" class="navIcon">
+                <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+                     width="40%" height="40%">
+            </a>
+        </nav>
+    </div>
+
+</header>
+
+    <main>
+      <h2>People You May Know</h2>
+      <br/>
+
+        <section>
+            <div style="flex-grow: 0">
+      <ul th:each="user: ${allusers}">
+
+        <a th:href="@{user/(id=${user.id})}">
+            <img style="width:150px"
+          src="/resources/images/defualtPic.png"
+          alt="defaultImg"/></button></a>
+</div>
+          <div style="flex-grow: 9; margin-top:55px;" >
+        <h4 style="font-size:22px"th:text="${user.firstName+ ' ' + user.lastName}">Full Name</h4>
+        <h5 style="color: rgba(255, 255, 255, 0.53); margin-top:-8px; font-size:18px" th:text="${user.username}">User name</h5>
+        <h6 style="margin-top: 15px;" th:text="${user.bio}">Web developer and ui designer</h6>
+      </ul>
+            </div>
+<div style="flex-grow: 1; margin-top: 57px">
         <form method="POST" action="/follow">
           <button
             style="align-items: center"
             type="submit"
-            class="btn btn-primary"
+
+            class="submit"
           >
-            Follow Me!
+            Follow
           </button>
           <input type="hidden" name="id" th:value="${user.id}" />
         </form>
       </form>
-      <a th:href="@{user/(id=${user.id})}"> <button type="submit">Visit Profile</button></a> 
+      <a th:href="@{user/(id=${user.id})}"> <button class="visit-button"type="submit">View</button></a>
      </form>
-
+</div>
       </ul>
+
+
+
+        </section>
     </main>
+
+
+<footer>
+    <div class="footer">
+
+
+        <div class="row">
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+
+        </div>
+        <div>
+</footer>
   </body>
 </html>
