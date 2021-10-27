@@ -102,6 +102,8 @@ public class User {
         model.addAttribute("allusers", users);
         Coders user = codersRepository.findByUsername(principal.getName());
         model.addAttribute("username", user.getUsername());
+        model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
+model.addAttribute("whoIFollow", user.getFollowers());
         return "users";
     }
 
@@ -111,7 +113,7 @@ public class User {
         Coders follow = codersRepository.findById(id).get();
         feed.getFollowers().add(follow);
         codersRepository.save(feed);
-        return new RedirectView("/feed");
+        return new RedirectView("/users");
     }
 
     @GetMapping("/feed")
