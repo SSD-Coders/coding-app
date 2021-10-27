@@ -6,6 +6,7 @@ import com.example.init.models.Post;
 import com.example.init.repositories.CodersRepository;
 import com.example.init.repositories.CommentRepository;
 import com.example.init.repositories.ContentRepository;
+import com.example.init.repositories.ContentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -143,6 +146,7 @@ model.addAttribute("whoIFollow", user.getFollowers());
         return "updateForm";
     }
 
+
     @PostMapping("/update/{id}")
     public RedirectView updateUser(@PathVariable("id") long id, Post post) {
         Post updatedPost = contentRepository.findById(id).orElseThrow();
@@ -150,6 +154,7 @@ model.addAttribute("whoIFollow", user.getFollowers());
         contentRepository.save(updatedPost);
         return new RedirectView("/profile");
     }
+
 
     @PostMapping("/addComment")
     public RedirectView addComment(Long id, String body, Coders coders) {
@@ -203,4 +208,13 @@ model.addAttribute("whoIFollow", user.getFollowers());
 //        System.out.println(comment.getBody());
 //        return new RedirectView("/user/?id=8");
 //    }
+
+    // @Autowired
+    // private ContentService contentService;
+    // @RequestMapping(value="/posts/edit}", method = {RequestMethod.PUT, RequestMethod.GET})
+    // public String updatePosts(Post post) {
+    //     contentService.update(post);
+    //     return "redirect:/profile";
+    // }
+
 }

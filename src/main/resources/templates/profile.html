@@ -7,6 +7,7 @@
     <link href="profile.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -245,6 +246,7 @@ margin:0% 1%;
         <div id="userInfo">
             <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
             <h2 class="fullName" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"></h2>
+            <a th:href="@{/UserForm/{id}(id=${userProfile.id})}">Update profile</a>
             <!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->
             <h3 class="email">Email</h3>
             <p th:text="${userProfile.email}"></p>
@@ -284,6 +286,7 @@ margin:0% 1%;
                         <td><a th:href="@{/delete/{id}(id=${post.id})}">Delete</a></td>
                         <td><a th:href="@{/edit/{id}(id=${post.id})}">Edit</a></td>
                     </div>
+
                     <form  th:each="comment : ${post.comments}">
                         <fieldset>
                             <div class="mb-3">
