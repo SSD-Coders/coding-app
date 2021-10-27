@@ -263,8 +263,8 @@ margin:0% 1%;
     <form class="post-form" action="/addComment" method="post" th:each="post : ${userProfile.posts}">
         <fieldset  class="form-space">
             <input type="hidden" name="id" th:value="${post.id}" />
-            <form action="/addComment" method="post">
-                <fieldset> <br>
+            <form>
+                <fieldset>
                     <div class="mb-3">
                         <p th:text="${post.body}"></p>
                         <p th:text="${post.createdAt}"></p>
@@ -277,19 +277,16 @@ margin:0% 1%;
                             </div>
                         </fieldset>
                     </form>
-            
-                    <div class="mb-3">
-                        <label class="form-label">Add a Comment</label>
-                        <input type="textarea" class="form-control" name="body">
-                    </div>
                 </fieldset>
+                <div class="mb-3">
+                    <label class="form-label">Add a Comment</label>
+                    <input type="textarea" class="form-control" name="body">
+                </div>
+
                 <button type="submit" class="btn btn-primary" name="addComment">Comment</button>
-    
             </form>
-    
         </fieldset>
     </form>
-
 </main>
 </body>
 </html>

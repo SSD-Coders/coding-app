@@ -3,10 +3,7 @@ package com.example.init.models;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Coders implements UserDetails {
@@ -27,7 +24,7 @@ public class Coders implements UserDetails {
     private String bio;
 
     @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
-    private List<Post> posts;
+    private Set<Post> posts;
 
     @ManyToMany
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
@@ -140,11 +137,11 @@ public class Coders implements UserDetails {
         this.bio = bio;
     }
 
-    public List<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
 

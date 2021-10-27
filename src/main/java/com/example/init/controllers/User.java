@@ -150,22 +150,23 @@ public class User {
     }
 
     @PostMapping("/addComment")
-    public RedirectView addComment(Long id, String body) {
-
+    public RedirectView addComment(Long id, String body, Coders coders) {
         Post post = contentRepository.findById(id).get();
-        System.out.println(post.getBody());
+        Long userId = post.getApplicationUser().getId();
+        System.out.println(userId);
         Comment comment = new Comment(post, body);
         commentRepository.save(comment);
+
         System.out.println(comment.getBody());
-        return new RedirectView("profile");
+        return new RedirectView("user/?id="+userId);
     }
 
-    @GetMapping("/post")
-    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
-        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
-        model.addAttribute("posts", posts);
-        return "post";
-    }
+//    @GetMapping("/post")
+//    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
+//        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
+//        model.addAttribute("posts", posts);
+//        return "post";
+//    }
 
     @GetMapping("/UserForm/{id}")
     public String updateInfo(@PathVariable("id") long id, Model model) {
@@ -189,4 +190,15 @@ public class User {
         codersRepository.save(updatedCoder);
         return new RedirectView("/profile");
     }
+
+//    @PostMapping("/addCommentToOther")
+//    public RedirectView addCommentToOther(Long id, String body,Principal principal) {
+//        Post post = contentRepository.findById(id).get();
+//        Coders coder1 = codersRepository.findById(id).get();
+//        System.out.println(post.getBody());
+//        Comment comment = new Comment(post, body);
+//        commentRepository.save(comment);
+//        System.out.println(comment.getBody());
+//        return new RedirectView("/user/?id=8");
+//    }
 }
