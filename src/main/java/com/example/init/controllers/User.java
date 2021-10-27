@@ -95,12 +95,6 @@ public class User {
         model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
         return "user";
     }
-//    @GetMapping("users/{id}")
-//    public String getUserById(@PathVariable Long id, Model model) {
-//        model.addAttribute("username", codersRepository.findUserById(id));
-//        return ("profile");
-//    }
-
 
     @GetMapping("/users")
     public String getUsers(Model model, Principal principal) {
@@ -178,9 +172,9 @@ public class User {
 
     @GetMapping("/UserForm/{id}")
     public String updateInfo(@PathVariable("id") long id, Model model) {
-        Coders coder = codersRepository.findById(id)
+        Coders userProfile = codersRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-        model.addAttribute("coder", coder);
+        model.addAttribute("userProfile", userProfile);
         return "UserInfoForm";
     }
 
