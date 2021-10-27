@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<form  method="post" th:object="${qForm}">
-    <div th:each="ques,i:${qForm}">
+<form action="/resultsv2" method="post" th:object="${qForm.questions}">
+    <div th:each="ques,i:${qForm.questions}">
         <p th:text = "${ques.question}" ></p>
         <div>
             <input type="radio" th:name="|[${i.index}].chose|"  >

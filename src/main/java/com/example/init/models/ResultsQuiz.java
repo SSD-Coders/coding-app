@@ -12,17 +12,19 @@ public class ResultsQuiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    public String username;
+    @OneToOne
+    @JoinColumn(name = "username_id")
+    public ApplicationUser user;
     public int totalCorrect = 0;
 
     public ResultsQuiz() {
         super();
     }
 
-    public ResultsQuiz(int id, String username, int totalCorrect) {
+    public ResultsQuiz(int id, ApplicationUser username, int totalCorrect) {
         super();
         this.id = id;
-        this.username = username;
+        this.user = user;
         this.totalCorrect = totalCorrect;
     }
 
@@ -34,12 +36,12 @@ public class ResultsQuiz {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public ApplicationUser getUser() {
+        return user;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser(ApplicationUser user) {
+        this.user = user;
     }
 
     public int getTotalCorrect() {

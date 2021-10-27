@@ -1,8 +1,10 @@
 package com.example.init.controllers;
 
+import com.example.init.models.ApplicationUser;
 import com.example.init.models.QuestionForm;
 import com.example.init.models.QuizDto;
 import com.example.init.models.ResultsQuiz;
+import com.example.init.repositories.QuestionRepo;
 import com.example.init.serviceQuiz.ServiceQuiz;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -30,7 +32,8 @@ public class QuizCont {
     ResultsQuiz result;
     @Autowired
     ServiceQuiz qService;
-
+    @Autowired
+    QuestionRepo questionRepo;
     Boolean submitted = false;
 
 //    @GetMapping("/quiz/v2")
@@ -49,18 +52,28 @@ public class QuizCont {
 ////        System.out.println(numbersJson);
 ////        return "quiz2";
 //    }
+@ModelAttribute("result")
+public ResultsQuiz getResult() {
+    return result;
+}
+    @GetMapping("/")
+    public String home() {
+        return "index.html";
+    }
+
 
     @PostMapping("/quiz/v2")
-    public String quiz( Model m, RedirectAttributes ra) throws FileNotFoundException {
-//        if(username.equals("")) {
+    public String quiz(Model m, RedirectAttributes ra) throws FileNotFoundException {
+//        if(user.equals("")) {
 //            ra.addFlashAttribute("warning", "You must enter your name");
 //            return "redirect:/";
 //        }
 //
 //        submitted = false;
-//        result.setUsername(username);
-
+//
+//        result.setUser(user);
         QuestionForm qForm = qService.getQuestions();
+//        questionRepo.save(qForm);
         m.addAttribute("qForm", qForm);
         System.out.println(qForm);
         return "quiz2.html";
@@ -75,7 +88,7 @@ public class QuizCont {
 
 
 
-        return "result.html";
+        return "resultsv2.html";
     }
 
 

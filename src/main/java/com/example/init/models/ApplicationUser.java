@@ -29,6 +29,10 @@ public class ApplicationUser implements UserDetails {
 
     @OneToMany(mappedBy = "author" , fetch = FetchType.EAGER)
     private List<Code> codes ;
+
+    @OneToOne
+    private ResultsQuiz quiz;
+
     public ApplicationUser() {
     }
 

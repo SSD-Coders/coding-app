@@ -10,9 +10,9 @@ import javax.persistence.*;
 public class QuizDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    private Long id;
 
-    public int quesId;
+    public Long quesId;
     public String question;
     public String answer_a;
     public String answer_b;
@@ -23,12 +23,20 @@ public class QuizDto {
     public String correct_answer;
     public int chose = -1;
 
-    public Long getId() {
-        return id;
+    @OneToOne(orphanRemoval = true)
+    @JoinColumn
+    private ApplicationUser application_user_id;
+
+    public ApplicationUser getApplication_user_id() {
+        return application_user_id;
+    }
+
+    public void setApplication_user_id(ApplicationUser application_user_id) {
+        this.application_user_id = application_user_id;
     }
 
 
-    public QuizDto(int quesId, String question, String answer_a, String answer_b, String answer_c, String answer_d, String answer_e, String answer_f, String correct_answer, int chose) {
+    public QuizDto(Long quesId, String question, String answer_a, String answer_b, String answer_c, String answer_d, String answer_e, String answer_f, String correct_answer, int chose) {
         super();
         this.quesId = quesId;
         this.question = question;
@@ -46,11 +54,11 @@ public class QuizDto {
         super();
     }
 
-    public int getQuesId() {
+    public Long getQuesId() {
         return quesId;
     }
 
-    public void setQuesId(int quesId) {
+    public void setQuesId(Long quesId) {
         this.quesId = quesId;
     }
 
@@ -129,8 +137,7 @@ public class QuizDto {
     @Override
     public String toString() {
         return "QuizDto{" +
-                "id=" + id +
-                ", quesId=" + quesId +
+                "quesId=" + quesId +
                 ", question='" + question + '\'' +
                 ", answer_a='" + answer_a + '\'' +
                 ", answer_b='" + answer_b + '\'' +

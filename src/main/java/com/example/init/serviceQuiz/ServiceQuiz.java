@@ -49,6 +49,7 @@ public class ServiceQuiz {
         System.out.println(numbersJson);
         List<QuizDto> qList = new ArrayList<QuizDto>();
 
+
         Random random = new Random();
 
         for (int i = 0; i < 5; i++) {
@@ -70,7 +71,7 @@ public class ServiceQuiz {
         }
     public void saveScore(ResultsQuiz result) {
         ResultsQuiz saveResult = new ResultsQuiz();
-        saveResult.setUsername(result.getUsername());
+        saveResult.setUser(result.getUser());
         saveResult.setTotalCorrect(result.getTotalCorrect());
         rRepo.save(saveResult);
     }
