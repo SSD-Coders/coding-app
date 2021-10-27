@@ -279,6 +279,7 @@ margin:0% 3%;
             <img style="width:150px"
           src="/resources/images/defualtPic.png"
           alt="defaultImg"/></button></a>
+      </ul>
 </div>
           <div style="flex-grow: 9; margin-top:55px;" >
         <h4 style="font-size:22px"th:text="${user.firstName+ ' ' + user.lastName}">Full Name</h4>
@@ -302,7 +303,7 @@ margin:0% 3%;
       <a th:href="@{user/(id=${user.id})}"> <button class="visit-button"type="submit">View</button></a>
      </form>
 </div>
-      </ul>
+
 
 
 
