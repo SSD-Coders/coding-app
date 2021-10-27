@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Page</title>
+  </head>
+  <body>
+    <!--private String title;-->
+    <!--private String course_level;-->
+    <!--private String description;-->
+    <!--private String image;-->
+    <tr th:each="Quiz: ${quiz}">
+      <td th:text="${Quiz.id}"></td>
+      <br />
+      <td th:text="${Quiz.question}"></td>
+      <br />
+
+      <p th:text="${Quiz.answers.answer_a}"></p>
+      <p th:text="${Quiz.answers.answer_b}"></p>
+      <p th:text="${Quiz.answers.answer_c}"></p>
+      <p th:text="${Quiz.answers.answer_d}"></p>
+      <p th:text="${Quiz.answers.answer_e}"></p>
+      <p th:text="${Quiz.answers.answer_f}"></p>
+
+      <p
+        style="background-color: grey"
+        th:text="${Quiz.correct_answers.answer_a_correct}"
+      ></p>
+      <p th:text="${Quiz.correct_answers.answer_b_correct}"></p>
+      <p th:text="${Quiz.correct_answers.answer_c_correct}"></p>
+      <p th:text="${Quiz.correct_answers.answer_d_correct}"></p>
+      <p th:text="${Quiz.correct_answers.answer_e_correct}"></p>
+      <p th:text="${Quiz.correct_answers.answer_f_correct}"></p>
+      <
+    </tr>
+  </body>
+</html>

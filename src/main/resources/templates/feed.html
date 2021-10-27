@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feed page</title>
+  </head>
+  <body>
+    <main>
+      <h1>Feed Posts</h1>
+      <div class="cards">
+        <div
+          class="card border-danger mb-3"
+          style="width: 18rem"
+          th:each="follower:${followers}"
+        >
+          <div class="card-body">
+            <h5 class="btn btn-outline-danger">Username:</h5>
+            <h2 class="card-title" th:text=" ${follower.firstName}"></h2>
+            <br /><br />
+          </div>
+          <h5>Posts:</h5>
+          <ul>
+            <li th:each="post:${follower.posts}" th:text="${post.body}"></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
