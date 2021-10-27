@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="/resultsv2" method="post" th:object="${qForm.questions}">
+<form action="/submit" method="post" th:object="${qForm.questions}">
     <div th:each="ques,i:${qForm.questions}">
         <p th:text = "${ques.question}" ></p>
         <div>

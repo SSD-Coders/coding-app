@@ -39,7 +39,7 @@ public class ServiceQuiz {
 //        List<QuizDto> allQues = qRepo.findAll();
         Gson gson = new Gson();
 
-        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
+        FileReader data = new FileReader("src/main/java/com/example/init/controllers/quiz.json");
         Type jsonCasting = new TypeToken<List<QuizDto>>() {
         }.getType();
         List<QuizDto> allQues = gson.fromJson(data, jsonCasting);
@@ -47,7 +47,7 @@ public class ServiceQuiz {
         System.out.println("----------------------");
         String numbersJson = gson.toJson(allQues);
         System.out.println(numbersJson);
-        List<QuizDto> qList = new ArrayList<QuizDto>();
+        List<QuizDto> qList = new ArrayList<>();
 
 
         Random random = new Random();
@@ -61,12 +61,25 @@ public class ServiceQuiz {
         qForm.setQuestions(qList);
         return qForm;
     }
-        public int getResult(QuestionForm qForm) {
-        int correct = 0 ;
-        for (QuizDto q: qForm.getQuestions())
-                if (q.getQuesId() == q.getChose())
-                correct++;
 
+        public int getResult() {
+        int correct = 0 ;
+        for (QuizDto q: qForm.getQuestions()){
+            if (q.getAnswer_a().equals(q.getCorrect_answer()))
+        {
+            correct++;
+        }else if (q.getAnswer_b().equals(q.getCorrect_answer())){
+            correct++;
+        }else if (q.getAnswer_c().equals(q.getCorrect_answer())) {
+            correct++;
+        }else if (q.getAnswer_d().equals(q.getCorrect_answer())) {
+            correct++;
+        }else if (q.getAnswer_e().equals(q.getCorrect_answer())) {
+            correct++;
+        }else if (q.getAnswer_f().equals(q.getCorrect_answer())) {
+            correct++;
+        }
+    }
             return correct;
         }
     public void saveScore(ResultsQuiz result) {

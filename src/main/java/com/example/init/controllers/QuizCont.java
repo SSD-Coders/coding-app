@@ -39,18 +39,18 @@ public class QuizCont {
 //    @GetMapping("/quiz/v2")
 //    public String getQuiz(Model model) throws Exception {
 //
-////        Gson gson = new Gson();
-////
-////        FileReader data = new FileReader("C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\src\\main\\java\\com\\example\\init\\controllers\\quiz.json");
-////        Type jsonCasting = new TypeToken<List<QuizDto>>() {
-////        }.getType();
-////        List<QuizDto> jsonList = gson.fromJson(data, jsonCasting);
-////        model.addAttribute("qForm", jsonList);
-////        System.out.println(jsonList);
-////        System.out.println("----------------------");
-////        String numbersJson = gson.toJson(jsonList);
-////        System.out.println(numbersJson);
-////        return "quiz2";
+//        Gson gson = new Gson();
+//
+//        FileReader data = new FileReader("src/main/java/com/example/init/controllers/quiz.json");
+//        Type jsonCasting = new TypeToken<List<QuizDto>>() {
+//        }.getType();
+//        List<QuizDto> jsonList = gson.fromJson(data, jsonCasting);
+//        model.addAttribute("qForm", jsonList);
+//        System.out.println(jsonList);
+//        System.out.println("----------------------");
+//        String numbersJson = gson.toJson(jsonList);
+//        System.out.println(numbersJson);
+//        return "quiz2";
 //    }
 @ModelAttribute("result")
 public ResultsQuiz getResult() {
@@ -81,7 +81,7 @@ public ResultsQuiz getResult() {
     @PostMapping("/submit")
     public String submit(@ModelAttribute QuestionForm qForm, Model m) {
         if(!submitted) {
-            result.setTotalCorrect(qService.getResult(qForm));
+            result.setTotalCorrect(qService.getResult());
             qService.saveScore(result);
             submitted = true;
         }
