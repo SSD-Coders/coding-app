@@ -189,4 +189,14 @@ public class User {
         codersRepository.save(updatedCoder);
         return new RedirectView("/profile");
     }
+
+    @Transactional
+    @PostMapping("/unfollow")
+    public RedirectView unfollow(@AuthenticationPrincipal Coders user, @RequestParam Long id) {
+        Coders feed = codersRepository.findByUsername(user.getUsername());
+        Coders follow = codersRepository.findById(id).orElseThrow();
+        feed.getFollowers().remove(follow);
+        return new RedirectView("/feed");
+    }
+
 }
