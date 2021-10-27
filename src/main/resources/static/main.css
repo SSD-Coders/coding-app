@@ -20,27 +20,22 @@ body {
   color: #333;
   /*  background-color: #f4f4f4; */
   height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 body:before {
-  height: 50%;
+  height: 45%;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  background: maxresdefault.jpg;
+  background: linear-gradient(
+    115.17deg,
+    #212634 9.22%,
+    #142833 50.16%,
+    rgba(13, 48, 46, 0.94) 92.84%
+  );
   content: '';
-  z-index: 0;
 }
 
 .clearfix:after {
-  display: block;
-  content: '';
   clear: both;
 }
 
@@ -49,7 +44,7 @@ body:before {
 }
 
 .form-control {
-  width: 100%;
+  width: 55%;
   min-height: 38px;
   font-size: 15px;
   border: 1px solid #c8c8c8;
@@ -70,28 +65,22 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
-
 h1 {
   font-size: 1.7em;
 }
 
-a {
-  color: #128ff2;
-}
-
 button {
-  box-shadow: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   font-size: 14px;
   outline: none;
   line-height: 100%;
   white-space: nowrap;
   vertical-align: middle;
   padding: 0.6rem 1rem;
-  border-radius: 2px;
+  border-radius: 4px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   min-height: 38px;
@@ -104,7 +93,7 @@ button.default {
 }
 
 button.primary {
-  background-color: #25be38;
+  background-color: #05a112;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
 }
@@ -120,8 +109,8 @@ button.accent {
 }
 
 .username-page-container {
-  background: #fff;
-  box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+  background: #fbffd1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.27);
   border-radius: 2px;
   width: 100%;
   max-width: 500px;
@@ -152,9 +141,9 @@ button.accent {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #fff;
-  box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-  margin-top: 30px;
+  background-color: #fbffd1;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.27);
+  margin-top: 2rem;
   height: calc(100% - 60px);
   max-height: 600px;
   position: relative;
