@@ -5,7 +5,7 @@
         xmlns="http://www.w3.org/1999/xhtml"
 >
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -13,7 +13,7 @@
             crossorigin="anonymous"
     />
 
-    <link href="profile.css" rel="stylesheet" />
+    <link href="profile.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
@@ -216,8 +216,8 @@ margin:0% 3%;
 }
 }
 
-    </style>
 
+</style>
 
 
 <body>
@@ -227,44 +227,49 @@ margin:0% 3%;
     <div class="navBar">
         <nav id="navIcons">
             <a href="@{/}" id="logoNav">
-                <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+                <img alt="logo"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="feed">
-                <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
-                      width="50%" height="50%">
+                <img class="navIcon" alt="homeIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+                     width="50%" height="50%">
             </a>
 
 
             <a href="users" class="navIcon">
-                <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+                <img class="navIcon" alt="users"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
                      width="50%" height="50%">
             </a>
 
 
             <a href="quiz" class="navIcon">
-                <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+                <img class="navIcon" alt="quizes"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
                      width="50%" height="50%">
             </a>
 
             <a href="courses" class="navIcon">
-                <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+                <img class="navIcon" alt="courses"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
                      width="50%" height="50%">
             </a>
 
 
-
-
-            <a href="profile" class="navIcon" >
-                <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+            <a href="profile" class="navIcon">
+                <img class="navIcon" id="navPic" alt="profileIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
                      width="120%" height="120%">
             </a>
 
 
             <a href="logout" class="navIcon">
-                <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+                <img class="navIcon" alt="logout"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
                      width="40%" height="40%">
             </a>
         </nav>
@@ -279,38 +284,39 @@ margin:0% 3%;
     <section>
 
         <div class="main-div" th:each="user: ${allusers}">
-        <div style="flex-grow: 1">
-            <a th:href="@{user/(id=${user.id})}">
-                <img style="width:150px"
-                     src="https://raw.githubusercontent.com/SSD-Coders/init/usersPage/src/main/resources/images/defualtPic.png"
-                     alt="defaultImg"/></button></a>
-        </div>
+            <div style="flex-grow: 1">
+                <a th:href="@{user/(id=${user.id})}">
+                    <img style="width:150px"
+                         src="https://raw.githubusercontent.com/SSD-Coders/init/usersPage/src/main/resources/images/defualtPic.png"
+                         alt="defaultImg"/></button></a>
+            </div>
 
 
+            <div style="flex-grow: 19; margin-top:32px;">
+                <h4 style="font-size:22px;" th:text="${user.firstName + ' ' + user.lastName}">Sara alshater</h4>
+                <h5 style="color: rgba(255, 255, 255, 0.53); margin-top:-8px; font-size:18px"
+                    th:text="${user.username}">saraswati</h5>
+                <h6 style="margin-top: 15px;" th:text="${user.bio}">im a web designer</h6>
+
+            </div>
 
 
-        <div style="flex-grow: 19; margin-top:32px;" >
-            <h4  style="font-size:22px;" th:text="${user.firstName + ' ' + user.lastName}">Sara alshater</h4>
-            <h5  style="color: rgba(255, 255, 255, 0.53); margin-top:-8px; font-size:18px" th:text="${user.username}">saraswati</h5>
-            <h6 style="margin-top: 15px;" th:text="${user.bio}">im a web designer</h6>
+            <div style="flex-grow: 1; margin-top: 30px">
+                <form method="POST" action="/follow">
+                    <button style="align-items: center"
+                            type="submit"
+                            class="submit"
+                    >
+                        Follow
+                    </button>
+                    <input type="hidden" name="id" th:value="${user.id}"/>
+                </form>
 
-        </div>
+                <a th:href="@{user/(id=${user.id})}">
+                    <button class="visit-button" type="submit">View</button>
+                </a>
 
-
-        <div style="flex-grow: 1; margin-top: 30px">
-            <form method="POST" action="/follow">
-                <button style="align-items: center"
-                        type="submit"
-                        class="submit"
-                >
-                    Follow
-                </button>
-                <input type="hidden" name="id" th:value="${user.id}" />
-            </form>
-
-            <a th:href="@{user/(id=${user.id})}"> <button class="visit-button"type="submit">View</button></a>
-
-        </div>
+            </div>
         </div>
 
     </section>

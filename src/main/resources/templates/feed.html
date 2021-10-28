@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns="http://www.w3.org/1999/xhtml"
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns="http://www.w3.org/1999/xhtml"
 >
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Feed page</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
     />
-    <link href="profile.css" rel="stylesheet" />
+    <link href="profile.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Admin Panel</title>
-  </head>
-  <style>
+</head>
+<style>
      * {
     box-sizing: border-box;
     margin: 0;
@@ -104,99 +104,135 @@ main h1{
     font-size: 29px;
 }
 
-  </style>
-  <body>
+
+.main-div{
+ display: flex;
+  flex-direction: row;
+ border-bottom: solid 1px white;
 
 
+}
+.submit{
+    padding: 7px 13px;
+    background-color: #CB1515;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+
+}
+.submit:hover{
+background-color: rgba(203,21,21,0.8);
+}
 
 
+</style>
+<body>
 
-  <header>
+
+<header>
 
     <div class="navBar">
-      <nav id="navIcons">
-        <a href="@{/}" id="logoNav">
-          <img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
-               width="50%" height="50%">
-        </a>
+        <nav id="navIcons">
+            <a href="@{/}" id="logoNav">
+                <img alt="logo"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="feed">
-          <img  class="navIcon" alt="homeIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
-                width="50%" height="50%">
-        </a>
+            <a href="feed">
+                <img class="navIcon" alt="homeIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="users" class="navIcon">
-          <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
-               width="50%" height="50%">
-        </a>
+            <a href="users" class="navIcon">
+                <img class="navIcon" alt="users"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="quiz" class="navIcon">
-          <img class="navIcon" alt="quizes" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
-               width="50%" height="50%">
-        </a>
+            <a href="quiz" class="navIcon">
+                <img class="navIcon" alt="quizes"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+                     width="50%" height="50%">
+            </a>
 
-        <a href="courses" class="navIcon">
-          <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
-               width="50%" height="50%">
-        </a>
-
-
-
-
-        <a href="profile" class="navIcon" >
-          <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
-               width="120%" height="120%">
-        </a>
+            <a href="courses" class="navIcon">
+                <img class="navIcon" alt="courses"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+                     width="50%" height="50%">
+            </a>
 
 
-        <a href="logout" class="navIcon">
-          <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
-               width="40%" height="40%">
-        </a>
-      </nav>
+            <a href="profile" class="navIcon">
+                <img class="navIcon" id="navPic" alt="profileIcon"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+                     width="120%" height="120%">
+            </a>
+
+
+            <a href="logout" class="navIcon">
+                <img class="navIcon" alt="logout"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+                     width="40%" height="40%">
+            </a>
+        </nav>
     </div>
 
-  </header>
+</header>
 
-    <main>
+<main>
 
-      <h1>Feed Posts</h1>
+    <h1>Feed</h1>
 
-      <section>
-        <ul th:each="user: ${allusers}">
+    <section>
 
-          <a th:href="@{user/(id=${user.id})}">
-            <img
-                 src="/resources/images/defualtPic.png"
-                 alt="defaultImg" height="8%" width="8%"/></button></a>
-      <div class="cards">
-        <div
-          class="card border-danger mb-3"
-          style="width: 18rem"
-          th:each="follower:${followers}"
-        >
-          <div class="card-body">
-            <h2 class="card-title" th:text=" ${follower.firstName}"></h2>
-            <form method="post" action="/unfollow">
-              <button type="submit">Unfollow</button>
-              <input type="hidden" name="id" th:value="${follower.id}" />
-            </form>
 
-            <br /><br />
-          </div>
-          <h5>Posts:</h5>
-          <ul>
-            <li th:each="post:${follower.posts}" th:text="${post.body}"></li>
-          </ul>
+        <div class="main-div" th:each="user: ${allusers}">
+            <div th:each="follower:${followers}">
+
+
+                <div style="margin-top: 33px;margin-top: 29px; margin-left: 48px;">
+                    <a th:href="@{user/(id=${user.id})}">
+                        <img
+                                src="/resources/images/defualtPic.png"
+                                alt="defaultImg" height="20%" width="30%"/></button></a>
+                </div>
+
+
+                <div style=" flex-grow:3;
+    margin-top: -49px;
+    margin-left: 139px;
+width:auto;">
+                    <h5 class="card-title" th:text=" ${follower.firstName}">Sara alshater</h5>
+                    <h6 th:each="post:${follower.posts}" th:text="${post.body}">hi i am new</h6>
+                </div>
+
+                <br/><br/>
+            </div>
+
+            <div style="
+    left: 666px;
+    position: relative;
+    top: 40px;">
+                <form method="post" action="/unfollow">
+                    <button class="submit" type="submit">Unfollow</button>
+                    <input type="hidden" name="id" th:value="${follower.id}"/>
+                </form>
+
+            </div>
         </div>
-      </div>
-      </section>
+
+    </section>
 
 
-    </main>
+</main>
 
-  </body>
+</body>
 </html>
