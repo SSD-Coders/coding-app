@@ -163,7 +163,7 @@ background-color: rgba(44,154,141,0.8);
 }
 .yellow-circle{
     position: relative;
-    bottom: 166px;
+    bottom: 225px;
     left: 815px;
     z-index: -1;
 }
@@ -246,7 +246,7 @@ margin:0% 3%;
 
     <section>
     <form ta:action="@{/login}" method="post">
-      <legend class="legend">Sign up</legend>
+      <legend class="legend">Sign in</legend>
 
       <fieldset class="container">
 
@@ -268,13 +268,15 @@ margin:0% 3%;
 
       <button type="submit" class="submit" name="password">
         Log in
-      </button>
+      </button><br>
+      <p style="text-align:center;">If you are not registered <a th:href="@{/signup}">Sign up</a></p>
     </form>
 
     </section>
 
 
-    <img class="yellow-circle" src="/resources/images/yellowCircle.png">
+    <img class="yellow-circle" src="https://raw.githubusercontent.com/SSD-Coders/init/feed/src/main/resources/images/yellowCircle.png
+    ">
   </main>
 
   <footer>

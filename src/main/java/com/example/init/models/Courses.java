@@ -20,17 +20,19 @@ public class Courses {
     public String course_level;
     public String description;
     public String image;
+    public String courseLink;
 
     public Courses() throws Exception {
 
     }
 
-    public Courses(String title, String course_level, String description, String image) throws Exception {
+    public Courses(String title, String course_level, String description, String image, String courseLink)
+            throws Exception {
         this.title = title;
         this.course_level = course_level;
         this.description = description;
         this.image = image;
-
+        this.courseLink = courseLink;
     }
 
     // this is reader json file --------------------------
@@ -87,9 +89,17 @@ public class Courses {
         this.image = image;
     }
 
+    public String getCourseLink() {
+        return courseLink;
+    }
+
+    public void setCourseLink(String courseLink) {
+        this.courseLink = courseLink;
+    }
+
     @Override
     public String toString() {
         return "Courses{" + "title='" + title + '\'' + ", description='" + description + '\'' + ", image='" + image
-                + '\'' + '}';
+                + '\'' + ", courseLink='" + courseLink + '\'' + '}';
     }
 }

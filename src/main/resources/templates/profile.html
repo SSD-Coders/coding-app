@@ -243,6 +243,11 @@ margin:0% 1%;
     </section>
     <section>
         <div id="userInfo">
+            <a class="update-info" th:href="@{/UserForm/{id}(id=${userProfile.id})}">
+                <img alt="update-info"
+                     src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/edit.png"
+                >
+            </a>
             <img id="profilePic" alt="profile-pic" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/Profilepic.png" width="50%" >
             <h2 class="fullName" th:text="${userProfile.firstName} +' '+ ${userProfile.lastName}"></h2>
             <!--            <h2 class="userName" th:text="{userProfile.username}">Username</h2>-->

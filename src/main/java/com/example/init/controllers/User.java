@@ -102,6 +102,9 @@ public class User {
         model.addAttribute("allusers", users);
         Coders user = codersRepository.findByUsername(principal.getName());
         model.addAttribute("username", user.getUsername());
+        model.addAttribute("logged", ((UsernamePasswordAuthenticationToken) principal).getPrincipal());
+        model.addAttribute("whoIFollow", user.getFollowers());
+
         return "users";
     }
 
@@ -111,6 +114,15 @@ public class User {
         Coders follow = codersRepository.findById(id).get();
         feed.getFollowers().add(follow);
         codersRepository.save(feed);
+        return new RedirectView("/users");
+    }
+
+    @Transactional
+    @PostMapping("/unfollow")
+    public RedirectView unfollow(@AuthenticationPrincipal Coders user, @RequestParam Long id) {
+        Coders feed = codersRepository.findByUsername(user.getUsername());
+        Coders follow = codersRepository.findById(id).orElseThrow();
+        feed.getFollowers().remove(follow);
         return new RedirectView("/feed");
     }
 
@@ -153,18 +165,10 @@ public class User {
     public RedirectView addComment(Long id, String body) {
 
         Post post = contentRepository.findById(id).get();
-        System.out.println(post.getBody());
+        Long userId = post.getApplicationUser().getId();
         Comment comment = new Comment(post, body);
         commentRepository.save(comment);
-        System.out.println(comment.getBody());
-        return new RedirectView("profile");
-    }
-
-    @GetMapping("/post")
-    public String getPost(Model model, @AuthenticationPrincipal Coders user) {
-        List<Post> posts = (List<Post>) codersRepository.findByUsername(user.getUsername()).getPosts();
-        model.addAttribute("posts", posts);
-        return "post";
+        return new RedirectView("user/?id=" + userId);
     }
 
     @GetMapping("/UserForm/{id}")
@@ -190,13 +194,9 @@ public class User {
         return new RedirectView("/profile");
     }
 
-    @Transactional
-    @PostMapping("/unfollow")
-    public RedirectView unfollow(@AuthenticationPrincipal Coders user, @RequestParam Long id) {
-        Coders feed = codersRepository.findByUsername(user.getUsername());
-        Coders follow = codersRepository.findById(id).orElseThrow();
-        feed.getFollowers().remove(follow);
-        return new RedirectView("/feed");
+    @GetMapping("/team")
+    public String getTeam() {
+        return "team";
     }
 
 }

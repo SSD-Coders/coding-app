@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.flaticon.com/premium-icon/icons/svg/2702/2702154.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="/home/asac/401/init/src/main/resources/static/aboutus.css"
+    />
+    <title>About US</title>
+  </head>
+  <body>
+    <style>
+      @import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css';
+      @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+      @import 'https://fonts.googleapis.com/css?family=Raleway:100,600';
+      @import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        color: #999;
+        background-color: #fff;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 20px 0;
+        text-transform: none;
+        color: rgba(254, 82, 76, 1);
+        font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
+      a:link,
+      a:active,
+      a:visited {
+        color: rgba(255, 255, 255, 1);
+      }
+      a:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .gray {
+        color: #a5a5a5;
+      }
+      .team {
+        margin: 40px;
+      }
+      .team-member {
+        margin: 5px 0;
+        padding: 0;
+      }
+      .team-member figure {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        border-radius: 70px;
+      }
+      .team-member figure img {
+        min-width: 100%;
+      }
+      .team-member figcaption p {
+        font-size: 16px;
+      }
+      .team-member figcaption ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .team-member figcaption ul {
+        visibility: visible;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+      }
+      .team-member figcaption ul li {
+        display: inline-block;
+        padding: 10px;
+      }
+      .team-member h4 {
+        margin: 10px 0 0;
+        padding: 0;
+      }
+      .team-member figcaption {
+        padding: 50px;
+        color: transparent;
+        background-color: transparent;
+        position: absolute;
+        z-index: 996;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .team-member figure:hover figcaption {
+        visibility: visible;
+        color: #fff;
+        background: rgba(230, 78, 62, 0.4);
+        /* Primary color, can be changed via colors.css */
+        height: 100%;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .team-member figure:hover figcaption ul li a:hover {
+        color: rgba(49, 49, 49, 0.97);
+      }
+      .team-member figure img {
+        -webkit-transform: scale(1) rotate(0) translateY(0);
+        -moz-transform: scale(1) rotate(0) translateY(0);
+        -o-transform: scale(1) rotate(0) translateY(0);
+        -ms-transform: scale(1) rotate(0) translateY(0);
+        transform: scale(1) rotate(0) translateY(0);
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+      .team-member figure:hover img {
+        -webkit-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -moz-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -o-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -ms-transform: scale(1.1) rotate(1deg) translateY(12px);
+        transform: scale(1.1) rotate(1deg) translateY(12px);
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+      .col-md-4 {
+        height: 340px;
+        width: 290px;
+      }
+      .sec-row-h {
+        margin-left: 110px;
+      }
+    </style>
+    <main>
+      <!-- Our team Section -->
+      <section id="team" class="team content-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <h2>Our Team</h2>
+              <h3 class="caption gray">
+                Meet the people who make awesome stuffs
+              </h3>
+            </div>
+            <!-- /.col-md-12 -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Abdelqader8.jpg}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>Fast & Smart</p>
+                        <p>Team Leader</p>
+                        <p>BA Mech Engineering @ University of Jordan</p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Abdelqader Al-Omari</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+                  <!-- /.team-member-->
+                </div>
+                <!-- /.col-md-4 -->
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Heba1.jpg}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>Studied Computer Engineering</p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Heba Al-Momani</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+                  <!-- /.team-member-->
+                </div>
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Jamal.png}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>Studied Computer Engineering</p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Jamal Eldeen Wari</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+
+                  <!-- /.col-md-4 -->
+                  <!-- /.team-member-->
+                </div>
+                <!-- /.col-md-4 -->
+                <div class="sec-row-h">
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/Mohammed.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>Studied Computer Engineering</p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Mohammad Alkhateeb</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/khair.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>Studied Mechanical Engineering</p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Khair Shkokany</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/Nawal.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>Studied Biomedical Engineering</p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Nawal Ahmad</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          src="https://i.pinimg.com/564x/5d/cf/02/5dcf02265a260bb0902c1ec504d1743b.jpg"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        />
+                        <figcaption>
+                          <p>Studied Engineering, UI Designer</p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Sara alshater</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.our-team -->
+    </main>
+  </body>
+</html>
