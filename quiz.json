@@ -1,0 +1,283 @@
+[
+    {
+      "id": 1,
+      "question": "Which are the three looping constructs provided by shell",
+      "answer_a": "while",
+      "answer_b": "for",
+      "answer_c": "until",
+      "answer_d": "foreach",
+      "correct_answer":"while"
+    },
+    {
+      "id": 2,
+      "question": "What are the functions of Replication controller?",
+      "answer_a": "It is responsible to control and administer the lifecycle of the pod.",
+      "answer_b": "It helps the user to check the running status of the pod",
+      "answer_c": "It is responsible to monitor and verify whether the allowed number of pod replicas were running",
+      "answer_d": "It is responsible for routing the ingress traffic",
+      "correct_answer": "It is responsible to control and administer the lifecycle of the pod."
+    },
+    {
+      "id": 3,
+      "question": "Which command can be used by the administrator to bring the system into single user mode?",
+      "answer_a": "init s",
+      "answer_b": "single",
+      "answer_c": "init",
+      "answer_d": "single s",
+      "correct_answer": "init s"
+  
+    },
+    {
+      "id": 4,
+      "question": "What is the Container Runtime?",
+      "answer_a": "Software that is responsible for running containers",
+      "answer_b": "An API object that manages a replicated application",
+      "answer_c": "Stored instance of a Container that holds a set of software needed to run an application",
+      "answer_d": "A command line tool for communicating with a Kubernetes API server",
+      "correct_answer": "Software that is responsible for running containers"
+  
+    },
+  
+    {
+      "id": 5,
+      "question": "What could be used to program additional authentication logic besides available authenticator modules?",
+      "answer_a": "Kube Vault",
+      "answer_b": "Authentication Proxy",
+      "answer_c": "Kube Auth Service",
+      "answer_d": "Kubernetes Role Manager",
+      "correct_answer": "Authentication Proxy"
+    },
+  
+    {
+      "id": 6,
+      "question": "Which HTML element defines the title of a document?",
+      "answer_a": "<title>",
+      "answer_b": "<head>",
+      "answer_c": "<meta>",
+      "answer_d": "<start>",
+      "correct_answer": "<title>"
+    },
+    {
+      "id": 7,
+      "question": "A much better approach to establish the base URL is to use the ______ element.",
+      "answer_a": "BODY",
+      "answer_b": "HEAD",
+      "answer_c": "BASE",
+      "answer_d": "None Of The Above",
+      "correct_answer": "BASE"
+    },
+    {
+      "id": 8,
+      "question": "________is an open-source project built to simplify and streamline using Docker on a Mac or Windows.",
+      "answer_a": "Docker Cloud",
+      "answer_b": "Docker Compose",
+      "answer_c": "Docker Universal Control Plane",
+      "answer_d": "Docker Kitematic",
+      "correct_answer":  "Docker Kitematic"
+    },
+    {
+      "id": 9,
+      "question": "Which operator is used to check if two values are equal and of same data type?",
+      "answer_a": "==",
+      "answer_b": "=",
+      "answer_c": "===",
+      "answer_d": "!=",
+      "correct_answer": "==="
+    },
+    {
+      "id": 10,
+      "question": "How to write an IF statement for executing some code if \"i\" is NOT equal to 5?",
+      "answer_a": "if (i != 5)",
+      "answer_b": "if (i <> 5)",
+      "answer_c": "if i =! 5 then",
+      "answer_d": "if i <> 5",
+      "correct_answer": "if (i != 5)"
+    },
+    {
+      "id": 11,
+      "question": "Which tag allows you to add a row in a table?",
+      "answer_a": "<td> and </td>",
+      "answer_b": "<tr> and </tr>",
+      "answer_c": "<th> and </th>",
+      "answer_d": "<cr> and </cr>",
+      "correct_answer": "<tr> and </tr>"
+    },
+  
+    {
+      "id": 12,
+      "question": "How can you count for a particular pattern occurrences in a file?",
+      "answer_a": "grep −c “pattern” <file>",
+      "answer_b": "grep −k “pattern” <file>",
+      "answer_c": "cat <file> | wc -k “pattern”",
+      "answer_d": "cat <file> | wc -l “pattern”",
+      "correct_answer": "grep −c “pattern” <file>"
+    },
+  
+    {
+      "id": 13,
+      "question": "The following command can be used for turning off or restarting a Linux host.",
+      "answer_a": "reboot",
+      "answer_b": "shutdown",
+      "answer_c": "exit",
+      "answer_d": "taskkill",
+      "correct_answer": "shutdown"
+    },
+    {
+      "id": 14,
+      "question": "Which command can be used to write onto other currently logged in user’s console output terminal.",
+      "answer_a": "notify",
+      "answer_b": "alert",
+      "answer_c": "write",
+      "answer_d": "broadcast",
+      "correct_answer": "write"
+    },
+    {
+      "id": 15,
+      "question": "Which artisan command would you use to create a new Laravel Model?",
+      "answer_a": "php artisan create:model ModelName",
+      "answer_b": "php artisan model:make ModelName",
+      "answer_c": "php artisan model create ModelName",
+      "answer_d": "php artisan make:model ModelName",
+      "correct_answer":"php artisan make:model ModelName"
+    },
+    {
+      "id": 16,
+      "question": "<TD> … </TD> tag is used for ________",
+      "answer_a": "Table heading",
+      "answer_b": "none of the above",
+      "answer_c": "Table row",
+      "answer_d": "Table Records",
+      "correct_answer": "Table Records"
+    },
+    {
+      "id": 17,
+      "question": "This volume type can be used to share contents within containers in a pod, but will not persist beyond the life of a pod.",
+      "answer_a": "EmptyDir",
+      "answer_b": "Local",
+      "answer_c": "ConfigMap",
+      "answer_d": "FlexVolume",
+      "correct_answer": "EmptyDir"
+    },
+    {
+      "id": 18,
+      "question": "The HTML global attribute, \"contenteditable\" is used to:",
+      "answer_a": "Specify whether the content of an element should be editable or not",
+      "answer_b": "Update content from the server",
+      "answer_c": "Specifies a context menu for an element. The menu appears when a user right-clicks on the element",
+      "answer_d": "Return the position of the first found occurrence of content inside a string",
+      "correct_answer": "Specify whether the content of an element should be editable or not"
+    },
+    {
+      "id": 19,
+      "question": "Which is the invalid file name in UNIX?",
+      "answer_a": "LINUX",
+      "answer_b": "a.widows",
+      "answer_c": "bill .gates",
+      "answer_d": "None of the above",
+      "correct_answer": "None of the above"
+    },
+    {
+      "id": 20,
+      "question": "Which command can give disk usage summary?",
+      "answer_a": "chkdsk",
+      "answer_b": "fdisk",
+      "answer_c": "du",
+      "answer_d": "df",
+      "correct_answer": "du"
+    },
+    {
+      "id": 21,
+      "question": "Which is the log in which data changes received from a replication master server are written?",
+      "answer_a": "Error Log",
+      "answer_b": "Relay Log",
+      "answer_c": "General Query Log",
+      "answer_d": "Binary Log",
+      "correct_answer": "Relay Log"
+    },
+  
+  
+    {
+      "id": 22,
+      "question": "Which оf the following class centers tabs/pills?",
+      "answer_a": ".nav-justified",
+      "answer_b": ".nav.navbar-nav",
+      "answer_c": ".nav Nav-pills",
+      "answer_d": ".nav-stacked",
+      "correct_answer": ".nav-justified"
+    },
+    {
+      "id": 23,
+      "question": "If the Plesk server can't run Docker locally, you can still connect to a remote Docker server to manage containers. You'll need:",
+      "answer_a": "A virtuozzo 6 container",
+      "answer_b": "One separate ready-to-code environment",
+      "answer_c": "A Windows Server",
+      "answer_d": "The Plesk Docker extension",
+      "correct_answer": "The Plesk Docker extension"
+    },
+    {
+      "id": 24,
+      "question": "The \"father\" Of MySQL Is ______.",
+      "answer_a": "Bill Joy",
+      "answer_b": "Stephanie Wall",
+      "answer_c": "Bill Gates",
+      "answer_d": "Michael Widenius",
+      "correct_answer": "Michael Widenius"
+    },
+    {
+      "id": 25,
+      "question": "How can you create an E-mail link?",
+      "answer_a": "<a Href=\"a@b\">",
+      "answer_b": "<mail Href=\"a@b\">",
+      "answer_c": "<a Href=\"mailto:a@b.com\">",
+      "answer_d": "<mail>a@b</mail>",
+      "correct_answer": "<a Href=\"mailto:a@b.com\">"
+    },
+    {
+      "id": 26,
+      "question": "What is the correct HTML element for playing video files?",
+      "answer_a": "<movie>",
+      "answer_b": "<media>",
+      "answer_c": "<type=\"video\">",
+      "answer_d": "<video>",
+      "correct_answer": "<video>"
+    },
+  
+    {
+      "id": 27,
+      "question": "Choose the correct usage of ‘cd’ to move into the parent directory.",
+      "answer_a": "cd",
+      "answer_b": "cd ..",
+      "answer_c": "cd..",
+      "answer_d": "cd/",
+      "correct_answer": "cd .."
+    },
+    {
+      "id": 28,
+      "question": "Which of the following scripts will run successfully",
+      "answer_a": "Users statistics SELECT customer name FROM customers;",
+      "answer_b": "SELECT `customer name` FROM customers WHERE cat_id = 12 ORDER BY cat_id;",
+      "answer_c": "SELECT FROM `customers` 'customer name';",
+      "answer_d": "SELECT `customer name` FROM customers ORDER BY zone WHERE cat_id = 12;",
+      "correct_answer": "SELECT `customer name` FROM customers WHERE cat_id = 12 ORDER BY cat_id;"
+    },
+    {
+      "id": 29,
+      "question": "How will you pass and access arguments to a script in Linux/Bash?",
+      "answer_a": "scriptName “Arg1” “Arg2”….”Argn” and can be accessed inside the script as $1 , $2 .. $n.",
+      "answer_b": "scriptName -arg “Arg1” “Arg2”….”Argn” and can be accessed inside the script as $1 , $2 .. $n.",
+      "answer_c": "scriptName \"Arg1 Arg2….Argn” and can be accessed inside the script as $1 , $2 .. $n.",
+      "answer_d": "scriptName “Arg1” “Arg2”….”Argn” and can be accessed inside the script as $Arg1 , $Arg2 .. $Argn.",
+      "correct_answer": "How will you pass and access arguments to a script in Linux/Bash?"
+    },
+  
+  
+    {
+      "id": 30,
+      "question": "The API server is also known as:",
+      "answer_a": "kubeapi",
+      "answer_b": "kube-server",
+      "answer_c": "k8s-apiserver",
+      "answer_d": "kube-apiserver",
+      "correct_answer": "kube-apiserver"
+    }
+  ]
