@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/home/asac/401/init/src/main/resources/static/aboutus.css"
+    />
+    <title>About US</title>
+  </head>
+  <body>
+    <header>
+      <div class="navBar">
+        <nav id="navIcons">
+          <a href="@{/}" id="logoNav">
+            <img
+              alt="logo"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="feed">
+            <img
+              class="navIcon"
+              alt="homeIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="users" class="navIcon">
+            <img
+              class="navIcon"
+              alt="users"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="quiz" class="navIcon">
+            <img
+              class="navIcon"
+              alt="quizes"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="courses" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="profile" class="navIcon">
+            <img
+              class="navIcon"
+              id="navPic"
+              alt="profileIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+              width="120%"
+              height="120%"
+            />
+          </a>
+          <a href="logout" class="navIcon">
+            <img
+              class="navIcon"
+              alt="logout"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+              width="40%"
+              height="40%"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+    <style>
+      @import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css';
+      @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+      @import 'https://fonts.googleapis.com/css?family=Raleway:100,600';
+      @import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        color: #999;
+        background-color: #fff;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 20px 0;
+        text-transform: none;
+        color: #2c9a8d;
+        font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
+      a:link,
+      a:active,
+      a:visited {
+        color: rgba(255, 255, 255, 1);
+      }
+      a:hover {
+        color: rgb(44, 154, 141, 0.8);
+      }
+      .gray {
+        color: #a5a5a5;
+      }
+      .team {
+        margin: 40px;
+      }
+      .team-member {
+        margin: 5px 0;
+        padding: 0;
+      }
+      .team-member figure {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        border-radius: 70px;
+      }
+      .team-member figure img {
+        min-width: 100%;
+      }
+      .team-member figcaption p {
+        font-size: 16px;
+      }
+      .team-member figcaption ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .team-member figcaption ul {
+        visibility: visible;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+      }
+      .team-member figcaption ul li {
+        display: inline-block;
+        padding: 10px;
+      }
+      .team-member h4 {
+        margin: 10px 0 0;
+        padding: 0;
+      }
+      .team-member figcaption {
+        padding: 50px;
+        color: transparent;
+        background-color: transparent;
+        position: absolute;
+        z-index: 996;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .team-member figure:hover figcaption {
+        visibility: visible;
+        color: #fff;
+        background: rgb(44, 154, 141, 0.55);
+        /* Primary color, can be changed via colors.css */
+        height: 100%;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .team-member figure:hover figcaption ul li a:hover {
+        color: rgba(49, 49, 49, 0.97);
+      }
+      .team-member figure img {
+        -webkit-transform: scale(1) rotate(0) translateY(0);
+        -moz-transform: scale(1) rotate(0) translateY(0);
+        -o-transform: scale(1) rotate(0) translateY(0);
+        -ms-transform: scale(1) rotate(0) translateY(0);
+        transform: scale(1) rotate(0) translateY(0);
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+      .team-member figure:hover img {
+        -webkit-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -moz-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -o-transform: scale(1.1) rotate(1deg) translateY(12px);
+        -ms-transform: scale(1.1) rotate(1deg) translateY(12px);
+        transform: scale(1.1) rotate(1deg) translateY(12px);
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+      .col-md-4 {
+        height: 340px;
+        width: 290px;
+      }
+      .sec-row-h {
+        margin-left: 110px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(
+          115.17deg,
+          #212634 9.22%,
+          #142833 50.16%,
+          rgba(13, 48, 46, 0.94) 92.84%
+        );
+        font-family: 'Raleway', sans-serif;
+        color: white;
+      }
+      /* ////////////////////////////// Start of nav bar //////////////////////////////////////// */
+      .navBar {
+        position: fixed;
+        width: 83px;
+        height: 1061px;
+        background: radial-gradient(
+          100% 100% at 0% 0%,
+          #4f5f67 0%,
+          rgba(68, 105, 125, 0.27) 100%
+        );
+        backdrop-filter: blur(15px);
+        margin: -22px 0px;
+        z-index: 1;
+      }
+      #logoNav {
+        position: absolute;
+        width: 34px;
+        height: 43px;
+        left: 6px;
+        top: -160px;
+      }
+      #navIcons {
+        position: absolute;
+        left: 35%;
+        width: 50px;
+        top: 199px;
+      }
+      .navIcon {
+        padding-bottom: 90%;
+      }
+      #navPic {
+        margin: 30;
+        position: relative;
+        left: -17px;
+      }
+
+      .container {
+        margin-left: 50px;
+      }
+    </style>
+    <header>
+      <div class="navBar">
+        <nav id="navIcons">
+          <a href="/" id="logoNav">
+            <img
+              alt="logo"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="feed">
+            <img
+              class="navIcon"
+              alt="homeIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="users" class="navIcon">
+            <img
+              class="navIcon"
+              alt="users"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="chat" class="navIcon">
+            <img
+              class="navIcon"
+              alt="chat"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="quiz" class="navIcon">
+            <img
+              class="navIcon"
+              alt="quizes"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="courses" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="team" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://www.linkpicture.com/q/developers.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="profile" class="navIcon">
+            <img
+              class="navIcon"
+              id="navPic"
+              alt="profileIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+              width="120%"
+              height="120%"
+            />
+          </a>
+
+          <a href="logout" class="navIcon">
+            <img
+              class="navIcon"
+              alt="logout"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+              width="40%"
+              height="40%"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Our team Section -->
+      <section id="team" class="team content-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <h2>Our Team</h2>
+              <h3 class="caption gray">
+                Meet the people who make awesome stuffs
+              </h3>
+            </div>
+            <!-- /.col-md-12 -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Abdelqader8.jpg}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>Fast & Smart</p>
+                        <p>Team Leader</p>
+                        <p>BA Mech Engineering @ University of Jordan</p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Abdelqader Al-Omari</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+                  <!-- /.team-member-->
+                </div>
+                <!-- /.col-md-4 -->
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Heba1.jpg}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>
+                          Heba Al-Momani, I'm a full-stack developer with a
+                          background of computer engineer
+                        </p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Heba Al-Momani</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+                  <!-- /.team-member-->
+                </div>
+                <div class="col-md-4">
+                  <div class="team-member">
+                    <figure>
+                      <img
+                        th:src="@{/images/Jamal.png}"
+                        alt=""
+                        class="img-responsive"
+                      />
+                      <figcaption>
+                        <p>
+                          I graduated from Arab Open University with a Computer
+                          Science degree. I love coding, it can get confusing
+                          but the majority is fun
+                        </p>
+                        <ul>
+                          <li>
+                            <a href=""><i class="fa fa-facebook fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
+                          </li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                    <h4>Jamal Eldeen Wari</h4>
+                    <p>Full Stack Software Developer</p>
+                  </div>
+
+                  <!-- /.col-md-4 -->
+                  <!-- /.team-member-->
+                </div>
+                <!-- /.col-md-4 -->
+                <div class="sec-row-h">
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/Mohammed.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>
+                            I will do everything in my power to learn
+                            Programming , and I will make it a way of my life.
+                          </p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Mohammad Alkhateeb</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/khair.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>
+                            i have Bachelor degree in mechanical engineer with
+                            background Web Developer
+                          </p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Khair Shkokany</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          th:src="@{/images/Nawal.jpg}"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>
+                            Biomedical Engineer. Optimist, like staying indoors.
+                          </p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Nawal Ahmad</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                  <div class="col-md-4">
+                    <div class="team-member">
+                      <figure>
+                        <img
+                          src="https://i.pinimg.com/564x/5d/cf/02/5dcf02265a260bb0902c1ec504d1743b.jpg"
+                          alt=""
+                          class="img-responsive"
+                        />
+                        <figcaption>
+                          <p>
+                            Graduated form the University of Jordan majoring in
+                            Visual Arts/Multimedia. Worked as a graphic and UI
+                            designer since 2019,
+                          </p>
+                          <ul>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-facebook fa-2x"></i
+                              ></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><i class="fa fa-linkedin fa-2x"></i
+                              ></a>
+                            </li>
+                          </ul>
+                        </figcaption>
+                      </figure>
+                      <h4>Sara alshater</h4>
+                      <p>Full Stack Software Developer</p>
+                    </div>
+                    <!-- /.team-member-->
+                  </div>
+                  <!-- /.col-md-4 -->
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.our-team -->
+    </main>
+  </body>
+</html>
