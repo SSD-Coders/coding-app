@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html
+  lang="en"
+  xmlns:th="http://www.w3.org/1999/xhtml"
+  xmlns="http://www.w3.org/1999/html"
+>
   <head>
     <meta charset="UTF-8" />
     <title>Update Form</title>
@@ -9,100 +13,406 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <header th:replace="nav::nav"></header>
 
-    <form
-      action="#"
-      th:action="@{/updateInfo/{id}(id=${coder.id})}"
-      th:object="${coder}"
-      method="post"
-    >
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="text"
-          th:field="*{email}"
-          name="email"
-          class="form-control"
-          id="email"
-          placeholder="User Name"
-        />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(
+        115.17deg,
+        #212634 9.22%,
+        #142833 50.16%,
+        rgba(13, 48, 46, 0.94) 92.84%
+      );
+      font-family: 'Raleway', sans-serif;
+      color: white;
+    }
+
+    /* ////////////////////////////////navbar//////////////////////////// */
+    .navBar {
+      position: fixed;
+      width: 83px;
+
+      height: 1061px;
+
+      background: radial-gradient(
+        100% 100% at 0% 0%,
+        #4f5f67 0%,
+        rgba(68, 105, 125, 0.27) 100%
+      );
+      backdrop-filter: blur(15px);
+      margin: -22px 0px;
+      z-index: 1;
+    }
+
+    #logoNav {
+      position: absolute;
+      width: 34px;
+      height: 43px;
+      left: 6px;
+      top: -160px;
+    }
+
+    #navIcons {
+      position: absolute;
+
+      left: 35%;
+      width: 50px;
+      top: 199px;
+    }
+
+    .navIcon {
+      padding-bottom: 90%;
+    }
+
+    #navPic {
+      margin: 30;
+
+      position: relative;
+      left: -17px;
+    }
+
+    /*///////////////////////////////////main/////////////////////*/
+    section {
+      position: relative;
+      top: 120px;
+      padding-bottom: 150px;
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 365px;
+      height: auto;
+      background: radial-gradient(
+        100% 100% at 0% 0%,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      backdrop-filter: blur(15px);
+      border: 1px solid #c5c5c5;
+      border-radius: 30px;
+      font-size: 15px;
+      padding: 33px 32px;
+    }
+
+    .form-control {
+      margin-bottom: 30px;
+    }
+
+    .legend {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .submit {
+      margin-top: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+      padding: 7px 25px;
+      background-color: rgba(44, 154, 141, 1);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      font-size: 15px;
+    }
+
+    .submit:hover {
+      background-color: rgba(44, 154, 141, 0.8);
+    }
+
+    .blue-circle {
+      position: absolute;
+      left: 427px;
+      top: 273px;
+    }
+    .yellow-circle {
+      position: relative;
+      bottom: 303px;
+      left: 816px;
+      z-index: -1;
+    }
+    /* /////////////////////////////////////////////footer////////////////////////////// */
+    .footer {
+      background: #f2f2f2;
+      padding: 30px 0px;
+      font-family: 'Play', sans-serif;
+      text-align: center;
+      margin: 20px 0px 0px 0px;
+    }
+
+    .footer .row {
+      width: 100%;
+      margin: 1% 0%;
+      padding: 0.6% 0%;
+      color: gray;
+      font-size: 0.8em;
+    }
+
+    .footer .row a {
+      text-decoration: none;
+      color: gray;
+      transition: 0.5s;
+    }
+
+    .footer .row a:hover {
+      color: #253b4d;
+    }
+
+    .footer .row ul {
+      width: 100%;
+    }
+
+    .footer .row ul li {
+      display: inline-block;
+      margin: 0px 30px;
+    }
+
+    .footer .row a i {
+      font-size: 2em;
+      margin: 0% 1%;
+    }
+
+    @media (max-width: 720px) {
+      .footer {
+        text-align: left;
+        padding: 5%;
+      }
+      .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+      }
+      .footer .row a i {
+        margin: 0% 3%;
+      }
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="navBar">
+        <nav id="navIcons">
+          <a href="/" id="logoNav">
+            <img
+              alt="logo"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="feed">
+            <img
+              class="navIcon"
+              alt="homeIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="users" class="navIcon">
+            <img
+              class="navIcon"
+              alt="users"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="chat" class="navIcon">
+            <img
+              class="navIcon"
+              alt="chat"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="quiz" class="navIcon">
+            <img
+              class="navIcon"
+              alt="quizes"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="courses" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="team" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://www.linkpicture.com/q/developers.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+
+          <a href="profile" class="navIcon">
+            <img
+              class="navIcon"
+              id="navPic"
+              alt="profileIcon"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png"
+              width="120%"
+              height="120%"
+            />
+          </a>
+
+          <a href="logout" class="navIcon">
+            <img
+              class="navIcon"
+              alt="logout"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png"
+              width="40%"
+              height="40%"
+            />
+          </a>
+        </nav>
       </div>
-      <br />
-      <div class="form-group">
-        <label for="username">User Name</label>
-        <input
-          th:field="*{username}"
-          type="text"
-          name="username"
-          class="form-control"
-          id="username"
-          placeholder="User Name"
-        />
+    </header>
+
+    <main>
+      <section>
+        <form
+          action="#"
+          th:action="@{/updateInfo/{id}(id=${coder.id})}"
+          th:object="${coder}"
+          method="post"
+        >
+          <legend class="legend">Update Your information</legend>
+
+          <fieldset class="container">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="text"
+                th:field="*{email}"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="User Name"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="username">User Name</label>
+              <input
+                th:field="*{username}"
+                type="text"
+                name="username"
+                class="form-control"
+                id="username"
+                placeholder="User Name"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="password">Password</label>
+              <input
+                th:field="*{password}"
+                id="password"
+                name="password"
+                type="password"
+                class="form-control"
+                placeholder="password"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <input
+                th:field="*{firstName}"
+                id="firstName"
+                name="firstName"
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input
+                th:field="*{lastName}"
+                id="lastName"
+                name="lastName"
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="dateOfBirth">Date Of Birth</label>
+              <input
+                th:field="*{dateOfBirth}"
+                id="dateOfBirth"
+                name="dateOfBirth"
+                type="date"
+                class="form-control"
+                placeholder="Date Of Birth"
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label class="form-label" for="bio">Bio</label>
+              <textarea
+                name="bio"
+                th:field="*{bio}"
+                class="form-control"
+                id="bio"
+                rows="3"
+              ></textarea>
+            </div>
+            <br />
+          </fieldset>
+          <button type="submit" class="submit">Update</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
       </div>
-      <br />
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          th:field="*{password}"
-          id="password"
-          name="password"
-          type="password"
-          class="form-control"
-          placeholder="password"
-        />
-      </div>
-      <br />
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input
-          th:field="*{firstName}"
-          id="firstName"
-          name="firstName"
-          type="text"
-          class="form-control"
-          placeholder="First Name"
-        />
-      </div>
-      <br />
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input
-          th:field="*{lastName}"
-          id="lastName"
-          name="lastName"
-          type="text"
-          class="form-control"
-          placeholder="Last Name"
-        />
-      </div>
-      <br />
-      <div class="form-group">
-        <label for="dateOfBirth">Date Of Birth</label>
-        <input
-          th:field="*{dateOfBirth}"
-          id="dateOfBirth"
-          name="dateOfBirth"
-          type="date"
-          class="form-control"
-          placeholder="Date Of Birth"
-        />
-      </div>
-      <br />
-      <div class="form-group">
-        <label for="bio">Bio</label>
-        <textarea
-          name="bio"
-          th:field="*{bio}"
-          class="form-control"
-          id="bio"
-          rows="3"
-        ></textarea>
-      </div>
-      <br />
-      <button type="submit" class="btn btn-primary mb-2">Update</button>
-    </form>
+    </footer>
   </body>
 </html>

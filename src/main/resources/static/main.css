@@ -21,6 +21,48 @@ body {
   /*  background-color: #f4f4f4; */
   height: 100%;
 }
+.navBar {
+  position: fixed;
+  width: 83px;
+
+  height: 1061px;
+
+  background: radial-gradient(
+    100% 100% at 0% 0%,
+    #4f5f67 0%,
+    rgba(68, 105, 125, 0.27) 100%
+  );
+  backdrop-filter: blur(15px);
+  margin: -22px 0px;
+  z-index: 1;
+}
+
+#logoNav {
+  position: absolute;
+  width: 34px;
+  height: 43px;
+  left: 6px;
+  top: -160px;
+}
+
+#navIcons {
+  position: absolute;
+
+  left: 35%;
+  width: 50px;
+  top: 199px;
+}
+
+.navIcon {
+  padding-bottom: 90%;
+}
+
+#navPic {
+  margin: 30;
+
+  position: relative;
+  left: -17px;
+}
 
 body:before {
   height: 45%;

@@ -130,7 +130,7 @@
       transition: all 0.3s ease 0s;
       font-size: 16px;
       align-items: center;
-      margin: 42px 0px -16px 267px;
+      margin: 4px 0px -16px 267px;
     }
 
     .submit:hover {
@@ -149,7 +149,7 @@
     <header>
       <div class="navBar">
         <nav id="navIcons">
-          <a href="@{/}" id="logoNav">
+          <a href="/" id="logoNav">
             <img
               alt="logo"
               src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png"
@@ -177,6 +177,15 @@
               height="50%"
             />
           </a>
+          <a href="chat" class="navIcon">
+            <img
+              class="navIcon"
+              alt="chat"
+              src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/messagesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
 
           <a href="quiz" class="navIcon">
             <img
@@ -193,6 +202,15 @@
               class="navIcon"
               alt="courses"
               src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png"
+              width="50%"
+              height="50%"
+            />
+          </a>
+          <a href="team" class="navIcon">
+            <img
+              class="navIcon"
+              alt="courses"
+              src="https://www.linkpicture.com/q/developers.png"
               width="50%"
               height="50%"
             />
@@ -232,13 +250,17 @@
           <img
             class="image"
             width="90%"
+            height="300px"
             th:src="${course.image}"
             src="image"
             alt="image"
           />
 
           <div class="text-div">
-            <h4 style="font-size: 22px" th:text="${course.title}">
+            <h4
+              style="font-size: 22px; height: 40px; width: 100%"
+              th:text="${course.title}"
+            >
               Interactive Technology Studio
             </h4>
 
@@ -247,13 +269,18 @@
                 color: rgba(255, 255, 255, 0.53);
                 margin-top: -8px;
                 font-size: 18px;
+                height: 40px;
+                width: 100%;
               "
               th:text="${course.course_level}"
             >
               Graduate/Professional Only (200+)
             </h5>
 
-            <p style="margin-top: 15px" th:text="${course.description}">
+            <p
+              style="margin-top: 15px; height: 150px; width: 100%"
+              th:text="${course.description}"
+            >
               Technologies, languages, and skills required for creating
               prototypes to communicate interactive technology concepts. Topics
               include HTTP, CSS, CSS scripting, AJAX, Design Patterns,
