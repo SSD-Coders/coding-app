@@ -3,19 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <title>Update Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
   </head>
+  <style>
+  * {    box-sizing: border-box;    margin: 0;    padding: 20;
+}
+.post-form-up{
+background-color: transparent;
+ width: 772px;
+ margin-left: 250px;
+ color: white;
+ height:auto;
+ border-bottom:solid white 0.5px;
+ border-top:solid white 0.5px;
 
+}
+.form-control-up{
+    border-radius: 10px;
+    width: 772px;
+    margin: 30px 29px;
+height: 81px;
+
+
+}
+.submit-up{
+padding:7px 25px;
+background-color: rgba(44,154,141,1);
+color:white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+
+font-size: 15px;
+
+    margin-left: 704px;
+
+
+}
+
+body {background: linear-gradient(115.17deg, #212634 9.22%, #142833 50.16%, rgba(13, 48, 46, 0.94) 92.84%);font-family: 'Raleway', sans-serif;color: white;
+}
+/* ////////////////////////////// Start of nav bar //////////////////////////////////////// */
+.navBar {position: fixed;    width: 83px;
+height: 1061px;
+background: radial-gradient(100% 100% at 0% 0%, #4F5F67 0%, rgba(68, 105, 125, 0.27) 100%);backdrop-filter: blur(15px);    margin: -22px 0px;        z-index: 1;}
+#logoNav{        position: absolute;    width: 34px;    height: 43px;    left: 6px;    top: -160px;}
+#navIcons{
+      position: absolute;
+    left: 35%;    width: 50px;    top: 199px;
+}
+.navIcon{    padding-bottom: 90%;
+}
+#navPic{
+    margin: 30;
+    position: relative;    left: -17px;
+}
+white_check_mark
+eyes
+raised_hands
+/* /////////////////////////////////////////////footer////////////////////////////// */
+.footer{
+background:#F2F2F2;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+
+    margin: 603px 0px 0px 0px;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#253B4D;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+
+11:22
+</style>
   <body>
-
+  <header>
+    <div class="navBar">
+      <nav id="navIcons"><a href="@{/}" id="logoNav"><img alt="logo" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/I.png" width="50%" height="50%"> </a>
+      <a href="feed"> <img class="navIcon" alt="homeIcon"  src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/homeIcon.png" width="50%" height="50%"> </a>
+      <a href="users" class="navIcon"> <img class="navIcon" alt="users" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/users.png" width="50%" height="50%"> </a>
+      <a href="quiz" class="navIcon"> <img class="navIcon" alt="quizes"  src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/quizezIcon.png" width="50%" height="50%"> </a>
+      <a href="courses" class="navIcon"> <img class="navIcon" alt="courses" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/coursesIcon.png" width="50%" height="50%"> </a>
+      <a href="profile" class="navIcon"> <img class="navIcon" id="navPic" alt="profileIcon" src="https://raw.githubusercontent.com/SSD-Coders/init/sara1/src/main/resources/images/profileIcon.png" width="120%" height="120%"> </a>
+      <a href="logout" class="navIcon"> <img class="navIcon" alt="logout" src="https://raw.githubusercontent.com/SSD-Coders/init/sara2/src/main/resources/images/logout.png" width="40%" height="40%">  </a>
+      </nav>
+    </div>
+  </header>
     <form
       action="#"
       th:action="@{/update/{id}(id=${post.id})}"
       th:object="${post}"
       method="post"
+      class="post-form-up"
     >
       <label>Post</label>
-      <input type="text" th:field="*{body}" name="post" id="post" />
-      <input type="submit" value="Update Post" />
+      <input class="form-control-up"type="text"  name="post" id="post" th:field="*{body}"/>
+      <input type="submit" value="Update Post" class="submit-up" />
     </form>
+  <footer>
+    <div class="footer">
+
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </footer>
+
   </body>
 </html>

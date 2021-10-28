@@ -26,8 +26,8 @@ public class Coders implements UserDetails {
     private String dateOfBirth;
     private String bio;
 
-    @OneToMany(mappedBy = "applicationUser", fetch = FetchType.EAGER)
-    private List<Post> posts;
+    @OneToMany(mappedBy = "applicationUser")
+    private Set<Post> posts;
 
     @ManyToMany
     @JoinTable(name = "follower_follower", joinColumns = @JoinColumn(name = "from_id"), inverseJoinColumns = @JoinColumn(name = "to_id"))
@@ -140,11 +140,11 @@ public class Coders implements UserDetails {
         this.bio = bio;
     }
 
-    public List<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
 
