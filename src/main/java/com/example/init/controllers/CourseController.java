@@ -20,7 +20,7 @@ public class CourseController {
 
                 Gson gson = new Gson();
                 JsonReader reader = new JsonReader(new FileReader(
-                                "json.json"));
+                                "C:\\Users\\STUDENT\\Desktop\\Spring\\Project\\init\\json.json"));
                 Type jsonCasting = new TypeToken<List<Courses>>() {
                 }.getType();
                 List<Courses> jsonList = gson.fromJson(reader, jsonCasting);
