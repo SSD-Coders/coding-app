@@ -23,22 +23,16 @@
         <h3 class="bg-danger text-center mb-5 p-2">Your Score</h3>
 
         <div class="d-flex justify-content-center">
-            <p>Participant name:&nbsp;&nbsp;</p>
-<!--            <p th:if="${result}" th:text="${result.username}"></p>-->
-<!--        </div>-->
 
         <div class="d-flex justify-content-center">
             <p>Total correct answer:&nbsp;&nbsp;</p>
-            <p th:if="${result}" th:text="${result.totalCorrect}"></p>
+            <p th:text="marks"></p>
         </div>
 
-        <div class="d-flex justify-content-center">
-            <p>Total false answer:&nbsp;&nbsp;</p>
-            <p th:if="${result}" th:text="5 - ${result.totalCorrect}"></p>
-        </div>
+
 
         <div class="d-flex justify-content-center mt-4">
-            <button type="button" th:onclick="window.location.href='/score'"
+            <button type="button" th:onclick="window.location.href='/profile'"
                     class="btn btn-outline-warning mx-auto">View Score Board</button>
             <button type="button" th:onclick="window.location.href='/'"
                     class="btn btn-outline-warning mx-auto">Back to Homepage</button>
@@ -46,8 +40,7 @@
     </div>
 </div>
 
-<!-- Importing Footer -->
-<div th:insert="footer.html :: footer"></div>
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>

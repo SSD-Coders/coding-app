@@ -58,7 +58,7 @@ public ResultsQuiz getResult() {
 }
     @GetMapping("/")
     public String home() {
-        return "index.html";
+        return "quizmenu.html";
     }
 
 
